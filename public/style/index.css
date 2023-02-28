@@ -7,15 +7,124 @@ footer {
     text-align: center;
 }
 
+
+* {
+    font-family: 'Nunito', sans-serif;
+    color: #D6CDA4;
+}
 .hero-banner {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 100%;
-    padding: 10em;
+    padding: 17em;
+    text-align: center;
+    box-shadow: 0 3px black;
+    /* height:10em; */
+}
+
+main, html {
+    background-color: #1C6758;
 }
 
 .home {
     background-image: url('../img/index-banner.jpg');
 }
+
+.hero-banner > i {
+    font-size:1.7em;
+    /* color: #D6CDA4; */
+}
+
+.hero-banner > h1 {
+    font-size:4em;
+    font-weight:bold;
+}
+
+
+.container {
+    padding:100px 50px;
+}
+
+h1 {
+    font-size:3.5em;
+    margin-bottom:20px;
+    /* color: #D6CDA4; */
+}
+
+.row {
+    text-align: center;
+    margin:50px 0;
+}
+
+.mission > p {
+    font-size:1.5em;
+}
+
+p {
+    font-size:1.15em;
+    color: #EEF2E6;
+}
+
+.mission {
+    border: 1px solid #196455;
+    border-radius: 15px;
+    padding:25px;
+    background-color: #3D8361;
+}
+
+.info-card {
+    padding:30px;
+}
+
+.info-card-pic {
+    width:260px;
+    height:260px;
+}
+
+.info-card-text {
+    text-align: left;
+    padding-left:20px;
+}
+
+
+/* .info-section {
+    background-color: #3D8361;
+} */
+
+
+
+/* floating animation */
+
+.float-up {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: float-up 0.5s ease forwards;
+  }
+  
+  @keyframes float-up {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+/*responsive?*/
+
+@media only screen and (max-width: 767px) {
+    /* Adjust the styles for screens with a maximum width of 767px */
+    
+    .hero-banner {
+      padding: 6em;
+    }
+    
+    .mission {
+      text-align: center;
+    }
+  }
+  
