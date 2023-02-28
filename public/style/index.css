@@ -81,6 +81,8 @@ p {
 .info-card-pic {
     width:260px;
     height:260px;
+    border-radius:10px;
+    border: 2px solid black;
 }
 
 .info-card-text {
@@ -93,7 +95,10 @@ p {
     background-color: #3D8361;
 } */
 
-
+#challenge-picture {
+    width:100%;
+    height:500px;
+}
 
 /* scroll animations */
 .reveal{
