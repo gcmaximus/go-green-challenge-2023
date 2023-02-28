@@ -12,7 +12,7 @@
     max-width: 100%;
     padding: 17em;
     text-align: center;
-    box-shadow: 0 3px black;
+    box-shadow: 0 2px 5px 0 black;
 }
 
 main, html {
@@ -79,6 +79,7 @@ p {
     border-radius: 15px;
     padding:25px;
     background-color: #3D8361;
+    box-shadow: -10px 12px 4px 0 #3c8173;
 }
 
 .info-card {
@@ -107,6 +108,8 @@ p {
 /* .info-section {
     background-color: #3D8361;
 } */
+
+  
 
 #challenge-picture {
     width:100%;
