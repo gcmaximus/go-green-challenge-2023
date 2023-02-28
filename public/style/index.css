@@ -4,6 +4,15 @@
     font-family: 'Nunito', sans-serif;
     color: #D6CDA4;
 }
+
+main, html {
+    background-color: #1C6758;
+}
+
+.home {
+    background-image: url('../img/index-banner.jpg');
+}
+
 .hero-banner {
     background-attachment: fixed;
     background-position: center;
@@ -15,13 +24,6 @@
     box-shadow: 0 2px 5px 0 black;
 }
 
-main, html {
-    background-color: #1C6758;
-}
-
-.home {
-    background-image: url('../img/index-banner.jpg');
-}
 
 .hero-banner > i {
     font-size:1.7em;
@@ -32,6 +34,25 @@ main, html {
     font-size:4em;
     font-weight:bold;
 }
+
+@media screen and (max-width: 768px) {
+    .hero-banner {
+        padding: 10em 1em; /* shorter height and smaller side padding */
+        display: flex; /* enable flexbox */
+        flex-direction: column; /* stack elements vertically */
+        justify-content: center; /* center vertically */
+        align-items: center; /* center horizontally */
+    }
+
+    
+    .hero-banner > i {
+      font-size: 1.2em;
+    }
+    
+    .hero-banner > h1 {
+      font-size: 3em;
+    }
+  }
 
 
 .container {
@@ -81,6 +102,20 @@ p {
     background-color: #3D8361;
     box-shadow: -10px 12px 4px 0 #3c8173;
 }
+
+.mission h1 {
+    font-size: 3em;
+    width: 330px;
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .mission h1 {
+      font-size: 2em;
+      width: 100%;
+    }
+  }
+  
 
 .info-card {
     margin:0px;
@@ -167,10 +202,21 @@ figure.challenge-figure > figcaption {
       blink-caret 0.8s step-end infinite;
   }
   
+  /* Reduce the duration of the animation on mobile */
+  @media screen and (max-width: 768px) {
+    .typewriter h1 {
+      animation: typing-mobile 1.5s steps(9)
+    }
+  }
   /* The typing effect */
   @keyframes typing {
     from { width: 0 }
-    to { width: 400px }
+    to { width: 330px }
+  }
+  
+  @keyframes typing-mobile {
+    from { width: 0; }
+    to { width: 250px; }
   }
   
   /* The typewriter cursor effect */
