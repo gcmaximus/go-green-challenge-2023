@@ -1,4 +1,14 @@
+/*
+Format to change e.g. font-sizes of h1 elements when viewed on mobile
+    
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size:2.5em;
+    }
+}
 
+
+*/
 
 * {
     font-family: 'Nunito', sans-serif;
@@ -78,6 +88,11 @@ h1 {
     /* color: #D6CDA4; */
 }
 
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size:2.5em;
+    }
+}
 .row {
     text-align: center;
     margin: 10px 5px;
@@ -115,29 +130,31 @@ p {
       width: 100%;
     }
   }
-  
+
 
 .info-card {
-    margin:0px;
-}
-
-.info-card-pic {
-    width:260px;
-    height:260px;
-    border-radius:10px;
+    margin: 0px;
+  }
+  
+  .info-card-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
     border: 2px solid black;
-}
+  }
+  
+  .info-card-text {
+    text-align: center;
+    padding-top: 20px;
+  }
+  
 
-.info-card-text {
-    text-align: left;
-    padding-left:20px;
-}
 
 .info-card-row {
     padding: 15px;
 }
 
-
+/* */
   
 
 figure.challenge-figure{
@@ -227,8 +244,7 @@ figure.challenge-figure > figcaption {
 
 /*responsive?*/
 
-@media only screen and (max-width: 767px) {
-    /* Adjust the styles for screens with a maximum width of 767px */
+/* @media only screen and (max-width: 768px) {
     
     .hero-banner {
       padding: 6em;
@@ -237,7 +253,7 @@ figure.challenge-figure > figcaption {
     .mission {
       text-align: center;
     }
-  }
+  } */
 
 @media (max-width: 767px) {
     .info-card {
