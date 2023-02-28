@@ -75,6 +75,8 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 50px;
+    text-shadow:-1px 1px black;
+    box-shadow: 0 -2px 2px 0 black;
 }
 
 footer p {

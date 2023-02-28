@@ -10,9 +10,9 @@ function reveal() {
           reveals[i].classList.add("active");
         }
         //**********************************************************/
-        else {
-          reveals[i].classList.remove("active");
-        }
+        // else {
+        //   reveals[i].classList.remove("active");
+        // }
         // uncomment if want to everytime scroll animation will show
         // comment if want to only first time scroll animation show
       }
