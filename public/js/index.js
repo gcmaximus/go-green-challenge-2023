@@ -1,15 +1,24 @@
-// Get all the info-card elements
-const infoCards = document.querySelectorAll('.info-card');
+// thank you https://alvarotrigo.com/blog/css-animations-scroll/
 
-// Add an event listener to the window object to detect when the user scrolls
-window.addEventListener('scroll', () => {
-  // Loop through all the info-card elements
-  infoCards.forEach(infoCard => {
-    // Check if the top of the info-card element is visible in the viewport
-    if (infoCard.getBoundingClientRect().top < window.innerHeight) {
-      // Add the "float-up" CSS class to the info-card element
-      infoCard.classList.add('float-up');
-    }
-  });
-});
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        }
+        //**********************************************************/
+        else {
+          reveals[i].classList.remove("active");
+        }
+        // uncomment if want to everytime scroll animation will show
+        // comment if want to only first time scroll animation show
+      }
+}
 
+window.addEventListener("scroll", reveal);
+
+// To check the scroll position on page load
+reveal();
