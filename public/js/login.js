@@ -66,24 +66,6 @@ toggleForm.addEventListener("click", function () {
     }
 });
 
-// Handle form submission
-const emailInput = document.querySelector("#email");
-const passwordInput = document.querySelector("#password");
-loginForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            alert("Login successful!");
-            location.replace("/index.html");
-        })
-        .catch((error) => {
-            alert(`Error code: ${error.code}\nError message: ${error.message}`);
-            location.reload();
-        });
-});
-
 const username2Input = document.querySelector("#username2");
 const email2Input = document.querySelector("#email2");
 const password2Input = document.querySelector("#password2");
@@ -112,28 +94,6 @@ email2Input.addEventListener("input", function () {
     } else {
         this.setCustomValidity("");
     }
-});
-
-signupForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    // Perform signup validation here
-    createUserWithEmailAndPassword(auth, email2Input, password2Input)
-        .then((userCredential) => {
-            // Signed in
-            let user = userCredential.user;
-            if (user) {
-                user.updateProfile({
-                    displayName: username2Input,
-                }).then(() => {
-                    alert("Login successful!");
-                    location.replace("/index.html");
-                });
-            }
-        })
-        .catch((error) => {
-            alert(`Error code: ${error.code}\nError message: ${error.message}`);
-            location.reload();
-        });
 });
 
 // Add floating label effect to input fields
