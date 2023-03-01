@@ -236,8 +236,11 @@ figure.challenge-figure:hover {
 
 figure.challenge-figure > figcaption {
     color:black;
-    text-decoration: none;
     padding:10px;
+}
+
+.challenge-container a {
+  text-decoration: none;
 }
   
 #challenge-picture {
