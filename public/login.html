@@ -158,29 +158,6 @@
             }
         });
 
-        // Handle form submission
-        loginForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            // Perform login validation here
-            alert('Login successful!');
-            // Redirect to index.html dashboard
-        });
-
-        signupForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            // Perform signup validation here
-            const username2Input = document.querySelector('#username2');
-            const email2Input = document.querySelector('#email');
-            const password2Input = document.querySelector('#password2');
-
-            username2Input.addEventListener('input', function () {
-                if (this.validity.valueMissing) {
-                    this.setCustomValidity('Please enter your username');
-                } else {
-                    this.setCustomValidity('');
-                }
-            });
-
             password2Input.addEventListener('input', function () {
                 if (this.validity.valueMissing) {
                     this.setCustomValidity('Please enter your password');
@@ -241,7 +218,7 @@
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-        import { getAuth, sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"
         const firebaseConfig = {
             apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
             authDomain: "go-green-challenge.firebaseapp.com",
