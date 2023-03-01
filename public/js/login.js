@@ -145,10 +145,6 @@ formGroups.forEach((group) => {
     });
 });
 
-
-
-
-
 // const actionCodeSettings = {
 //     // URL you want to redirect back to. The domain (www.example.com) for this
 //     // URL must be in the authorized domains list in the Firebase Console.
@@ -192,3 +188,15 @@ formGroups.forEach((group) => {
 // }
 
 
+
+createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+    });
