@@ -187,16 +187,19 @@ formGroups.forEach((group) => {
 //         });
 // }
 
+let email = document.getElementById('email').value
+let password = document.getElementById('password').value
 
-
-createUserWithEmailAndPassword(auth, email, password)
+document.getElementById("signUpButton").onclick() = () => {
+    createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        // ...
     })
     .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
+        alert(`Error code: ${error.code}\nError message: ${error.message}`);
+        location.reload()
     });
+}
+
+

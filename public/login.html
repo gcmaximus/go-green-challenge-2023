@@ -158,29 +158,6 @@
             }
         });
 
-        // Handle form submission
-        loginForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            // Perform login validation here
-            alert('Login successful!');
-            // Redirect to index.html dashboard
-        });
-
-        signupForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            // Perform signup validation here
-            const username2Input = document.querySelector('#username2');
-            const email2Input = document.querySelector('#email');
-            const password2Input = document.querySelector('#password2');
-
-            username2Input.addEventListener('input', function () {
-                if (this.validity.valueMissing) {
-                    this.setCustomValidity('Please enter your username');
-                } else {
-                    this.setCustomValidity('');
-                }
-            });
-
             password2Input.addEventListener('input', function () {
                 if (this.validity.valueMissing) {
                     this.setCustomValidity('Please enter your password');
