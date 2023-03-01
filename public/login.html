@@ -413,13 +413,13 @@
             });
             alert('Sign up successful!');
             // Show login form after successful signup
-            const usernameInput = document.querySelector('#username');
+            const emailInput = document.querySelector('#email');
             const passwordInput = document.querySelector('#password');
 
 
-            usernameInput.addEventListener('input', function () {
+            emailInput.addEventListener('input', function () {
                 if (this.validity.valueMissing) {
-                    this.setCustomValidity('Please enter your username');
+                    this.setCustomValidity('Please enter your email');
                 } else {
                     this.setCustomValidity('');
                 }
