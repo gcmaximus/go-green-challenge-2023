@@ -141,11 +141,14 @@
             const app = initializeApp(firebaseConfig);
             const auth = getAuth(app);
 
+            const loginForm = document.querySelector("#login-form");
+            const signupForm = document.querySelector("#signup-form");
+
             const emailInput = document.querySelector("#email").value;
             const passwordInput = document.querySelector("#password").value;
             loginForm.addEventListener("submit", function (e) {
                 e.preventDefault();
-                signInWithEmailAndPassword(auth, email, password)
+                signInWithEmailAndPassword(auth, emailInput, passwordInput)
                     .then((userCredential) => {
                         // Signed in
                         const user = userCredential.user;
@@ -164,31 +167,33 @@
             const email2Input = document.querySelector("#email2").value;
             const password2Input = document.querySelector("#password2").value;
             signupForm.addEventListener("submit", function (e) {
+                console.log(email2Input, password2Input);
                 e.preventDefault();
                 // Perform signup validation here
-                createUserWithEmailAndPassword(
-                    auth,
-                    email2Input,
-                    password2Input
-                )
-                    .then((userCredential) => {
-                        // Signed in
-                        let user = userCredential.user;
-                        if (user) {
-                            user.updateProfile({
-                                displayName: username2Input,
-                            }).then(() => {
-                                alert("Login successful!");
-                                location.replace("/index.html");
-                            });
-                        }
-                    })
-                    .catch((error) => {
-                        alert(
-                            `Error code: ${error.code}\nError message: ${error.message}`
-                        );
-                        location.reload();
-                    });
+
+                // createUserWithEmailAndPassword(
+                //     auth,
+                //     email2Input,
+                //     password2Input
+                // )
+                //     .then((userCredential) => {
+                //         // Signed in
+                //         let user = userCredential.user;
+                //         if (user) {
+                //             user.updateProfile({
+                //                 displayName: username2Input,
+                //             }).then(() => {
+                //                 alert("Login successful!");
+                //                 location.replace("/index.html");
+                //             });
+                //         }
+                //     })
+                //     .catch((error) => {
+                //         alert(
+                //             `Error code: ${error.code}\nError message: ${error.message}`
+                //         );
+                //         location.reload();
+                //     });
             });
         </script>
     </body>
