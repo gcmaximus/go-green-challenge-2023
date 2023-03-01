@@ -384,7 +384,7 @@
             e.preventDefault();
             // Perform signup validation here
             const username2Input = document.querySelector('#username2');
-            const emailInput = document.querySelector('#email');
+            const email2Input = document.querySelector('#email');
             const password2Input = document.querySelector('#password2');
 
             username2Input.addEventListener('input', function () {
@@ -402,7 +402,7 @@
                     this.setCustomValidity('');
                 }
             });
-            emailInput.addEventListener('input', function () {
+            email2Input.addEventListener('input', function () {
                 if (this.validity.valueMissing) {
                     this.setCustomValidity('Please enter your email');
                 } else if (this.validity.typeMismatch) {
