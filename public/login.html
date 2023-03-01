@@ -1,35 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
+    <title>Login/Sign-up Page</title>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- CSS -->
-    <link src="./style/login.css" rel="stylesheet">
-    
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        body {
+            background: linear-gradient(to right, #1C6758, #3D8361, #D6CDA4, #EEF2E6);
+            animation: gradientAnimation 20s ease infinite;
+            background-size: 400% auto;
+        }
 
-    <!-- Title -->
-    <title>Login</title>
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            max-width: 500px;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .card-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+            transform: translateY(0);
+            transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+        }
+
+        .form-group input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            border-radius: 0;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #1C6758;
+        }
+
+        .form-group input:focus~label,
+        .form-group input:not(:placeholder-shown)~label {
+            transform: translateY(-5px);
+            font-size: 14px;
+            color: #1C6758;
+        }
+
+        .form-group button {
+            background-color: #1C6758;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #3D8361;
+        }
+
+        .form-group p {
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+            color: #666;
+        }
+
+        .form-group a {
+            color: #1C6758;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .form-group a:hover {
+            color: #3D8361;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .card-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 20px;
+            z-index: 100;
+        }
+
+        .card-toggle button {
+            background-color: #1C6758;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .card-toggle button:hover {
+            background-color: #3D8361;
+        }
+
+        @media (max-width: 767px) {
+            .card-container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .card-toggle {
+                position: static;
+                margin: 20px 0;
+            }
+        }
+
+        /* Floating Label */
+        .form-group {
+            position: relative;
+            margin-bottom: 2.4rem;
+        }
+
+        .form-group input:focus~label,
+        .form-group input:valid~label {
+            top: -24px;
+            font-size: 14px;
+            color: #D6CDA4;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .form-group input:focus,
+        .form-group input:valid {
+            border: none;
+            border-bottom: 2px solid #D6CDA4;
+            outline: none;
+            box-shadow: none;
+        }
+
+        .form-group label {
+            position: absolute;
+            left: 0;
+            top: 8px;
+            font-size: 16px;
+            color: #EEF2E6;
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* The message box is shown when the user clicks on the password field */
+        #message {
+            /* display: none; */
+            background: #f1f1f1;
+            color: #000;
+            position: relative;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        #message p {
+            padding: 10px 35px;
+            font-size: 15px;
+        }
+        
+        #message h3 {
+            font-size: 15px;
+        }
+
+        .valid:before {
+            position: absolute;
+            left: 35px;
+            content: "✓";
+            color: green;
+        }
+
+        .invalid:before {
+            position: absolute;
+            left: 35px;
+            content: "☓";
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
     <header>
 
     </header>
-    <div class="content">
-        <form>
-            aaa
-        </form>
-    </div>
-    <footer class="d-flex justify-content-center">
-        <p>GoGreenChallenge2023@gmail.com | 500 Dover Road Singapore 139651 | +65 9897 9695</p>
-    </footer>
-
 
     <!--bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -38,27 +243,223 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
         integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
         crossorigin="anonymous"></script>
-    
-    <!-- Script -->
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-        import { getAuth } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"
-        const firebaseConfig = {
-            apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
-            authDomain: "go-green-challenge.firebaseapp.com",
-            projectId: "go-green-challenge",
-            storageBucket: "go-green-challenge.appspot.com",
-            messagingSenderId: "586047303749",
-            appId: "1:586047303749:web:73a742cbefa66c0fbd732c",
-            measurementId: "G-5WNGZ08ND0"
-        };
-        
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app)
-    </script>
-    <script src="login.js"></script>
-</body>
+    <div class="container">
+        <div class="card-container">
+            <form id="login-form" style="display:block">
+                <h2 class="title">Login</h2>
+                <div class="form-group">
+                    <input type="text" id="email" name="email" required class="floating-label">
+                    <label for="email">email</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" required class="floating-label">
+                    <label for="password">Password</label>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Login</button>
+                    <p>Don't have an account? <a href="#" class="toggle-form">Sign up</a></p>
+                </div>
+            </form>
+            <form id="signup-form" style="display:none">
+                <h2 class="title">Sign up</h2>
+                <div class="form-group">
+                    <input type="text" id="username2" name="username2" required>
+                    <label for="username2">Username</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password2" name="password2" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                    <label for="password2">Password</label>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Sign up</button>
 
+                    <div id="message">
+                        <h3>Password must contain the following:</h3>
+                        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                        <p id="number" class="invalid">A <b>number</b></p>
+                        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                    </div>
+
+                        <script>
+                            var myInput = document.getElementById("password2");
+                            var letter = document.getElementById("letter");
+                            var capital = document.getElementById("capital");
+                            var number = document.getElementById("number");
+                            var length = document.getElementById("length");
+                            
+                            
+                            // When the user starts to type something inside the password field
+                            myInput.onkeyup = function() {
+                              // Validate lowercase letters
+                              var lowerCaseLetters = /[a-z]/g;
+                              if(myInput.value.match(lowerCaseLetters)) {  
+                                letter.classList.remove("invalid");
+                                letter.classList.add("valid");
+                              } else {
+                                letter.classList.remove("valid");
+                                letter.classList.add("invalid");
+                              }
+                              
+                              // Validate capital letters
+                              var upperCaseLetters = /[A-Z]/g;
+                              if(myInput.value.match(upperCaseLetters)) {  
+                                capital.classList.remove("invalid");
+                                capital.classList.add("valid");
+                              } else {
+                                capital.classList.remove("valid");
+                                capital.classList.add("invalid");
+                              }
+                            
+                              // Validate numbers
+                              var numbers = /[0-9]/g;
+                              if(myInput.value.match(numbers)) {  
+                                number.classList.remove("invalid");
+                                number.classList.add("valid");
+                              } else {
+                                number.classList.remove("valid");
+                                number.classList.add("invalid");
+                              }
+                              
+                              // Validate length
+                              if(myInput.value.length >= 8) {
+                                length.classList.remove("invalid");
+                                length.classList.add("valid");
+                              } else {
+                                length.classList.remove("valid");
+                                length.classList.add("invalid");
+                              }
+                            }
+                        </script>
+                    
+                    <p>Already have an account? <a href="#" class="toggle-form">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const toggleForm = document.querySelector('.toggle-form');
+        const loginForm = document.querySelector('#login-form');
+        const signupForm = document.querySelector('#signup-form');
+        const cardToggleBtn = document.querySelector('.card-toggle button');
+
+        // Toggle between login and signup forms
+        toggleForm.addEventListener('click', function () {
+            if (signupForm.style.display === 'block') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+                cardToggleBtn.textContent = 'Switch to Login';
+            }
+            else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+                cardToggleBtn.textContent = 'Switch to Sign Up';
+            }
+        });
+
+        // Handle form submission
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Perform login validation here
+            alert('Login successful!');
+            // Redirect to index.html dashboard
+        });
+
+        signupForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Perform signup validation here
+            const username2Input = document.querySelector('#username2');
+            const email2Input = document.querySelector('#email');
+            const password2Input = document.querySelector('#password2');
+
+            username2Input.addEventListener('input', function () {
+                if (this.validity.valueMissing) {
+                    this.setCustomValidity('Please enter your username');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
+
+            password2Input.addEventListener('input', function () {
+                if (this.validity.valueMissing) {
+                    this.setCustomValidity('Please enter your password');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
+            email2Input.addEventListener('input', function () {
+                if (this.validity.valueMissing) {
+                    this.setCustomValidity('Please enter your email');
+                } else if (this.validity.typeMismatch) {
+                    this.setCustomValidity('Please enter a valid email address');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
+            alert('Sign up successful!');
+            // Show login form after successful signup
+            const emailInput = document.querySelector('#email');
+            const passwordInput = document.querySelector('#password');
+
+
+            emailInput.addEventListener('input', function () {
+                if (this.validity.valueMissing) {
+                    this.setCustomValidity('Please enter your email');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
+
+            passwordInput.addEventListener('input', function () {
+                if (this.validity.valueMissing) {
+                    this.setCustomValidity('Please choose a password');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+            cardToggleBtn.textContent = 'Switch to Login';
+        });
+
+        // Add floating label effect to input fields
+        const formGroups = document.querySelectorAll('.form-group');
+        formGroups.forEach(group => {
+            const input = group.querySelector('input');
+            input.addEventListener('focus', function () {
+                group.classList.add('focused');
+            });
+            input.addEventListener('blur', function () {
+                if (input.value === '') {
+                    group.classList.remove('focused');
+                }
+            });
+        });
+    </script>
+        <!-- Script -->
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+            import { getAuth, sendSignInLinkToEmail } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"
+            const firebaseConfig = {
+                apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
+                authDomain: "go-green-challenge.firebaseapp.com",
+                projectId: "go-green-challenge",
+                storageBucket: "go-green-challenge.appspot.com",
+                messagingSenderId: "586047303749",
+                appId: "1:586047303749:web:73a742cbefa66c0fbd732c",
+                measurementId: "G-5WNGZ08ND0"
+            };
+            
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app)
+        </script>
+        <script src="login.js"></script>
 </html>
