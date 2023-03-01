@@ -77,13 +77,13 @@ loginForm.addEventListener("submit", function (e) {
             // Signed in
             const user = userCredential.user;
             alert("Login successful!");
-            location.replace("https://localhost:5000/index.html");
+            location.replace("/index.html");
         })
         .catch((error) => {
             alert(`Error code: ${error.code}\nError message: ${error.message}`);
-            location.reload()
+            location.reload();
         });
-    
+
     //
 });
 
@@ -91,16 +91,22 @@ signupForm.addEventListener("submit", function (e) {
     e.preventDefault();
     // Perform signup validation here
     // !!! HARSHA GET ME MY EMAIL AND PASSWORD FOR SIGN UP I NEED IT HERE
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password) // email and password NEEDED
         .then((userCredential) => {
+            let user = userCredential.user
             // Signed in
-            const user = userCredential.user;
-            alert("Login successful!");
-            location.replace("https://localhost:5000/index.html");
+            if (user) {
+                user.updateProfile({
+                    displayName: username, // username NEEDED
+                }).then(() => {
+                    alert("Login successful!");
+                    location.replace("/index.html");
+                });
+            }
         })
         .catch((error) => {
             alert(`Error code: ${error.code}\nError message: ${error.message}`);
-            location.reload()
+            location.reload();
         });
     //
 
