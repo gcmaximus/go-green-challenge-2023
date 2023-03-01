@@ -9,15 +9,15 @@ const actionCodeSettings = {
 
 let email = window.document.getElementById("email");
 
-sendSignInLinkToEmail(auth, email, actionCodeSettings)
-    .then(() => {
-        window.localStorage.setItem("emailForSignIn", email);
-    })
-    .catch((error) => {
-        window.alert(
-            `Error code: ${error.code}\nError message: ${error.message}`
-        );
-    });
+// sendSignInLinkToEmail(auth, email, actionCodeSettings)
+//     .then(() => {
+//         window.localStorage.setItem("emailForSignIn", email);
+//     })
+//     .catch((error) => {
+//         window.alert(
+//             `Error code: ${error.code}\nError message: ${error.message}`
+//         );
+//     });
 
 if (isSignInWithEmailLink(auth, window.location.href)) {
     let email = window.localStorage.getItem("emailForSignIn");
