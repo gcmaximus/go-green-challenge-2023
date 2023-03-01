@@ -158,7 +158,7 @@ const actionCodeSettings = {
     handleCodeInApp: true,
 };
 
-let email = document.getElementById("emailForSignIn");
+let email = document.getElementById("emailForSignIn").value;
 
 document.getElementById("signInButton").addEventListener("click", () => {
     sendSignInLinkToEmail(auth, email, actionCodeSettings)
