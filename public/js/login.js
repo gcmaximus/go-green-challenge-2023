@@ -1,9 +1,9 @@
 // validate password
-var myInput = document.getElementById("password2");
-var letter = document.getElementById("letter");
-var capital = document.getElementById("capital");
-var number = document.getElementById("number");
-var length = document.getElementById("length");
+let myInput = document.getElementById("password2");
+let letter = document.getElementById("letter");
+let capital = document.getElementById("capital");
+let number = document.getElementById("number");
+let length = document.getElementById("length");
 
 // When the user starts to type something inside the password field
 myInput.onkeyup = function () {
@@ -66,96 +66,34 @@ toggleForm.addEventListener("click", function () {
     }
 });
 
-// Handle form submission
-loginForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+const username2Input = document.querySelector("#username2");
+const email2Input = document.querySelector("#email2");
+const password2Input = document.querySelector("#password2");
 
-    // Sign In validation
-    // !!! HARSHA GET ME MY EMAIL AND PASSWORD FOR SIGN IN I NEED IT HERE
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            alert("Login successful!");
-            location.replace("https://localhost:5000/index.html");
-        })
-        .catch((error) => {
-            alert(`Error code: ${error.code}\nError message: ${error.message}`);
-            location.reload()
-        });
-    
-    //
+username2Input.addEventListener("input", function () {
+    if (this.validity.valueMissing) {
+        this.setCustomValidity("Please enter your username");
+    } else {
+        this.setCustomValidity("");
+    }
 });
 
-signupForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    // Perform signup validation here
-    // !!! HARSHA GET ME MY EMAIL AND PASSWORD FOR SIGN UP I NEED IT HERE
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            alert("Login successful!");
-            location.replace("https://localhost:5000/index.html");
-        })
-        .catch((error) => {
-            alert(`Error code: ${error.code}\nError message: ${error.message}`);
-            location.reload()
-        });
-    //
+password2Input.addEventListener("input", function () {
+    if (this.validity.valueMissing) {
+        this.setCustomValidity("Please enter your password");
+    } else {
+        this.setCustomValidity("");
+    }
+});
 
-    const username2Input = document.querySelector("#username2");
-    const email2Input = document.querySelector("#email");
-    const password2Input = document.querySelector("#password2");
-
-    username2Input.addEventListener("input", function () {
-        if (this.validity.valueMissing) {
-            this.setCustomValidity("Please enter your username");
-        } else {
-            this.setCustomValidity("");
-        }
-    });
-
-    password2Input.addEventListener("input", function () {
-        if (this.validity.valueMissing) {
-            this.setCustomValidity("Please enter your password");
-        } else {
-            this.setCustomValidity("");
-        }
-    });
-    email2Input.addEventListener("input", function () {
-        if (this.validity.valueMissing) {
-            this.setCustomValidity("Please enter your email");
-        } else if (this.validity.typeMismatch) {
-            this.setCustomValidity("Please enter a valid email address");
-        } else {
-            this.setCustomValidity("");
-        }
-    });
-    alert("Sign up successful!");
-
-    // Show login form after successful signup
-    const emailInput = document.querySelector("#email");
-    const passwordInput = document.querySelector("#password");
-
-    emailInput.addEventListener("input", function () {
-        if (this.validity.valueMissing) {
-            this.setCustomValidity("Please enter your email");
-        } else {
-            this.setCustomValidity("");
-        }
-    });
-
-    passwordInput.addEventListener("input", function () {
-        if (this.validity.valueMissing) {
-            this.setCustomValidity("Please choose a password");
-        } else {
-            this.setCustomValidity("");
-        }
-    });
-    loginForm.style.display = "block";
-    signupForm.style.display = "none";
-    cardToggleBtn.textContent = "Switch to Login";
+email2Input.addEventListener("input", function () {
+    if (this.validity.valueMissing) {
+        this.setCustomValidity("Please enter your email");
+    } else if (this.validity.typeMismatch) {
+        this.setCustomValidity("Please enter a valid email address");
+    } else {
+        this.setCustomValidity("");
+    }
 });
 
 // Add floating label effect to input fields
