@@ -55,10 +55,7 @@ var cardToggleBtn = document.querySelector(".card-toggle button");
 
 // Toggle between login and signup forms
 toggleForm.addEventListener("click", function () {
-    // var loginForm = document.querySelector("#login-form");
-    // var signupForm = document.querySelector("#signup-form");
-    // var cardToggleBtn = document.querySelector(".card-toggle button");
-    if (signupForm.style.display === "block") {
+    if (document.querySelector("#signup-form").style.display === "block") {
         loginForm.style.display = "block";
         signupForm.style.display = "none";
         cardToggleBtn.textContent = "Switch to Login";
