@@ -55,10 +55,9 @@ main, html {
       font-size: 3em;
     }
 
-    figcaption {
-        font-size: 0.9em;
-    }
+    
 }
+
 
 
 footer p {
@@ -139,6 +138,17 @@ footer p {
     font-size: 1em;
 }
 
+
+
+@media screen and (max-width: 768px) {
+  figcaption {
+    font-size: 0.9em;
+  }
+
+  p {
+  font-size:1.15em;
+  }
+}
 /*mobile hamburger menu */
 
 .menu a {
