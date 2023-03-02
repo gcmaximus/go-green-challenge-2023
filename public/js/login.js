@@ -58,11 +58,11 @@ toggleForm.addEventListener("click", function () {
     if (document.querySelector("#signup-form").style.display === "block") {
         loginForm.style.display = "block";
         signupForm.style.display = "none";
-        //cardToggleBtn.textContent = "Switch to Login";
+        cardToggleBtn.textContent = "Switch to Login";
     } else {
         loginForm.style.display = "none";
         signupForm.style.display = "block";
-        //cardToggleBtn.textContent = "Switch to Sign Up";
+        cardToggleBtn.textContent = "Switch to Sign Up";
     }
 });
 
