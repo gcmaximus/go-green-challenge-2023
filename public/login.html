@@ -126,6 +126,7 @@
                 getAuth,
                 createUserWithEmailAndPassword,
                 signInWithEmailAndPassword,
+                updateProfile,
             } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
             const firebaseConfig = {
                 apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
@@ -141,14 +142,12 @@
             const app = initializeApp(firebaseConfig);
             const auth = getAuth(app);
 
-            const loginForm = document.querySelector("#login-form");
-            const signupForm = document.querySelector("#signup-form");
-
-            const emailInput = document.querySelector("#email").value;
-            const passwordInput = document.querySelector("#password").value;
             loginForm.addEventListener("submit", function (e) {
                 e.preventDefault();
-                signInWithEmailAndPassword(auth, emailInput, passwordInput)
+                let emailValue = document.querySelector("#email").value;
+                let passwordValue = document.querySelector("#password").value;
+                // Perform sigin validation here
+                signInWithEmailAndPassword(auth, emailValue, passwordValue)
                     .then((userCredential) => {
                         // Signed in
                         const user = userCredential.user;
@@ -163,37 +162,45 @@
                     });
             });
 
-            const username2Input = document.querySelector("#username2").value;
-            const email2Input = document.querySelector("#email2").value;
-            const password2Input = document.querySelector("#password2").value;
             signupForm.addEventListener("submit", function (e) {
-                console.log(email2Input, password2Input);
                 e.preventDefault();
+                let username2Value = username2Input.value;
+                let email2Value = email2Input.value;
+                let password2Value = password2Input.value;
                 // Perform signup validation here
-
-                // createUserWithEmailAndPassword(
-                //     auth,
-                //     email2Input,
-                //     password2Input
-                // )
-                //     .then((userCredential) => {
-                //         // Signed in
-                //         let user = userCredential.user;
-                //         if (user) {
-                //             user.updateProfile({
-                //                 displayName: username2Input,
-                //             }).then(() => {
-                //                 alert("Login successful!");
-                //                 location.replace("/index.html");
-                //             });
-                //         }
-                //     })
-                //     .catch((error) => {
-                //         alert(
-                //             `Error code: ${error.code}\nError message: ${error.message}`
-                //         );
-                //         location.reload();
-                //     });
+                createUserWithEmailAndPassword(
+                    auth,
+                    email2Value,
+                    password2Value
+                )
+                    .then((userCredential) => {
+                        console.log(userCredential);
+                        console.log(userCredential.user)
+                        alert("test");
+                        // Signed in
+                        let user = userCredential.user;
+                        if (user) {
+                            updateProfile(auth.currentUser, {
+                                displayName: username2Value,
+                            })
+                                .then(() => {
+                                    alert("Login successful!");
+                                    location.replace("/index.html");
+                                })
+                                .catch((error) => {
+                                    alert(
+                                        `Error code: ${error.code}\nError message: ${error.message}`
+                                    );
+                                    location.reload();
+                                });
+                        }
+                    })
+                    .catch((error) => {
+                        alert(
+                            `Error code: ${error.code}\nError message: ${error.message}`
+                        );
+                        location.reload();
+                    });
             });
         </script>
     </body>
