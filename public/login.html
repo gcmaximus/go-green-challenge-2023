@@ -152,7 +152,7 @@
                         // Signed in
                         const user = userCredential.user;
                         alert("Login successful!");
-                        location.replace("/index.html");
+                        location.replace("/");
                     })
                     .catch((error) => {
                         alert(
@@ -185,7 +185,7 @@
                             })
                                 .then(() => {
                                     alert(`Welcome ${username2Value}, signup is successful! You are now logged in :D`);
-                                    location.replace("/index.html");
+                                    location.replace("/");
                                 })
                                 .catch((error) => {
                                     alert(
