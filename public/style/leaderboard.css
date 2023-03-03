@@ -1,7 +1,12 @@
-* {
-  font-family: 'Nunito', sans-serif;
-  color: #D6CDA4;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 
 /* Navbar */
@@ -133,15 +138,8 @@ h2 {
   margin-top: 0px;
   transform: rotate(-405deg);
 }
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 
 body{
