@@ -358,3 +358,19 @@ h2 {
 .carousel {
   margin-bottom: 40px;
 }
+
+.past figcaption {
+  color: rgb(66, 135, 68);
+}
+
+.ongoing figcaption {
+  color: rgb(157, 111, 19)
+}
+
+.unreleased {
+  filter: brightness(70%);
+}
+
+figcaption {
+  text-decoration: none;
+}
