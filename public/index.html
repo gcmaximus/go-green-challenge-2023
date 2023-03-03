@@ -1,200 +1,165 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- CSS -->
-        <link href="./style/index.css" rel="stylesheet" />
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Bootstrap -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-            crossorigin="anonymous"
-        />
+    <!-- CSS -->
+    <link href="./style/index.css" rel="stylesheet" />
 
-        <!-- poppins -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
-            rel="stylesheet"
-        />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
 
-        <!-- Script -->
-        <script src="./js/index.js"></script>
+    <!-- poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
 
-        <title>Home</title>
-    </head>
-    <body>
-        <header>
-            <!--Navbar-->
-            <nav>
-                <section class="top-nav">
-                    <div>Logo Here</div>
-                    <input id="menu-toggle" type="checkbox" />
-                    <label class="menu-button-container" for="menu-toggle">
-                        <div class="menu-button"></div>
-                    </label>
-                    <ul class="menu">
-                        <li><a href="./index.html">Home</a></li>
-                        <li>
-                            <a href="./leaderboard.html"
-                                >Leaderboard & Prizes</a
-                            >
-                        </li>
-                        <li>
-                            <a href="./ongoing-challenge.html"
-                                >Ongoing Challenges</a
-                            >
-                        </li>
-                        <li>
-                            <a href="./past-challenges.html">Past Challenges</a>
-                        </li>
-                        <li><a href="./about-us.html">About Us</a></li>
-                    </ul>
-                </section>
-            </nav>
-        </header>
-        <main>
-            <!--Home Page Hero Banner-->
-            <article class="hero-banner home">
-                <h1 class="mb-4">Go-Green Recycling Challenge 2023</h1>
-                <i>One-line description of the project</i>
-            </article>
+    <!-- Script -->
+    <script src="./js/index.js"></script>
 
-            <!--Main Contents-->
-            <section class="container">
-                <!--Mission-->
-                <div class="row">
-                    <div class="col-12 mission">
-                        <div class="typewriter">
-                            <h1>Our Mission</h1>
-                        </div>
-                        <p>Encouraging recycling among youths</p>
-                    </div>
-                </div>
-                <!--3W1H-->
-                <div class="row">
-                    <div class="col-md-6 info-card reveal">
-                        <div class="row info-card-row">
-                            <div class="col-md-6">
-                                <img
-                                    src="./img/placeholder.png"
-                                    alt="abc"
-                                    class="info-card-pic"
-                                />
-                            </div>
-                            <div class="col-md-6 info-card-text">
-                                <h3>Why?</h3>
-                                <p>
-                                    A description of an effort and why it
-                                    matters
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 info-card reveal">
-                        <div class="row info-card-row">
-                            <div class="col-md-6">
-                                <img
-                                    src="./img/placeholder.png"
-                                    alt="abc"
-                                    class="info-card-pic"
-                                />
-                            </div>
-                            <div class="col-md-6 info-card-text">
-                                <h3>What?</h3>
-                                <p>
-                                    A description of an effort and why it
-                                    matters
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 info-card reveal">
-                        <div class="row info-card-row">
-                            <div class="col-md-6">
-                                <img
-                                    src="./img/placeholder.png"
-                                    alt="abc"
-                                    class="info-card-pic"
-                                />
-                            </div>
-                            <div class="col-md-6 info-card-text">
-                                <h3>How?</h3>
-                                <p>
-                                    Submit by submitting images on the daily
-                                    challenge segment when you are logged in
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 info-card reveal">
-                        <div class="row info-card-row">
-                            <div class="col-md-6">
-                                <img
-                                    src="./img/placeholder.png"
-                                    alt="abc"
-                                    class="info-card-pic"
-                                />
-                            </div>
-                            <div class="col-md-6 info-card-text">
-                                <h3>When?</h3>
-                                <p>
-                                    A description of an effort and why it
-                                    matters
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <title>Home</title>
+</head>
 
-                <hr />
-                <!--Daily Challenges-->
-                <div class="row">
-                    <div class="col-12 reveal">
-                        <h1>Daily Challenges</h1>
-                        <h4>Week 1</h4>
-                        <div class="challenge-container">
-                            <a href="./ongoing-challenge.html">
-                                <figure class="challenge-figure">
-                                    <img
-                                        src="./img/challenge-picture.png"
-                                        alt="challenge-picture"
-                                        id="challenge-picture"
-                                    />
-                                    <figcaption>
-                                        Click to view challenges
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <hr />
-                <!--Questions?-->
-                <div class="row">
-                    <div class="col-12">
-                        <h1>Questions?</h1>
-                        <p>
-                            Contact [email] for more information on the project
-                        </p>
-                    </div>
-                </div>
+<body>
+    <header>
+        <!--Navbar-->
+        <nav>
+            <section class="top-nav">
+                <div>Logo Here</div>
+                <input id="menu-toggle" type="checkbox" />
+                <label class="menu-button-container" for="menu-toggle">
+                    <div class="menu-button"></div>
+                </label>
+                <ul class="menu">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./leaderboard.html">Leaderboard & Prizes</a></li>
+                    <li><a href="./ongoing-challenge.html">Ongoing Challenges</a></li>
+                    <li><a href="./past-challenges.html">Past Challenges</a></li>
+                    <li><a href="./about-us.html">About Us</a></li>
+                </ul>
             </section>
+        </nav>
+    </header>
+    <main>
+        <!--Home Page Hero Banner-->
+        <article class="hero-banner home">
+            <h1 class="mb-4">Go-Green Recycling Challenge 2023</h1>
+            <i>One-line description of the project</i>
+        </article>
 
-            <footer>
-                <p>
-                    GoGreenChallenge2023@gmail.com | 500 Dover Road Singapore
-                    139651 | +65 9897 9695
-                </p>
-            </footer>
+        <!--Main Contents-->
+        <section class="container">
+            <!--Mission-->
+            <div class="row">
+                <div class="col-12 mission">
+                    <div class="typewriter">
+                        <h1>Our Mission</h1>
+                    </div>
+                    <p>Encouraging recycling among youths</p>
+                </div>
+            </div>
+            <!--3W1H-->
+            <div class="row">
+                <div class="col-md-6 info-card reveal">
+                    <div class="row info-card-row">
+                        <div class="col-md-6">
+                            <img src="./img/placeholder.png" alt="abc" class="info-card-pic" />
+                        </div>
+                        <div class="col-md-6 info-card-text">
+                            <h3>Why?</h3>
+                            <p>
+                                A description of an effort and why it
+                                matters
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 info-card reveal">
+                    <div class="row info-card-row">
+                        <div class="col-md-6">
+                            <img src="./img/placeholder.png" alt="abc" class="info-card-pic" />
+                        </div>
+                        <div class="col-md-6 info-card-text">
+                            <h3>What?</h3>
+                            <p>
+                                A description of an effort and why it
+                                matters
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 info-card reveal">
+                    <div class="row info-card-row">
+                        <div class="col-md-6">
+                            <img src="./img/placeholder.png" alt="abc" class="info-card-pic" />
+                        </div>
+                        <div class="col-md-6 info-card-text">
+                            <h3>How?</h3>
+                            <p>
+                                Submit by submitting images on the daily
+                                challenge segment when you are logged in
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 info-card reveal">
+                    <div class="row info-card-row">
+                        <div class="col-md-6">
+                            <img src="./img/placeholder.png" alt="abc" class="info-card-pic" />
+                        </div>
+                        <div class="col-md-6 info-card-text">
+                            <h3>When?</h3>
+                            <p>
+                                A description of an effort and why it
+                                matters
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <!-- <div class="footer-dark">
+            <hr />
+            <!--Daily Challenges-->
+            <div class="row">
+                <div class="col-12 reveal">
+                    <h1>Daily Challenges</h1>
+                    <h4>Week 1</h4>
+                    <div class="challenge-container">
+                        <a href="./ongoing-challenge.html">
+                            <figure class="challenge-figure">
+                                <img src="./img/challenge-picture.png" alt="challenge-picture" id="challenge-picture" />
+                                <figcaption>
+                                    Click to view challenges
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <!--Questions?-->
+            <div class="row">
+                <div class="col-12">
+                    <h1>Questions?</h1>
+                    <p>
+                        Contact [email] for more information on the project
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>
+                GoGreenChallenge2023@gmail.com | 500 Dover Road Singapore
+                139651 | +65 9897 9695
+            </p>
+        </footer>
+
+        <!-- <div class="footer-dark">
             <footer>
                 <div class="container">
                     <div class="row footer-text">
@@ -208,18 +173,15 @@
                 </div>
             </footer>
         </div> -->
-        </main>
+    </main>
 
-        <!--bootstrap-->
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-            integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-            crossorigin="anonymous"
-        ></script>
-    </body>
+    <!--bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>

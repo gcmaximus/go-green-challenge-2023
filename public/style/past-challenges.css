@@ -1,3 +1,91 @@
+* {
+  font-family: 'Nunito', sans-serif;
+  color: #D6CDA4;
+}
+
+main, html {
+  background-color: #1C6758;
+}
+
+
+
+.past-challenges-banner {
+  background-image: url('../img/past-challenges-banner.jpg');
+}
+
+.hero-banner {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
+  padding: 17em;
+  text-align: center;
+  box-shadow: 0 2px 5px 0 black;
+}
+
+
+.hero-banner > i {
+  font-size:1.7em;
+  /* color: #D6CDA4; */
+}
+
+.hero-banner > h1 {
+  font-size:4em;
+  font-weight:bold;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-banner {
+      padding: 10em 1em; /* shorter height and smaller side padding */
+      display: flex; /* enable flexbox */
+      flex-direction: column; /* stack elements vertically */
+      justify-content: center; /* center vertically */
+      align-items: center; /* center horizontally */
+  }
+  
+  .hero-banner > h1 {
+    font-size: 3em;
+  }
+
+  
+}
+
+
+
+footer p {
+  margin: 0;
+  font-size: 1em;
+}
+
+h1 {
+  font-size:3.5em;
+  margin-bottom:40px;
+}
+
+
+p {
+  font-size:1.5em;
+  color: #EEF2E6;
+}
+
+
+.container {
+  padding:20px 50px;
+}
+
+.row {
+  text-align: center;
+  margin: 10px 5px;
+}
+
+.container > .row {
+  margin:30px 0 10px 0;
+}
+
+
+
+
 /*mobile hamburger menu */
 
 .menu a {
@@ -142,3 +230,7 @@ h2 {
     border-bottom: 1px solid #444;
   }
 }
+
+
+
+
