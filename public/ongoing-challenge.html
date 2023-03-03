@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->
+    <link rel="stylesheet" href="./style/ongoing-mobile.css">
     <link href="./style/ongoing-challenge.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style/nav.css">
 
     <!--bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -16,6 +18,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
+
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ongoing Challenge</title>
 </head>
@@ -24,7 +27,7 @@
     <header>
         <!--Navbar-->
 
-        <nav>
+        <nav class="d-none">
         <div class="sidebar close">
             <div class="logo-details">
             <i class='bx bxl-c-plus-plus hamburger'></i>
@@ -152,8 +155,19 @@
     </div>
 
 
-    <div class="wrapper">
+    <div class="container-pc">
         <div class="margin" style="margin-top: 50px;"></div>
+
+        <div class="logo">
+            <div class="logo-border">
+                <div class="logo-text">Go-Green Challenge</div>
+                <div class="logo-year">2023</div>
+            </div>
+        </div>
+        <div class="additional-text">Together, we are greener</div>
+
+        <div class="separator"></div>
+
 
         <div class="individual_elements">
             <div class="image_left"><img src="../public/img/placeholder.png" alt="sample_image"></div>
@@ -210,19 +224,82 @@
                 <input type="button" value="Button">
             </div>
         </div>
+        <div class="separator"></div>
 
     </div>
 
-    <div class="separator"></div>
 
 
 
 
-    
 
 
+    <div class="container-mobile">
+        <div class="separator"></div>
 
+        <div class="logo">
+            <div class="logo-border">
+                <div class="logo-text">Go-Green Challenge</div>
+                <div class="logo-year">2023</div>
+            </div>
+        </div>
+        <div class="additional-text">Together, we are greener</div>
 
+        <div class="separator"></div>
+        <div class="row-mobile">
+          <div class="card-mobile">
+            <div class="bg"></div>
+            <div class="text-body">
+                <h2>Day #5 Friday</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, consequatur voluptatum similique obcaecati libero tempore eos! Error rem iusto ea quod exercitationem quia eveniet facilis qui inventore cum autem, nobis delectus sed veritatis consectetur excepturi quo atque vel. Modi consequuntur harum laborum vero mollitia similique optio error provident ex veritatis.</p>
+                <input type="button" value=" Upload ">
+            </div>
+            </div>
+        </div>
+        <div class="row-mobile">
+            <div class="card-mobile">
+            <div class="bg"></div>
+            <div class="text-body">
+                <h2>Day #4 Thursday</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, omnis laborum. Exercitationem repudiandae magnam adipisci eligendi voluptates non reiciendis aspernatur dolorem, eos quidem iste fuga cum numquam consequuntur culpa iusto accusantium suscipit placeat natus laudantium! Qui ipsam maiores ipsa culpa atque facere harum natus, officia temporibus, molestias amet tempore deleniti.</p>
+                <input type="button" value=" Upload ">
+            </div>
+            </div>
+
+        </div>
+        <div class="row-mobile">
+            <div class="card-mobile">
+            <div class="bg"></div>
+            <div class="text-body">
+                <h2>Day #3 Wednesday</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam repellendus repudiandae quam recusandae id ipsa veritatis aperiam fuga sequi, vero blanditiis neque corrupti autem exercitationem, saepe ex similique laboriosam illo adipisci quasi suscipit nesciunt asperiores provident magnam! Cumque sapiente iure iusto distinctio praesentium. Cupiditate, sequi.</p>
+                <input type="button" value=" Upload ">
+            </div>
+            </div>
+        </div>
+        <div class="row-mobile">
+            <div class="card-mobile">
+            <div class="bg"></div>
+            <div class="text-b">
+                <h2>Day #2 Tuesday</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ullam dolorum ut quis cum distinctio! Eos impedit magnam, nam totam aliquid voluptatem iste excepturi enim beatae, delectus odit qui cum deserunt officia nemo sed est quis praesentium ipsum nesciunt, perspiciatis veniam. Eos a commodi nihil fuga ipsam id facilis nesciunt.</p>
+                <input type="button" value=" Upload ">
+              </div>
+            </div>
+        </div>
+        <div class="row-mobile">
+            <div class="card-mobile">
+            <div class="bg"></div>
+            <div class="text-bo">
+                <h2>Day #1 Monday</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum libero vitae, dolor dolore laudantium ab nobis similique, quidem quis quos harum porro illo quam accusantium iste vero ex magnam velit, est nam qui veritatis autem. Sint quibusdam maiores fuga dignissimos adipisci commodi distinctio. Cupiditate repellat atque ducimus eius neque nostrum.</p>
+                <input type="button" value=" Upload ">
+            </div>
+          </div>
+        </div>
+        <div class="separator"></div>
+
+    </div>
 
 
 
@@ -251,6 +328,10 @@
         </footer>
     </div>
 
+    <!-- <script src="./js/ongoing-challenge.js"></script> -->
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
@@ -267,19 +348,14 @@
         crossorigin="anonymous"></script>
 
     <script>
-        let arrow = document.querySelectorAll(".arrow");
-        for (var i = 0; i < arrow.length; i++) {
-            arrow[i].addEventListener("click", (e)=>{
-            let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
-            arrowParent.classList.toggle("showMenu");
-            });
-        }
-        let sidebar = document.querySelector(".sidebar");
-        let sidebarBtn = document.querySelector(".hamburger");
-        console.log(sidebarBtn);
-        sidebarBtn.addEventListener("click", ()=>{
-            sidebar.classList.toggle("close");
+        const cards = document.querySelectorAll('.card-mobile');
+    
+        cards.forEach((card) => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('open');
         });
+        });
+    
     </script>
 </body>
 

@@ -6,25 +6,107 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->
-    <link src="./style/leaderboard.css" rel="stylesheet">
+    <link href="./style/leaderboard.css" rel="stylesheet">
     <!--bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <title>Leaderboard</title>
+    <title>Leaderboard & Prizes</title>
 </head>
 
 <body>
     <header>
 
     </header>
-    <div class="content">
+    <div class="hero-banner">
+        <div class="hero-banner1">Leaderboard & Prizes</div>
+        <div class="hero-banner2">Go-Green Chanllenge</div>
+        <div class="hero-banner3">2023</div>
 
-        Leaderboard
+            <div class="toggle-margin">
+                <div class="switch-button">
+                    <input class="switch-button-checkbox" type="checkbox"></input>
+                    <label class="switch-button-label" for=""><span class="switch-button-label-span">Prizes</span></label>
+                </div>
+            </div>
 
     </div>
-    <footer class="d-flex justify-content-center">
-        <p>GoGreenChallenge2023@gmail.com | 500 Dover Road Singapore 139651 | +65 9897 9695</p>
-    </footer>
+
+
+
+
+    <div class="pc-container-prize">
+        <div class="row">
+            <div class="col-4">
+                <div class="prize2">
+                    <div class="bg-prize2"></div>
+                    <div class="prize2-header">Prize 2</div>
+                    <div class="prize-description">Description</div>
+                    <div class="prize2-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ipsum non odit dolores vel eum, incidunt aut porro totam dolore minus id itaque! Tempora, accusantium!</div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="prize1">
+                    <div class="bg-prize1"></div>
+                    <div class="prize1-header">Prize 1</div>
+                    <div class="prize-description">Description</div>
+                    <div class="prize1-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolore doloribus aperiam, quam esse voluptas harum amet itaque magnam labore?</div>
+
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="prize3">
+                    <div class="bg-prize3"></div>
+                    <div class="prize3-header">Prize 3</div>
+                    <div class="prize-description">Description</div>
+                    <div class="prize3-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, ratione fugit at corporis iusto veritatis quod dolor quia ea rerum odio illum, magni deserunt esse aspernatur. Quam voluptatum accusamus quae.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="seperator"></div>
+    </div>
+
+
+
+
+
+
+
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row footer-text">
+                        <h3>Go-Green Challenge</h3>
+                        <p>Some text or a small paragraph or a small description for the challenge. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis excepturi est impedit dignissimos exercitationem placeat aspernatur obcaecati voluptatem iure recusandae?</p>
+                </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">GoGreenChallenge © 2023</p>
+                <p class="copyright">GoGreenChallenge2023@gmail.com | 500 Dover Road Singapore 139651 | +65 9897 9695</p>
+            </div>
+        </footer>
+    </div>
+
+
+	<script>
+		window.onload = function() {
+			// Get the elements and their heights
+			var prize1 = document.querySelector('.prize1-content');
+			var prize2 = document.querySelector('.prize2-content');
+			var prize3 = document.querySelector('.prize3-content');
+			var prize1Height = prize1.offsetHeight;
+			var prize2Height = prize2.offsetHeight;
+			var prize3Height = prize3.offsetHeight;
+
+			// Find the maximum height among them
+			var maxHeight = Math.max(prize1Height, prize2Height, prize3Height);
+
+			// Set the min-height of all elements to the maximum height
+			prize1.style.minHeight = maxHeight + 10 +  'px';
+			prize2.style.minHeight = maxHeight + 'px';
+			prize3.style.minHeight = maxHeight + 'px';
+		}
+	</script>
     <!--bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
