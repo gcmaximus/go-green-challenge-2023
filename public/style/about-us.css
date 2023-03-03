@@ -269,6 +269,10 @@ nav button {
   border: none;
 }
 
+#signInPageButton > a {
+  color: #D6CDA4;
+}
+
 /**/
 
 
