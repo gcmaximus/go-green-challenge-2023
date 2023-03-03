@@ -273,6 +273,10 @@ nav button {
   color: #D6CDA4;
 }
 
+#usernameDisplay {
+  display: inline;
+}
+
 /**/
 
 
