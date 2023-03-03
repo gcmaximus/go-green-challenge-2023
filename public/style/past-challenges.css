@@ -339,7 +339,7 @@ figcaption {
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .show-mobile {
     display: block;
   }
@@ -350,7 +350,7 @@ figcaption {
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1000px) {
   .show-mobile {
     display: none;
   }
@@ -396,3 +396,22 @@ h2 {
 .col a {
   text-decoration: none;
 }
+
+
+
+/* footer (to be changed later)*/
+footer {
+  background-color: #3D8361;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  text-shadow: -1px 1px black;
+  box-shadow: 0 -2px 2px 0 black;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1em;
+}
+
