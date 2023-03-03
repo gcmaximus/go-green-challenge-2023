@@ -163,14 +163,14 @@
         const auth = getAuth(app);
 
         // sign out button and username element
-        let loginPageButton = document.querySelector("#loginPageButton")
+        let signInPageButton = document.querySelector("#signInPageButton")
         let signOutButton = document.querySelector("#signOutButton");
         let usernameDisplay = document.querySelector("#usernameDisplay");
 
         // Unhide sign out button and add username
         onAuthStateChanged(auth, (user) => {
                 if (user) {
-                    loginPageButton.hidden = true
+                    signInPageButton.hidden = true
                     signOutButton.hidden = false
                     usernameDisplay.textContent = user.displayName;
                 }
