@@ -1,113 +1,338 @@
-
 /* STANDARDISE THIS???? */
 * {
-    font-family: 'Nunito', sans-serif;
-    color: #D6CDA4;
+  font-family: 'Nunito', sans-serif;
+  color: #D6CDA4;
 }
 
 main, html {
-    background-color: #1C6758;
+  background-color: #1C6758;
 }
 
 
 
 .about-us-banner {
-    background-image: url('../img/about-us-banner.jpg');
+  background-image: url('../img/about-us-banner.jpg');
 }
 
 .hero-banner {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    max-width: 100%;
-    padding: 17em;
-    text-align: center;
-    box-shadow: 0 2px 5px 0 black;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
+  padding: 17em;
+  text-align: center;
+  box-shadow: 0 2px 5px 0 black;
 }
 
 
-.hero-banner > i {
-    font-size:1.7em;
-    /* color: #D6CDA4; */
+.hero-banner>i {
+  font-size: 1.7em;
+  /* color: #D6CDA4; */
 }
 
-.hero-banner > h1 {
-    font-size:4em;
-    font-weight:bold;
+.hero-banner>h1 {
+  font-size: 4em;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
-    .hero-banner {
-        padding: 10em 1em; /* shorter height and smaller side padding */
-        display: flex; /* enable flexbox */
-        flex-direction: column; /* stack elements vertically */
-        justify-content: center; /* center vertically */
-        align-items: center; /* center horizontally */
-    }
+  .hero-banner {
+    padding: 10em 1em;
+    /* shorter height and smaller side padding */
+    display: flex;
+    /* enable flexbox */
+    flex-direction: column;
+    /* stack elements vertically */
+    justify-content: center;
+    /* center vertically */
+    align-items: center;
+    /* center horizontally */
+  }
 
-    
-    .hero-banner > i {
-      font-size: 1.2em;
-    }
-    
-    .hero-banner > h1 {
-      font-size: 3em;
-    }
+
+  .hero-banner>i {
+    font-size: 1.2em;
+  }
+
+  .hero-banner>h1 {
+    font-size: 3em;
+  }
+
+
 }
+
 
 
 footer p {
-    margin: 0;
-    font-size: 1em;
+  margin: 0;
+  font-size: 1em;
 }
 
 h1 {
-    font-size:3.5em;
-    margin-bottom:40px;
+  font-size: 3.5em;
+  margin-bottom: 40px;
 }
 
 
 p {
-    font-size:1.15em;
-    color: #EEF2E6;
+  font-size: 1.5em;
+  color: #EEF2E6;
 }
 
 
 .container {
-    padding:20px 50px;
+  padding: 20px 50px;
 }
 
 .row {
-    text-align: center;
-    margin: 10px 5px;
+  text-align: center;
+  margin: 10px 5px;
 }
 
-.container > .row {
-    margin:30px 0 10px 0;
+.container>.row {
+  margin: 30px 0 10px 0;
+}
+
+/*mobile hamburger menu */
+
+.menu a {
+  text-decoration: none;
+  color: white;
+}
+
+li {
+  margin: 0 5px;
+  padding: 5px 10px;
+  transition: 0.3s;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+li:hover {
+  background-color: #444444;
+}
+
+h2 {
+  vertical-align: center;
+  text-align: center;
+}
+
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #272727;
+  height: 50px;
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu>li {
+  margin: 0 1rem;
+  overflow: hidden;
+  color: #FFF;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+  }
+
+  #menu-toggle~.menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  #menu-toggle:checked~.menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .menu>li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+
+  .menu>li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+
+
+}
+
+/* Navbar */
+
+#navbar-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 7px;
+  border: transparent;
+}
+
+nav p {
+  display: inline;
+}
+
+nav div {
+  text-align: center;
+}
+
+nav button {
+  background-color:transparent;
+  border: none;
+}
+
+#signInPageButton > a {
+  color: #D6CDA4;
+}
+
+#usernameDisplay {
+  display: inline;
 }
 
 /**/
 
 
 img {
-    width: 80%;
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid black;
-    margin: 20px 0;
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 20px 0;
 }
 
 
 figure {
-    padding: 10px 20px;
-    border: 1px solid #1C6758;
-    border-radius: 5px;
-    background-color:#D6CDA4
+  padding: 10px 20px;
+  border: 1px solid #1C6758;
+  border-radius: 5px;
+  background-color: #D6CDA4;
+  transition: 0.4s;
+  box-shadow: -10px 5px rgb(34, 34, 34);
+}
+
+figure:hover {
+  translate: 0px -10px 0px;
+  box-shadow: -15px 15px rgb(34, 34, 34);
 }
 
 figcaption {
-    color:black;
-    font-size: 1.2em;
+  color: black;
+  font-size: 1.2em;
 }
 
+
+/* footer (to be changed later)*/
+footer {
+  background-color: #3D8361;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  text-shadow: -1px 1px black;
+  box-shadow: 0 -2px 2px 0 black;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1em;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  figcaption {
+    font-size: 0.9em;
+  }
+
+  p {
+    font-size: 1.15em;
+  }
+}

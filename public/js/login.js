@@ -1,10 +1,9 @@
 // validate password
-
-var myInput = document.getElementById("password2");
-var letter = document.getElementById("letter");
-var capital = document.getElementById("capital");
-var number = document.getElementById("number");
-var length = document.getElementById("length");
+let myInput = document.getElementById("password2");
+let letter = document.getElementById("letter");
+let capital = document.getElementById("capital");
+let number = document.getElementById("number");
+let length = document.getElementById("length");
 
 // When the user starts to type something inside the password field
 myInput.onkeyup = function () {
@@ -50,13 +49,13 @@ myInput.onkeyup = function () {
 
 // Form stuff
 const toggleForm = document.querySelector(".toggle-form");
-const loginForm = document.querySelector("#login-form");
-const signupForm = document.querySelector("#signup-form");
-const cardToggleBtn = document.querySelector(".card-toggle button");
+var loginForm = document.querySelector("#login-form");
+var signupForm = document.querySelector("#signup-form");
+var cardToggleBtn = document.querySelector(".card-toggle button");
 
 // Toggle between login and signup forms
 toggleForm.addEventListener("click", function () {
-    if (signupForm.style.display === "block") {
+    if (document.querySelector("#signup-form").style.display === "block") {
         loginForm.style.display = "block";
         signupForm.style.display = "none";
         cardToggleBtn.textContent = "Switch to Login";
@@ -67,68 +66,34 @@ toggleForm.addEventListener("click", function () {
     }
 });
 
-// Handle form submission
-loginForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    // Perform login validation here
-    alert("Login successful!");
-    // Redirect to index.html dashboard
+const username2Input = document.querySelector("#username2");
+const email2Input = document.querySelector("#email2");
+const password2Input = document.querySelector("#password2");
+
+username2Input.addEventListener("input", function () {
+    if (this.validity.valueMissing) {
+        this.setCustomValidity("Please enter your username");
+    } else {
+        this.setCustomValidity("");
+    }
 });
 
-signupForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    // Perform signup validation here
-    const username2Input = document.querySelector("#username2");
-    const email2Input = document.querySelector("#email");
-    const password2Input = document.querySelector("#password2");
+password2Input.addEventListener("input", function () {
+    if (this.validity.valueMissing) {
+        this.setCustomValidity("Please enter your password");
+    } else {
+        this.setCustomValidity("");
+    }
+});
 
-    username2Input.addEventListener("input", function () {
-        if (this.validity.valueMissing) {
-            this.setCustomValidity("Please enter your username");
-        } else {
-            this.setCustomValidity("");
-        }
-    });
-
-    password2Input.addEventListener("input", function () {
-        if (this.validity.valueMissing) {
-            this.setCustomValidity("Please enter your password");
-        } else {
-            this.setCustomValidity("");
-        }
-    });
-    email2Input.addEventListener("input", function () {
-        if (this.validity.valueMissing) {
-            this.setCustomValidity("Please enter your email");
-        } else if (this.validity.typeMismatch) {
-            this.setCustomValidity("Please enter a valid email address");
-        } else {
-            this.setCustomValidity("");
-        }
-    });
-    alert("Sign up successful!");
-    // Show login form after successful signup
-    const emailInput = document.querySelector("#email");
-    const passwordInput = document.querySelector("#password");
-
-    emailInput.addEventListener("input", function () {
-        if (this.validity.valueMissing) {
-            this.setCustomValidity("Please enter your email");
-        } else {
-            this.setCustomValidity("");
-        }
-    });
-
-    passwordInput.addEventListener("input", function () {
-        if (this.validity.valueMissing) {
-            this.setCustomValidity("Please choose a password");
-        } else {
-            this.setCustomValidity("");
-        }
-    });
-    loginForm.style.display = "block";
-    signupForm.style.display = "none";
-    cardToggleBtn.textContent = "Switch to Login";
+email2Input.addEventListener("input", function () {
+    if (this.validity.valueMissing) {
+        this.setCustomValidity("Please enter your email");
+    } else if (this.validity.typeMismatch) {
+        this.setCustomValidity("Please enter a valid email address");
+    } else {
+        this.setCustomValidity("");
+    }
 });
 
 // Add floating label effect to input fields
@@ -144,49 +109,3 @@ formGroups.forEach((group) => {
         }
     });
 });
-
-
-
-
-
-const actionCodeSettings = {
-    // URL you want to redirect back to. The domain (www.example.com) for this
-    // URL must be in the authorized domains list in the Firebase Console.
-    url: "http://localhost:5000/login.html",
-
-    // This must be true.
-    handleCodeInApp: true,
-};
-
-let email = document.getElementById("emailForSignIn").value;
-
-document.getElementById("signInButton").addEventListener("click", () => {
-    sendSignInLinkToEmail(auth, email, actionCodeSettings)
-        .then(() => {
-            localStorage.setItem("emailForSignIn", email);
-        })
-        .catch((error) => {
-            alert(`Error code: ${error.code}\nError message: ${error.message}`);
-        });
-});
-
-if (isSignInWithEmailLink(auth, location.href)) {
-    let email = localStorage.getItem("emailForSignIn");
-    if (!email) {
-        email = prompt("Please provide your email for confirmation");
-    }
-    signInWithEmailLink(auth, email, location.href)
-        .then((result) => {
-            localStorage.removeItem("emailForSignIn");
-            // You can access the new user via result.user
-            // Additional user info profile not available via:
-            // result.additionalUserInfo.profile == null
-            // You can check if the user is new or existing:
-            // result.additionalUserInfo.isNewUser
-            localStorage.setItem("loginResult", result);
-            location.replace('http://localhost:5000/index.html')
-        })
-        .catch((error) => {
-            alert(`Error code: ${error.code}\nError message: ${error.message}`);
-        });
-}

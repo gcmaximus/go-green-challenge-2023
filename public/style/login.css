@@ -1,3 +1,4 @@
+/* 
 body {
     background: linear-gradient(to right, #1C6758, #3D8361, #D6CDA4, #EEF2E6);
     animation: gradientAnimation 20s ease infinite;
@@ -16,8 +17,8 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
-
+} 
+*/
 .container {
     display: flex;
     flex-wrap: wrap;

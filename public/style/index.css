@@ -84,6 +84,87 @@ footer p {
     font-size: 1em;
 }
 
+
+/* Navbar */
+
+#navbar-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 7px;
+  border: transparent;
+}
+
+nav p {
+  display: inline;
+}
+
+nav div {
+  text-align: center;
+}
+
+nav button {
+  background-color:transparent;
+  border: none;
+}
+
+
+
+
+
+/* WM Footer */
+/* .footer-dark {
+  padding:50px 0;
+  color:#f0f9ff;
+  background-color:#282d32;
+}
+
+.footer-text{
+  text-align: center;
+}
+
+.footer-dark h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:25px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-dark p{
+  font-family: "Montserrat", sans-serif;
+
+}
+
+.footer-dark .item.social {
+  text-align:center;
+}
+
+.footer-dark .item.social > a {
+  font-size:20px;
+  width:36px;
+  height:36px;
+  line-height:36px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+  margin:0 8px;
+  color:#fff;
+  opacity:0.75;
+}
+
+.footer-dark .item.social > a:hover {
+  opacity:0.7;
+}
+
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
+} */
+
 h1 {
     font-size:3.5em;
     margin-bottom:20px;
@@ -181,8 +262,11 @@ figure.challenge-figure:hover {
 
 figure.challenge-figure > figcaption {
     color:black;
-    text-decoration: none;
     padding:10px;
+}
+
+.challenge-container a {
+  text-decoration: none;
 }
   
 #challenge-picture {
@@ -191,6 +275,152 @@ figure.challenge-figure > figcaption {
     border-bottom: 1px black solid;
 }
 
+
+/*mobile hamburger menu */
+
+.menu a {
+  text-decoration: none;
+  color:white;
+}
+li {
+  margin: 0 5px;
+  padding: 5px 10px;
+  transition: 0.3s;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+
+li:hover {
+  background-color: #444444;
+}
+
+h2 {
+vertical-align: center;
+text-align: center;
+}
+
+
+.top-nav {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+background-color: #272727;
+height: 50px;
+padding: 1em;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index:10;
+}
+
+.menu {
+display: flex;
+flex-direction: row;
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+.menu > li {
+margin: 0 1rem;
+overflow: hidden;
+color: #FFF;
+}
+
+.menu-button-container {
+display: none;
+height: 100%;
+width: 30px;
+cursor: pointer;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+#menu-toggle {
+display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+display: block;
+background-color: #fff;
+position: absolute;
+height: 4px;
+width: 30px;
+transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+border-radius: 2px;
+}
+
+.menu-button::before {
+content: '';
+margin-top: -8px;
+}
+
+.menu-button::after {
+content: '';
+margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+margin-top: 0px;
+transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+margin-top: 0px;
+transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+.menu-button-container {
+  display: flex;
+}
+.menu {
+  position: absolute;
+  top: 0;
+  margin-top: 50px;
+  left: 0;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+}
+#menu-toggle ~ .menu li {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+#menu-toggle:checked ~ .menu li {
+  border: 1px solid #333;
+  height: 2.5em;
+  padding: 0.5em;
+  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu > li {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0.5em 0;
+  width: 100%;
+  color: white;
+  background-color: #222;
+}
+.menu > li:not(:last-child) {
+  border-bottom: 1px solid #444;
+}
+}
 
 /* scroll animations */
 .reveal{

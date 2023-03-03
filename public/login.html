@@ -1,261 +1,205 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- CSS -->
+        <link href="./style/login.css" rel="stylesheet" />
 
-<head>
+        <!-- Bootstrap -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous"
+        />
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS -->
-    <link href="./style/login.css" rel="stylesheet">
+        <title>Login/Sign-up</title>
+    </head>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
-    <!-- Script -->
-    <script src="./js/login.js"></script>
-
-    <title>Login/Sign-up</title>
-</head>
-
-<body>
-    <div class="container">
-        <div class="card-container">
-            <form id="login-form" style="display:block">
-                <h2 class="title">Login</h2>
-                <div class="form-group">
-                    <input type="text" id="email" name="email" required class="floating-label">
-                    <label for="email">email</label>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="password" name="password" required class="floating-label">
-                    <label for="password">Password</label>
-                </div>
-                <div class="form-group">
-                    <button type="submit">Login</button>
-                    <p>Don't have an account? <a href="#" class="toggle-form">Sign up</a></p>
-                </div>
-            </form>
-            <form id="signup-form" style="display:none">
-                <h2 class="title">Sign up</h2>
-                <div class="form-group">
-                    <input type="text" id="username2" name="username2" required>
-                    <label for="username2">Username</label>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" required>
-                    <label for="email">Email</label>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="password2" name="password2" required
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-                    <label for="password2">Password</label>
-                </div>
-                <div class="form-group">
-                    <button type="submit">Sign up</button>
-
-                    <div id="message">
-                        <h3>Password must contain the following:</h3>
-                        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                        <p id="number" class="invalid">A <b>number</b></p>
-                        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+    <body>
+        <div class="container">
+            <div class="card-container">
+                <form id="login-form" style="display: block">
+                    <h2 class="title">Login</h2>
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            required
+                            class="floating-label"
+                        />
+                        <label for="email">email</label>
                     </div>
+                    <div class="form-group">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            required
+                            class="floating-label"
+                        />
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Login</button>
+                        <p>
+                            Don't have an account?
+                            <a href="#" class="toggle-form">Sign up</a>
+                        </p>
+                    </div>
+                </form>
+                <form id="signup-form" style="display: none">
+                    <h2 class="title">Sign up</h2>
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            id="username2"
+                            name="username2"
+                            required
+                        />
+                        <label for="username2">Username</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email2" name="email" required />
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input
+                            type="password"
+                            id="password2"
+                            name="password2"
+                            required
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        />
+                        <label for="password2">Password</label>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Sign up</button>
 
-                    <p>Already have an account? <a href="#" class="toggle-form">Login</a></p>
-                </div>
-            </form>
+                        <div id="message">
+                            <h3>Password must contain the following:</h3>
+                            <p id="letter" class="invalid">
+                                A <b>lowercase</b> letter
+                            </p>
+                            <p id="capital" class="invalid">
+                                A <b>capital (uppercase)</b> letter
+                            </p>
+                            <p id="number" class="invalid">A <b>number</b></p>
+                            <p id="length" class="invalid">
+                                Minimum <b>8 characters</b>
+                            </p>
+                        </div>
+
+                        <p>
+                            Already have an account?
+                            <a href="/login.html" class="toggle-form">Login</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <!--bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
+        <!--bootstrap-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"
+        ></script>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-        crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+            integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+            crossorigin="anonymous"
+        ></script>
 
+        <!-- Script -->
+        <script src="./js/login.js"></script>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+            import {
+                getAuth,
+                createUserWithEmailAndPassword,
+                signInWithEmailAndPassword,
+                updateProfile,
+            } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+            const firebaseConfig = {
+                apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
+                authDomain: "go-green-challenge.firebaseapp.com",
+                projectId: "go-green-challenge",
+                storageBucket: "go-green-challenge.appspot.com",
+                messagingSenderId: "586047303749",
+                appId: "1:586047303749:web:73a742cbefa66c0fbd732c",
+                measurementId: "G-5WNGZ08ND0",
+            };
 
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
 
-    <!-- Script -->
-
-    <script>
-
-        // validate password
-
-        var myInput = document.getElementById("password2");
-        var letter = document.getElementById("letter");
-        var capital = document.getElementById("capital");
-        var number = document.getElementById("number");
-        var length = document.getElementById("length");
-
-
-        // When the user starts to type something inside the password field
-        myInput.onkeyup = function () {
-            // Validate lowercase letters
-            var lowerCaseLetters = /[a-z]/g;
-            if (myInput.value.match(lowerCaseLetters)) {
-                letter.classList.remove("invalid");
-                letter.classList.add("valid");
-            } else {
-                letter.classList.remove("valid");
-                letter.classList.add("invalid");
-            }
-
-            // Validate capital letters
-            var upperCaseLetters = /[A-Z]/g;
-            if (myInput.value.match(upperCaseLetters)) {
-                capital.classList.remove("invalid");
-                capital.classList.add("valid");
-            } else {
-                capital.classList.remove("valid");
-                capital.classList.add("invalid");
-            }
-
-            // Validate numbers
-            var numbers = /[0-9]/g;
-            if (myInput.value.match(numbers)) {
-                number.classList.remove("invalid");
-                number.classList.add("valid");
-            } else {
-                number.classList.remove("valid");
-                number.classList.add("invalid");
-            }
-
-            // Validate length
-            if (myInput.value.length >= 8) {
-                length.classList.remove("invalid");
-                length.classList.add("valid");
-            } else {
-                length.classList.remove("valid");
-                length.classList.add("invalid");
-            }
-        }
-
-
-        // Form stuff
-        const toggleForm = document.querySelector('.toggle-form');
-        const loginForm = document.querySelector('#login-form');
-        const signupForm = document.querySelector('#signup-form');
-        const cardToggleBtn = document.querySelector('.card-toggle button');
-
-        // Toggle between login and signup forms
-        toggleForm.addEventListener('click', function () {
-            if (signupForm.style.display === 'block') {
-                loginForm.style.display = 'block';
-                signupForm.style.display = 'none';
-                cardToggleBtn.textContent = 'Switch to Login';
-            }
-            else {
-                loginForm.style.display = 'none';
-                signupForm.style.display = 'block';
-                cardToggleBtn.textContent = 'Switch to Sign Up';
-            }
-        });
-
-        // Handle form submission
-        loginForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            // Perform login validation here
-            alert('Login successful!');
-            // Redirect to index.html dashboard
-        });
-
-        signupForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            // Perform signup validation here
-            const username2Input = document.querySelector('#username2');
-            const email2Input = document.querySelector('#email');
-            const password2Input = document.querySelector('#password2');
-
-            username2Input.addEventListener('input', function () {
-                if (this.validity.valueMissing) {
-                    this.setCustomValidity('Please enter your username');
-                } else {
-                    this.setCustomValidity('');
-                }
+            loginForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                let emailValue = document.querySelector("#email").value;
+                let passwordValue = document.querySelector("#password").value;
+                // Perform sigin validation here
+                signInWithEmailAndPassword(auth, emailValue, passwordValue)
+                    .then((userCredential) => {
+                        // Signed in
+                        alert("Login successful!");
+                        location.replace("/");
+                    })
+                    .catch((error) => {
+                        alert(
+                            `Error code: ${error.code}\nError message: ${error.message}`
+                        );
+                        location.reload();
+                    });
             });
 
-            password2Input.addEventListener('input', function () {
-                if (this.validity.valueMissing) {
-                    this.setCustomValidity('Please enter your password');
-                } else {
-                    this.setCustomValidity('');
-                }
+            signupForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                let username2Value = username2Input.value;
+                let email2Value = email2Input.value;
+                let password2Value = password2Input.value;
+                // Perform signup validation here
+                createUserWithEmailAndPassword(
+                    auth,
+                    email2Value,
+                    password2Value
+                )
+                    .then((userCredential) => {
+                        console.log(userCredential);
+                        console.log(userCredential.user)
+                        // Signed in
+                        let user = userCredential.user;
+                        if (user) {
+                            updateProfile(auth.currentUser, {
+                                displayName: username2Value,
+                            })
+                                .then(() => {
+                                    alert(`Welcome ${username2Value}, signup is successful! You are now logged in :D`);
+                                    location.replace("/");
+                                })
+                                .catch((error) => {
+                                    alert(
+                                        `Error code: ${error.code}\nError message: ${error.message}`
+                                    );
+                                    location.reload();
+                                });
+                        }
+                    })
+                    .catch((error) => {
+                        alert(
+                            `Error code: ${error.code}\nError message: ${error.message}`
+                        );
+                        location.reload();
+                    });
             });
-            email2Input.addEventListener('input', function () {
-                if (this.validity.valueMissing) {
-                    this.setCustomValidity('Please enter your email');
-                } else if (this.validity.typeMismatch) {
-                    this.setCustomValidity('Please enter a valid email address');
-                } else {
-                    this.setCustomValidity('');
-                }
-            });
-            alert('Sign up successful!');
-            // Show login form after successful signup
-            const emailInput = document.querySelector('#email');
-            const passwordInput = document.querySelector('#password');
-
-
-            emailInput.addEventListener('input', function () {
-                if (this.validity.valueMissing) {
-                    this.setCustomValidity('Please enter your email');
-                } else {
-                    this.setCustomValidity('');
-                }
-            });
-
-            passwordInput.addEventListener('input', function () {
-                if (this.validity.valueMissing) {
-                    this.setCustomValidity('Please choose a password');
-                } else {
-                    this.setCustomValidity('');
-                }
-            });
-            loginForm.style.display = 'block';
-            signupForm.style.display = 'none';
-            cardToggleBtn.textContent = 'Switch to Login';
-        });
-
-        // Add floating label effect to input fields
-        const formGroups = document.querySelectorAll('.form-group');
-        formGroups.forEach(group => {
-            const input = group.querySelector('input');
-            input.addEventListener('focus', function () {
-                group.classList.add('focused');
-            });
-            input.addEventListener('blur', function () {
-                if (input.value === '') {
-                    group.classList.remove('focused');
-                }
-            });
-        });
-    </script>
-
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-        import { getAuth, sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"
-        const firebaseConfig = {
-            apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
-            authDomain: "go-green-challenge.firebaseapp.com",
-            projectId: "go-green-challenge",
-            storageBucket: "go-green-challenge.appspot.com",
-            messagingSenderId: "586047303749",
-            appId: "1:586047303749:web:73a742cbefa66c0fbd732c",
-            measurementId: "G-5WNGZ08ND0"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app)
-    </script>
-
-
+        </script>
+    </body>
 </html>
