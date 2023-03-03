@@ -305,6 +305,10 @@ nav p {
   display: inline;
 }
 
+nav div {
+  text-align: center;
+}
+
 
 
 
