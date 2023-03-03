@@ -313,3 +313,48 @@ figcaption {
   margin-top: 10px;
   text-align: center;
 }
+
+
+
+
+@media screen and (max-width: 768px) {
+  .show-mobile {
+    display: block;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .show-mobile {
+    display: none;
+  }
+
+  .hide-mobile {
+    display: block;
+  }
+
+}
+
+
+
+.carousel-inner {
+  width: 400px;
+  height: 250px;
+}
+
+.show-mobile img {
+  width: 400px;
+  height: 250px;
+}
+
+h2 {
+  text-align: left;
+}
+
+.carousel {
+  margin-bottom: 40px;
+}
