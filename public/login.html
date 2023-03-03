@@ -150,7 +150,6 @@
                 signInWithEmailAndPassword(auth, emailValue, passwordValue)
                     .then((userCredential) => {
                         // Signed in
-                        const user = userCredential.user;
                         alert("Login successful!");
                         location.replace("/");
                     })
