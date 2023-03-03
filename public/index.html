@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="./style/index.css" rel="stylesheet" />
 
     <!-- Bootstrap -->
@@ -29,7 +30,13 @@
         <!--Navbar-->
         <nav>
             <section class="top-nav">
-                <div>Logo Here</div>
+                <div>
+                    <img src="./img/logo.png" alt="Go-Green Challenge 2023" id="navbar-logo" />
+                    <span>
+                        <!-- Display Username-->
+                        <span id="usernameDisplay"></span>! Points: 100000
+                    </span>
+                </div>
                 <input id="menu-toggle" type="checkbox" />
                 <label class="menu-button-container" for="menu-toggle">
                     <div class="menu-button"></div>
@@ -40,6 +47,9 @@
                     <li><a href="./ongoing-challenge.html">Ongoing Challenges</a></li>
                     <li><a href="./past-challenges.html">Past Challenges</a></li>
                     <li><a href="./about-us.html">About Us</a></li>
+                    <li><button id="signOutButton">
+                        <i class="fa fa-sign-out" style="font-size:24px"></i>
+                    </button></li>
                 </ul>
             </section>
         </nav>

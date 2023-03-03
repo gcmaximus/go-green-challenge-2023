@@ -85,6 +85,32 @@ footer p {
 }
 
 
+/* Navbar */
+
+#navbar-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 7px;
+  border: transparent;
+}
+
+nav p {
+  display: inline;
+}
+
+nav div {
+  text-align: center;
+}
+
+nav button {
+  background-color:transparent;
+  border: none;
+}
+
+
+
+
+
 /* WM Footer */
 /* .footer-dark {
   padding:50px 0;
