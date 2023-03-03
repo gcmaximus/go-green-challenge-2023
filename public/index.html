@@ -210,13 +210,16 @@
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const auth = getAuth(app);
+            const user = auth.getCurrentUser()
 
-            // sign out button element
+            // sign out button and username element
             let signOutButton = document.querySelector("#signOutButton");
+            let usernameDisplay = document.querySelector("#usernameDisplay");
 
-            // Unhide sign out button
-            if (auth.getCurrentUser()) {
+            // Unhide sign out button and add username
+            if (user) {
                 signOutButton.removeAttribute("hidden");
+                usernameDisplay.textContent = user.displayName
             }
 
             // Sign out
