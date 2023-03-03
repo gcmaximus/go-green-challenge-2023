@@ -200,7 +200,7 @@
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const auth = getAuth(app);
-            const user = auth.getCurrentUser();
+            const user = auth.currentUser();
 
             // sign out button and username element
             let signOutButton = document.querySelector("#signOutButton");
