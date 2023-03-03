@@ -44,7 +44,7 @@
                     <li><a href="./ongoing-challenge.html">Ongoing Challenges</a></li>
                     <li><a href="./past-challenges.html">Past Challenges</a></li>
                     <li><a href="./about-us.html">About Us</a></li>
-                    <li><button id="signOutButton">
+                    <li><button hidden id="signOutButton">
                         <i class="fa fa-sign-out" style="font-size:24px"></i>
                     </button></li>
                 </ul>
@@ -145,9 +145,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
         import {
             getAuth,
-            createUserWithEmailAndPassword,
-            signInWithEmailAndPassword,
-            updateProfile,
+            onAuthStateChanged,
             signOut
         } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
         const firebaseConfig = {
@@ -163,21 +161,22 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
-        const user = auth.currentUser;
-        console.log(user)
 
         // sign out button and username element
+        let loginPageButton = document.querySelector("#loginPageButton")
         let signOutButton = document.querySelector("#signOutButton");
         let usernameDisplay = document.querySelector("#usernameDisplay");
 
         // Unhide sign out button and add username
-        if (user) {
-            signOutButton.removeAttribute("hidden");
-            usernameDisplay.textContent = user.displayName;
-        }
+        onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    loginPageButton.hidden = true
+                    signOutButton.hidden = false
+                    usernameDisplay.textContent = user.displayName;
+                }
+            });
 
         // Sign out
-
         signOutButton.addEventListener("click", (e) => {
             e.preventDefault();
             signOut(auth)
