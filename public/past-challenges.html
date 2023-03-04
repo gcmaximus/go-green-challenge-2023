@@ -1045,7 +1045,7 @@
 
         <!-- Script -->
         <script type="module">
-                    import { getFirestore, collection, getDocs } from
+            import { getFirestore, collection, getDocs } from
             db = getFirestore(app)
             getDocs(collection(db, "challenges")).then((snapshot) => {
                 let challengesList = []
