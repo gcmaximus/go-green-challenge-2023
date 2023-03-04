@@ -1,610 +1,1059 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link href="./style/past-challenges.css" rel="stylesheet" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="./style/past-challenges.css" rel="stylesheet" />
+        <!-- Bootstrap -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous"
+        />
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+        <!-- poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+        <title>Past Challenges</title>
+    </head>
 
-    <title>Past Challenges</title>
-</head>
+    <body>
+        <header>
+            <!--Navbar-->
+            <nav>
+                <section class="top-nav">
+                    <div>
+                        <img
+                            src="./img/logo.png"
+                            alt="Go-Green Challenge 2023"
+                            id="navbar-logo"
+                        />
+                        <span>
+                            <!-- Display Username-->
+                            <span id="usernameDisplay"></span>! Points: 100000
+                        </span>
+                    </div>
+                    <input id="menu-toggle" type="checkbox" />
+                    <label class="menu-button-container" for="menu-toggle">
+                        <div class="menu-button"></div>
+                    </label>
+                    <ul class="menu">
+                        <li><a href="./index.html">Home</a></li>
+                        <li>
+                            <a href="./leaderboard.html"
+                                >Leaderboard & Prizes</a
+                            >
+                        </li>
+                        <li>
+                            <a href="./ongoing-challenge.html"
+                                >Ongoing Challenges</a
+                            >
+                        </li>
+                        <li>
+                            <a href="./past-challenges.html">Past Challenges</a>
+                        </li>
+                        <li><a href="./about-us.html">About Us</a></li>
+                        <li>
+                            <button id="signOutButton">
+                                <i
+                                    class="fa fa-sign-out"
+                                    style="font-size: 24px"
+                                ></i>
+                            </button>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+        </header>
+        <main>
+            <!--Home Page Hero Banner-->
+            <article class="hero-banner past-challenges-banner">
+                <h1 class="mb-4">Past Challenges</h1>
+            </article>
 
-<body>
-    <header>
-        <!--Navbar-->
-        <nav>
-            <section class="top-nav">
-                <div>
-                    <img src="./img/logo.png" alt="Go-Green Challenge 2023" id="navbar-logo" />
-                    <span>
-                        <!-- Display Username-->
-                        <span id="usernameDisplay"></span>! Points: 100000
-                    </span>
-                </div>
-                <input id="menu-toggle" type="checkbox" />
-                <label class="menu-button-container" for="menu-toggle">
-                    <div class="menu-button"></div>
-                </label>
-                <ul class="menu">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./leaderboard.html">Leaderboard & Prizes</a></li>
-                    <li><a href="./ongoing-challenge.html">Ongoing Challenges</a></li>
-                    <li><a href="./past-challenges.html">Past Challenges</a></li>
-                    <li><a href="./about-us.html">About Us</a></li>
-                    <li><button id="signOutButton">
-                            <i class="fa fa-sign-out" style="font-size:24px"></i>
-                        </button></li>
-                </ul>
-            </section>
-        </nav>
-    </header>
-    <main>
-        <!--Home Page Hero Banner-->
-        <article class="hero-banner past-challenges-banner">
-            <h1 class="mb-4">Past Challenges</h1>
-        </article>
+            <!-- Main Contents (Non-Mobile) -->
+            <section class="container hide-mobile">
+                <!-- Calendar of 28 cards -->
 
-        <!-- Main Contents (Non-Mobile) -->
-        <section class="container hide-mobile">
-            <!-- Calendar of 28 cards -->
-
-            <!-- Day Headings (M-S)-->
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col">
-                    <h3>Mon</h3>
+                <!-- Day Headings (M-S)-->
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col">
+                        <h3>Mon</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Tues</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Wed</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Thurs</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Fri</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Sat</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Sun</h3>
+                    </div>
                 </div>
-                <div class="col">
-                    <h3>Tues</h3>
-                </div>
-                <div class="col">
-                    <h3>Wed</h3>
-                </div>
-                <div class="col">
-                    <h3>Thurs</h3>
-                </div>
-                <div class="col">
-                    <h3>Fri</h3>
-                </div>
-                <div class="col">
-                    <h3>Sat</h3>
-                </div>
-                <div class="col">
-                    <h3>Sun</h3>
-                </div>
-            </div>
-            <hr>
-            <!-- Week 1 Cards -->
-            <div class="row">
-                <div class="col-1">
-                    <h5>Week 1</h5>
-                </div>
-                <div class="col">
-                    <figure class="past">
-                        <img src="./img/day1-chall.jpg" alt="Challenge Image">
-                        <figcaption>Own Your Bottle</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <a href="./ongoing-challenge.html">
-                        <figure class="ongoing">
-                            <img src="./img/day2-chall.jpg" alt="Challenge Image">
-                            <figcaption>Strawless</figcaption>
-                            <hr id="line">
-                            <p id="textbox">Click to view ongoing challenge!</p>
+                <hr />
+                <!-- Week 1 Cards -->
+                <div class="row">
+                    <div class="col-1">
+                        <h5>Week 1</h5>
+                    </div>
+                    <div class="col">
+                        <figure class="past">
+                            <img
+                                src="./img/day1-chall.jpg"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Own Your Bottle</figcaption>
                         </figure>
-                    </a>
-                    
+                    </div>
+                    <div class="col">
+                        <a href="./ongoing-challenge.html">
+                            <figure class="ongoing">
+                                <img
+                                    src="./img/day2-chall.jpg"
+                                    alt="Challenge Image"
+                                />
+                                <figcaption>Strawless</figcaption>
+                                <hr id="line" />
+                                <p id="textbox">
+                                    Click to view ongoing challenge!
+                                </p>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
                 </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
+                <hr />
+                <!-- Week 2 Cards -->
+                <div class="row">
+                    <div class="col-1">
+                        <h5>Week 2</h5>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
                 </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
+                <hr />
+                <!-- Week 3 Cards -->
+                <div class="row">
+                    <div class="col-1">
+                        <h5>Week 3</h5>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
                 </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
+                <hr />
+                <!-- Week 4 Cards -->
+                <div class="row">
+                    <div class="col-1">
+                        <h5>Week 4</h5>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="unreleased">
+                            <img
+                                src="./img/stay-tuned.png"
+                                alt="Challenge Image"
+                            />
+                            <figcaption>Not Released</figcaption>
+                        </figure>
+                    </div>
                 </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-            </div>
-            <hr>
-            <!-- Week 2 Cards -->
-            <div class="row">
-                <div class="col-1">
-                    <h5>Week 2</h5>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-            </div>
-            <hr>
-            <!-- Week 3 Cards -->
-            <div class="row">
-                <div class="col-1">
-                    <h5>Week 3</h5>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-            </div>
-            <hr>
-            <!-- Week 4 Cards -->
-            <div class="row">
-                <div class="col-1">
-                    <h5>Week 4</h5>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure class="unreleased">
-                        <img src="./img/stay-tuned.png" alt="Challenge Image">
-                        <figcaption>Not Released</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Main Contents (Mobile) -->
-        <section class="container show-mobile">
-            <!-- Carousel -->
+            <!-- Main Contents (Mobile) -->
+            <section class="container show-mobile">
+                <!-- Carousel -->
 
-            <!-- Week 1 Carousel -->
-            <h2>Week 1</h2>
-            <div id="week1" class="carousel slide">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#week1" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#week1" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#week1" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#week1" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                    <button type="button" data-bs-target="#week1" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                    <button type="button" data-bs-target="#week1" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                    <button type="button" data-bs-target="#week1" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                <!-- Week 1 Carousel -->
+                <h2>Week 1</h2>
+                <div id="week1" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button
+                            type="button"
+                            data-bs-target="#week1"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 1"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week1"
+                            data-bs-slide-to="1"
+                            aria-label="Slide 2"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week1"
+                            data-bs-slide-to="2"
+                            aria-label="Slide 3"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week1"
+                            data-bs-slide-to="3"
+                            aria-label="Slide 4"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week1"
+                            data-bs-slide-to="4"
+                            aria-label="Slide 5"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week1"
+                            data-bs-slide-to="5"
+                            aria-label="Slide 6"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week1"
+                            data-bs-slide-to="6"
+                            aria-label="Slide 7"
+                        ></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img
+                                src="./img/day1-chall.jpg"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Monday</h5>
+                                <p>Own Your Bottle</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/day2-chall.jpg"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Tuesday</h5>
+                                <p>Strawless</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Wednesday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Thursday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Friday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Saturday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Sunday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#week1"
+                        data-bs-slide="prev"
+                    >
+                        <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#week1"
+                        data-bs-slide="next"
+                    >
+                        <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./img/day1-chall.jpg" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Monday</h5>
-                            <p>Own Your Bottle</p>
+
+                <!-- Week 2 Carousel -->
+                <h2>Week 2</h2>
+                <div id="week2" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button
+                            type="button"
+                            data-bs-target="#week2"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 1"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week2"
+                            data-bs-slide-to="1"
+                            aria-label="Slide 2"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week2"
+                            data-bs-slide-to="2"
+                            aria-label="Slide 3"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week2"
+                            data-bs-slide-to="3"
+                            aria-label="Slide 4"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week2"
+                            data-bs-slide-to="4"
+                            aria-label="Slide 5"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week2"
+                            data-bs-slide-to="5"
+                            aria-label="Slide 6"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week2"
+                            data-bs-slide-to="6"
+                            aria-label="Slide 7"
+                        ></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Monday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Tuesday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Wednesday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Thursday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Friday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Saturday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Sunday</h5>
+                                <p>Not Released</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="./img/day2-chall.jpg" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Tuesday</h5>
-                            <p>Strawless</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Wednesday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Thursday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Friday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Saturday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Sunday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#week2"
+                        data-bs-slide="prev"
+                    >
+                        <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#week2"
+                        data-bs-slide="next"
+                    >
+                        <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#week1" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#week1" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
 
-            <!-- Week 2 Carousel -->
-            <h2>Week 2</h2>
-            <div id="week2" class="carousel slide">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#week2" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#week2" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#week2" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#week2" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                    <button type="button" data-bs-target="#week2" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                    <button type="button" data-bs-target="#week2" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                    <button type="button" data-bs-target="#week2" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                <!-- Week 3 Carousel -->
+                <h2>Week 3</h2>
+                <div id="week3" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button
+                            type="button"
+                            data-bs-target="#week3"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 1"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week3"
+                            data-bs-slide-to="1"
+                            aria-label="Slide 2"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week3"
+                            data-bs-slide-to="2"
+                            aria-label="Slide 3"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week3"
+                            data-bs-slide-to="3"
+                            aria-label="Slide 4"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week3"
+                            data-bs-slide-to="4"
+                            aria-label="Slide 5"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week3"
+                            data-bs-slide-to="5"
+                            aria-label="Slide 6"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week3"
+                            data-bs-slide-to="6"
+                            aria-label="Slide 7"
+                        ></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Monday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Tuesday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Wednesday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Thursday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Friday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Saturday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Sunday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#week3"
+                        data-bs-slide="prev"
+                    >
+                        <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#week3"
+                        data-bs-slide="next"
+                    >
+                        <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Monday</h5>
-                            <p>Not Released</p>
+
+                <!-- Week 4 Carousel -->
+                <h2>Week 4</h2>
+                <div id="week4" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button
+                            type="button"
+                            data-bs-target="#week4"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 1"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week4"
+                            data-bs-slide-to="1"
+                            aria-label="Slide 2"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week4"
+                            data-bs-slide-to="2"
+                            aria-label="Slide 3"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week4"
+                            data-bs-slide-to="3"
+                            aria-label="Slide 4"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week4"
+                            data-bs-slide-to="4"
+                            aria-label="Slide 5"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week4"
+                            data-bs-slide-to="5"
+                            aria-label="Slide 6"
+                        ></button>
+                        <button
+                            type="button"
+                            data-bs-target="#week4"
+                            data-bs-slide-to="6"
+                            aria-label="Slide 7"
+                        ></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Monday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Tuesday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Wednesday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Thursday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Friday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Saturday</h5>
+                                <p>Not Released</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./img/stay-tuned.png"
+                                class="d-block w-100"
+                                alt="Challenge Image"
+                            />
+                            <div class="carousel-caption d-md-block">
+                                <h5>Sunday</h5>
+                                <p>Not Released</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Tuesday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Wednesday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Thursday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Friday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Saturday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Sunday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#week4"
+                        data-bs-slide="prev"
+                    >
+                        <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#week4"
+                        data-bs-slide="next"
+                    >
+                        <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#week2" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#week2" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+            </section>
+        </main>
 
-            <!-- Week 3 Carousel -->
-            <h2>Week 3</h2>
-            <div id="week3" class="carousel slide">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#week3" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#week3" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#week3" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#week3" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                    <button type="button" data-bs-target="#week3" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                    <button type="button" data-bs-target="#week3" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                    <button type="button" data-bs-target="#week3" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Monday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Tuesday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Wednesday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Thursday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Friday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Saturday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Sunday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#week3" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#week3" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+        <footer class="d-flex justify-content-center">
+            <p>
+                GoGreenChallenge2023@gmail.com | 500 Dover Road Singapore 139651
+                | +65 9897 9695
+            </p>
+        </footer>
 
-            <!-- Week 4 Carousel -->
-            <h2>Week 4</h2>
-            <div id="week4" class="carousel slide">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#week4" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#week4" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#week4" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#week4" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                    <button type="button" data-bs-target="#week4" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                    <button type="button" data-bs-target="#week4" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                    <button type="button" data-bs-target="#week4" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Monday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Tuesday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Wednesday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Thursday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Friday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Saturday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/stay-tuned.png" class="d-block w-100" alt="Challenge Image">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Sunday</h5>
-                            <p>Not Released</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#week4" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#week4" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </section>
-    </main>
+        <!--bootstrap-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+            integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+            crossorigin="anonymous"
+        ></script>
 
-
-
-
-    <footer class="d-flex justify-content-center">
-        <p>GoGreenChallenge2023@gmail.com | 500 Dover Road Singapore 139651 | +65 9897 9695</p>
-    </footer>
-
-    <!--bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-        crossorigin="anonymous"></script>
-</body>
-
+        <!-- Script -->
+        <script type="module">
+                    import { getFirestore, collection, getDocs } from
+            db = getFirestore(app)
+            getDocs(collection(db, "challenges")).then((snapshot) => {
+                let challengesList = []
+                snapshot.forEach((doc) => {
+                    challengesList.push({ ...doc.data(), id: doc.id })
+                })
+                console.log(challengesList)
+            })
+        </script>
+    </body>
 </html>
