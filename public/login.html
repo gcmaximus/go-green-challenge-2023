@@ -133,6 +133,8 @@
                 doc,
                 setDoc,
             } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+            
+            // Firebase config
             const firebaseConfig = {
                 apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
                 authDomain: "go-green-challenge.firebaseapp.com",
@@ -147,7 +149,6 @@
             const app = initializeApp(firebaseConfig);
             const auth = getAuth(app);
             const db = getFirestore(app);
-            // console.log()
 
             loginForm.addEventListener("submit", function (e) {
                 e.preventDefault();

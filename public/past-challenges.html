@@ -1023,6 +1023,28 @@
 
         <!-- Script -->
         <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+            import {
+                getFirestore,
+                getDocs
+            } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+            
+            // Firebase config
+            const firebaseConfig = {
+                apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
+                authDomain: "go-green-challenge.firebaseapp.com",
+                projectId: "go-green-challenge",
+                storageBucket: "go-green-challenge.appspot.com",
+                messagingSenderId: "586047303749",
+                appId: "1:586047303749:web:73a742cbefa66c0fbd732c",
+                measurementId: "G-5WNGZ08ND0",
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+            const db = getFirestore(app);
             import { getFirestore, collection, getDocs } from
             db = getFirestore(app)
             getDocs(collection(db, "challenges")).then((snapshot) => {
