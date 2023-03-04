@@ -267,7 +267,8 @@ nav button {
 
 img {
   width:90px;
-  border: 1px solid gray;
+  height:70px;
+
 }
 
 .col-1 {
@@ -366,6 +367,11 @@ figcaption {
 .carousel-inner {
   width: 400px;
   height: 250px;
+  background-color: gray;
+}
+
+.carousel-item > img {
+  filter: brightness(75%);
 }
 
 .show-mobile img {
