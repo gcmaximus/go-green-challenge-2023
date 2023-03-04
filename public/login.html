@@ -128,7 +128,11 @@
                 signInWithEmailAndPassword,
                 updateProfile,
             } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-            import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"
+            import {
+                getFirestore,
+                doc,
+                setDoc,
+            } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
             const firebaseConfig = {
                 apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
                 authDomain: "go-green-challenge.firebaseapp.com",
@@ -142,7 +146,7 @@
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const auth = getAuth(app);
-            const db = getFirestore(app)
+            const db = getFirestore(app);
             // console.log()
 
             loginForm.addEventListener("submit", function (e) {
@@ -179,14 +183,19 @@
                         // Signed in
                         let user = userCredential.user;
                         if (user) {
-                            // setDoc(collection(db, 'scores'), {score: 0})
-                            // .doc(user.email).set()
-                            setDoc(doc(db, "scores/"+user.email), {day1:0,totalScore:0})
+                            setDoc(doc(db, "scores", user.email), {
+                                week1: {
+                                    day1: 0,
+                                },
+                                totalScore: 0,
+                            });
                             updateProfile(auth.currentUser, {
                                 displayName: username2Value,
                             })
                                 .then(() => {
-                                    alert(`Welcome ${username2Value}, signup is successful! You are now logged in :D`);
+                                    alert(
+                                        `Welcome ${username2Value}, signup is successful! You are now logged in :D`
+                                    );
                                     location.replace("/");
                                 })
                                 .catch((error) => {
