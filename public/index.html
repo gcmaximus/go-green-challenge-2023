@@ -42,14 +42,15 @@
                     <div class="menu-button"></div>
                 </label>
                 <ul class="menu">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./leaderboard.html">Leaderboard & Prizes</a></li>
-                    <li><a href="./ongoing-challenge.html">Ongoing Challenges</a></li>
-                    <li><a href="./past-challenges.html">Past Challenges</a></li>
-                    <li><a href="./about-us.html">About Us</a></li>
-                    <li><button id="signOutButton">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/leaderboard.html">Leaderboard & Prizes</a></li>
+                    <li><a href="/ongoing-challenge.html">Ongoing Challenges</a></li>
+                    <li><a href="/past-challenges.html">Past Challenges</a></li>
+                    <li><a href="/about-us.html">About Us</a></li>
+                    <li hidden id="signOutButton"><button>
                         <i class="fa fa-sign-out" style="font-size:24px"></i>
                     </button></li>
+                    <li id="signInPageButton"><a href="/login.html">Sign In</a></li>
                 </ul>
             </section>
         </nav>
@@ -203,9 +204,8 @@
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
             import {
                 getAuth,
-                createUserWithEmailAndPassword,
-                signInWithEmailAndPassword,
-                updateProfile,
+                onAuthStateChanged,
+                signOut,
             } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
             const firebaseConfig = {
                 apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
@@ -220,17 +220,21 @@
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const auth = getAuth(app);
-            const user = auth.getCurrentUser()
 
             // sign out button and username element
+            let signInPageButton = document.querySelector('#signInPageButton')
             let signOutButton = document.querySelector("#signOutButton");
             let usernameDisplay = document.querySelector("#usernameDisplay");
 
             // Unhide sign out button and add username
-            if (user) {
-                signOutButton.removeAttribute("hidden");
-                usernameDisplay.textContent = user.displayName
-            }
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    signInPageButton.hidden = true
+                    signOutButton.hidden = false
+                    usernameDisplay.textContent = user.displayName
+                }
+            })
+            
 
             // Sign out
             signOutButton.addEventListener("click", (e) => {
