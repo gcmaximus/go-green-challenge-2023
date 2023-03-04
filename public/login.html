@@ -133,7 +133,7 @@
                 doc,
                 setDoc,
             } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
-            
+
             // Firebase config
             const firebaseConfig = {
                 apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
@@ -187,6 +187,15 @@
                             setDoc(doc(db, "scores", user.email), {
                                 week1: {
                                     day1: 0,
+                                },
+                                week2: {
+                                    day8: 0,
+                                },
+                                week3: {
+                                    day15: 0,
+                                },
+                                week4: {
+                                    day22: 0,
                                 },
                                 totalScore: 0,
                             });
