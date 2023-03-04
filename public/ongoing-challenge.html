@@ -45,14 +45,15 @@
                     <div class="menu-button"></div>
                 </label>
                 <ul class="menu">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./leaderboard.html">Leaderboard & Prizes</a></li>
-                    <li><a href="./ongoing-challenge.html">Ongoing Challenges</a></li>
-                    <li><a href="./past-challenges.html">Past Challenges</a></li>
-                    <li><a href="./about-us.html">About Us</a></li>
-                    <li><button id="signOutButton">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/leaderboard.html">Leaderboard & Prizes</a></li>
+                    <li><a href="/ongoing-challenge.html">Ongoing Challenges</a></li>
+                    <li><a href="/past-challenges.html">Past Challenges</a></li>
+                    <li><a href="/about-us.html">About Us</a></li>
+                    <li hidden id="signOutButton"><button>
                         <i class="fa fa-sign-out" style="font-size:24px"></i>
                     </button></li>
+                    <li id="signInPageButton"><a href="/login.html">Sign In</a></li>
                 </ul>
             </section>
         </nav>
@@ -264,6 +265,61 @@
         });
         });
     
+    </script>
+
+    <!-- script -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import {
+            getAuth,
+            onAuthStateChanged,
+            signOut
+        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
+            authDomain: "go-green-challenge.firebaseapp.com",
+            projectId: "go-green-challenge",
+            storageBucket: "go-green-challenge.appspot.com",
+            messagingSenderId: "586047303749",
+            appId: "1:586047303749:web:73a742cbefa66c0fbd732c",
+            measurementId: "G-5WNGZ08ND0",
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // sign out button and username element
+        let signInPageButton = document.querySelector("#signInPageButton")
+        let signOutButton = document.querySelector("#signOutButton");
+        let usernameDisplay = document.querySelector("#usernameDisplay");
+
+        // Unhide sign out button and add username
+        onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    signInPageButton.hidden = true
+                    signOutButton.hidden = false
+                    usernameDisplay.textContent = user.displayName;
+                }
+            });
+
+        // Sign out
+        signOutButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            signOut(auth)
+                .then(() => {
+                    location.assign("/");
+                })
+                .catch((error) => {
+                    alert(
+                        `Error code: ${error.code}\nError message: ${error.message}`
+                    );
+                    location.reload();
+                });
+        });
+
+
     </script>
 </body>
 
