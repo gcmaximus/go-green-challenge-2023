@@ -4,7 +4,7 @@
 }
 
 main, html {
-  background-color: #1C6758;
+  background-color: #555555;
 }
 
 
@@ -368,6 +368,7 @@ figcaption {
   width: 400px;
   height: 250px;
   background-color: gray;
+  border-radius: 10px;
 }
 
 .carousel-item > img {
