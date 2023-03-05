@@ -19,6 +19,10 @@ body {
     }
 } 
 */
+
+body {
+    background-color: rgb(124, 124, 124) !important;
+}
 .container {
     display: flex;
     flex-wrap: wrap;

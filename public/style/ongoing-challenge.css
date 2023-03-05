@@ -4,6 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap');
 
 
+span, i {
+  color: #D6CDA4;
+}
 /* Navbar */
 
 #navbar-logo {
@@ -25,6 +28,11 @@ nav button {
   background-color:transparent;
   border: none;
 }
+
+#signInPageButton > a {
+  color: #D6CDA4;
+}
+
 
 /*mobile hamburger menu */
 
@@ -524,11 +532,8 @@ p{
 }
 
 /* display = none when mobile */
-@media (max-width: 1050px) {
+@media (max-width: 768px) {
   .container-pc{
-    display: none;
-  }
-  nav{
     display: none;
   }
   .hero-banner-bg .hero-banner-header {

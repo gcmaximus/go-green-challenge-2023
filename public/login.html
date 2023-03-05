@@ -31,7 +31,7 @@
                             required
                             class="floating-label"
                         />
-                        <label for="email">email</label>
+                        <label for="email">Email</label>
                     </div>
                     <div class="form-group">
                         <input
@@ -128,6 +128,13 @@
                 signInWithEmailAndPassword,
                 updateProfile,
             } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+            import {
+                getFirestore,
+                doc,
+                setDoc,
+            } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+
+            // Firebase config
             const firebaseConfig = {
                 apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
                 authDomain: "go-green-challenge.firebaseapp.com",
@@ -141,6 +148,7 @@
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const auth = getAuth(app);
+            const db = getFirestore(app);
 
             loginForm.addEventListener("submit", function (e) {
                 e.preventDefault();
@@ -173,16 +181,35 @@
                     password2Value
                 )
                     .then((userCredential) => {
-                        console.log(userCredential);
-                        console.log(userCredential.user)
                         // Signed in
                         let user = userCredential.user;
                         if (user) {
+                            setDoc(doc(db, "scores", user.email), {
+                                week1: {
+                                    day1: 0,
+                                    week1TotalScore: 0,
+                                },
+                                week2: {
+                                    day8: 0,
+                                    week2TotalScore: 0,
+                                },
+                                week3: {
+                                    day15: 0,
+                                    week3TotalScore: 0,
+                                },
+                                week4: {
+                                    day22: 0,
+                                    week4TotalScore: 0,
+                                },
+                                totalScore: 0,
+                            });
                             updateProfile(auth.currentUser, {
                                 displayName: username2Value,
                             })
                                 .then(() => {
-                                    alert(`Welcome ${username2Value}, signup is successful! You are now logged in :D`);
+                                    alert(
+                                        `Welcome ${username2Value}, signup is successful! You are now logged in :D`
+                                    );
                                     location.replace("/");
                                 })
                                 .catch((error) => {
