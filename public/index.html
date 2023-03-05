@@ -228,14 +228,22 @@
 
             // Unhide sign out button and add username
             onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    signInPageButton.hidden = true
-                    signOutButton.hidden = false
-                    usernameDisplay.textContent = user.displayName
-                }
-            })
+            if (user) {
+                signInPageButton.hidden = true;
+                signOutButton.hidden = false;
+                usernameDisplay.textContent = user.displayName;
+                getDoc(doc(db, "scores", user.email))
+                    .then((docSnap) => {
+                        totalScoreDisplay.textContent = docSnap.data().totalScore;
+                    })
+                    .catch((error) => {
+                        alert(
+                            `Error code: ${error.code}\nError message: ${error.message}`
+                        );
+                    });
+            }
+        });
             
-
             // Sign out
             signOutButton.addEventListener("click", (e) => {
                 e.preventDefault();
