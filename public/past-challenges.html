@@ -1092,7 +1092,7 @@
                     usernameDisplay.textContent = user.displayName;
                     getDoc(doc(db, "scores", user.email))
                         .then((docSnap) => {
-                            console.log(docSnap.data());
+                            totalScoreDisplay.textContent = docSnap.data().totalScore;
                         })
                         .catch((error) => {
                             alert(
