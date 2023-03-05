@@ -1,493 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!--CSS-->
-        <link rel="stylesheet" href="./style/ongoing-mobile.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-        <link href="./style/ongoing-challenge.css" rel="stylesheet" />
-        <link rel="stylesheet" href="./style/nav.css" />
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!--bootstrap-->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-            crossorigin="anonymous"
-        />
+    <!--CSS-->
+    <link rel="stylesheet" href="./style/ongoing-mobile.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="./style/ongoing-challenge.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style/nav.css" />
 
-        <!-- <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+
+    <!-- <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"> -->
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Ongoing Challenge</title>
-    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ongoing Challenge</title>
+</head>
 
-    <body>
-        <header>
-            <!--Navbar-->
-            <nav>
-                <section class="top-nav">
-                    <div>
-                        <img
-                            src="./img/logo.png"
-                            alt="Go-Green Challenge 2023"
-                            id="navbar-logo"
-                        />
-                        <span>
-                            <!-- Display Username-->
-                            <span id="usernameDisplay"></span>! Points: 100000
-                        </span>
-                    </div>
-                    <input id="menu-toggle" type="checkbox" />
-                    <label class="menu-button-container" for="menu-toggle">
-                        <div class="menu-button"></div>
-                    </label>
-                    <ul class="menu">
-                        <li><a href="/">Home</a></li>
-                        <li>
-                            <a href="/leaderboard.html">Leaderboard & Prizes</a>
-                        </li>
-                        <li>
-                            <a href="/ongoing-challenge.html"
-                                >Ongoing Challenges</a
-                            >
-                        </li>
-                        <li>
-                            <a href="/past-challenges.html">Past Challenges</a>
-                        </li>
-                        <li><a href="/about-us.html">About Us</a></li>
-                        <li hidden id="signOutButton">
-                            <button>
-                                <i
-                                    class="fa fa-sign-out"
-                                    style="font-size: 24px"
-                                ></i>
-                            </button>
-                        </li>
-                        <li id="signInPageButton">
-                            <a href="/login.html">Sign In</a>
-                        </li>
-                    </ul>
-                </section>
-            </nav>
-        </header>
+<body>
+    <header>
+        <!--Navbar-->
+        <nav>
+            <section class="top-nav">
+                <div>
+                    <img src="./img/logo.png" alt="Go-Green Challenge 2023" id="navbar-logo" />
+                    <span>
+                        <!-- Display Username and Points-->
+                        <span id="usernameDisplay"></span>: <span id="totalScoreDisplay"></span> points
+                    </span>
+                </div>
+                <input id="menu-toggle" type="checkbox" />
+                <label class="menu-button-container" for="menu-toggle">
+                    <div class="menu-button"></div>
+                </label>
+                <ul class="menu">
+                    <li><a href="/">Home</a></li>
+                    <li>
+                        <a href="/leaderboard.html">Leaderboard & Prizes</a>
+                    </li>
+                    <li>
+                        <a href="/ongoing-challenge.html">Ongoing Challenges</a>
+                    </li>
+                    <li>
+                        <a href="/past-challenges.html">Past Challenges</a>
+                    </li>
+                    <li><a href="/about-us.html">About Us</a></li>
+                    <li hidden id="signOutButton">
+                        <button>
+                            <i class="fa fa-sign-out" style="font-size: 24px"></i>
+                        </button>
+                    </li>
+                    <li id="signInPageButton">
+                        <a href="/login.html">Sign In</a>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+    </header>
 
-        <div class="hero-banner-bg">
-            <div class="hero-banner-header">Week #1 Challenge</div>
+    <div class="hero-banner-bg">
+        <div class="hero-banner-header">Week #1 Challenge</div>
+    </div>
+
+    <div class="container-pc">
+        <div class="margin" style="margin-top: 50px"></div>
+
+        <div class="logo">
+            <div class="logo-border">
+                <div class="logo-text">Go-Green Challenge</div>
+                <div class="logo-year">2023</div>
+            </div>
+        </div>
+        <div class="additional-text">Together, we are greener</div>
+
+        <div class="separator"></div>
+
+        <div class="individual_elements">
+            <div class="image_left">
+                <img src="../public/img/day1-chall.jpg" alt="sample_image" />
+            </div>
+            <div class="box_right">
+                <h2>Day 1# Monday</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Modi quam id est amet rem quo officia, minus neque
+                    deserunt culpa minima natus distinctio magni
+                    repudiandae, eaque, earum voluptatem assumenda veniam ex
+                    recusandae saepe vitae quas esse! Neque reprehenderit
+                    laborum nam facilis molestias sit voluptate placeat.
+                    Dolore odit architecto quisquam cupiditate.
+                </p>
+                <input type="button" value=" Button " />
+            </div>
         </div>
 
-        <div class="container-pc">
-            <div class="margin" style="margin-top: 50px"></div>
+        <div class="separator"></div>
 
-            <div class="logo">
-                <div class="logo-border">
-                    <div class="logo-text">Go-Green Challenge</div>
-                    <div class="logo-year">2023</div>
-                </div>
+        <div class="individual_elements">
+            <div class="box_left">
+                <h2>Day 2# Tuesday</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Modi quam id est amet rem quo officia, minus neque
+                    deserunt culpa minima natus distinctio magni
+                    repudiandae, eaque, earum voluptatem assumenda veniam ex
+                    recusandae saepe vitae quas esse! Neque reprehenderit
+                    laborum nam facilis molestias sit voluptate placeat.
+                    Dolore odit architecto quisquam cupiditate.
+                </p>
+                <input type="button" value="Button" />
             </div>
-            <div class="additional-text">Together, we are greener</div>
-
-            <div class="separator"></div>
-
-            <div class="individual_elements">
-                <div class="image_left">
-                    <img
-                        src="../public/img/day1-chall.jpg"
-                        alt="sample_image"
-                    />
-                </div>
-                <div class="box_right">
-                    <h2>Day 1# Monday</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Modi quam id est amet rem quo officia, minus neque
-                        deserunt culpa minima natus distinctio magni
-                        repudiandae, eaque, earum voluptatem assumenda veniam ex
-                        recusandae saepe vitae quas esse! Neque reprehenderit
-                        laborum nam facilis molestias sit voluptate placeat.
-                        Dolore odit architecto quisquam cupiditate.
-                    </p>
-                    <input type="button" value=" Button " />
-                </div>
+            <div class="image_right">
+                <img src="../public/img/day2-chall.jpg" alt="sample_image" />
             </div>
-
-            <div class="separator"></div>
-
-            <div class="individual_elements">
-                <div class="box_left">
-                    <h2>Day 2# Tuesday</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Modi quam id est amet rem quo officia, minus neque
-                        deserunt culpa minima natus distinctio magni
-                        repudiandae, eaque, earum voluptatem assumenda veniam ex
-                        recusandae saepe vitae quas esse! Neque reprehenderit
-                        laborum nam facilis molestias sit voluptate placeat.
-                        Dolore odit architecto quisquam cupiditate.
-                    </p>
-                    <input type="button" value="Button" />
-                </div>
-                <div class="image_right">
-                    <img
-                        src="../public/img/day2-chall.jpg"
-                        alt="sample_image"
-                    />
-                </div>
-            </div>
-
-            <div class="separator"></div>
-
-            <div class="individual_elements">
-                <div class="image_left">
-                    <img
-                        src="../public/img/stay-tuned.png"
-                        alt="sample_image"
-                    />
-                </div>
-                <div class="box_right">
-                    <h2>Day 3# Wednesday</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Modi quam id est amet rem quo officia, minus neque
-                        deserunt culpa minima natus distinctio magni
-                        repudiandae, eaque, earum voluptatem assumenda veniam ex
-                        recusandae saepe vitae quas esse! Neque reprehenderit
-                        laborum nam facilis molestias sit voluptate placeat.
-                        Dolore odit architecto quisquam cupiditate.
-                    </p>
-                    <input type="button" value="Button" />
-                </div>
-            </div>
-
-            <div class="separator"></div>
-
-            <div class="individual_elements">
-                <div class="box_left">
-                    <h2>Day 4# Thursday</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Modi quam id est amet rem quo officia, minus neque
-                        deserunt culpa minima natus distinctio magni
-                        repudiandae, eaque, earum voluptatem assumenda veniam ex
-                        recusandae saepe vitae quas esse! Neque reprehenderit
-                        laborum nam facilis molestias sit voluptate placeat.
-                        Dolore odit architecto quisquam cupiditate.
-                    </p>
-                    <input type="button" value="Button" />
-                </div>
-                <div class="image_right">
-                    <img
-                        src="../public/img/stay-tuned.png"
-                        alt="sample_image"
-                    />
-                </div>
-            </div>
-
-            <div class="separator"></div>
-
-            <div class="individual_elements">
-                <div class="image_left">
-                    <img
-                        src="../public/img/stay-tuned.png"
-                        alt="sample_image"
-                    />
-                </div>
-                <div class="box_right">
-                    <h2>Day 5# Friday</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Modi quam id est amet rem quo officia, minus neque
-                        deserunt culpa minima natus distinctio magni
-                        repudiandae, eaque, earum voluptatem assumenda veniam ex
-                        recusandae saepe vitae quas esse! Neque reprehenderit
-                        laborum nam facilis molestias sit voluptate placeat.
-                        Dolore odit architecto quisquam cupiditate.
-                    </p>
-                    <input type="button" value="Button" />
-                </div>
-            </div>
-            <div class="separator"></div>
         </div>
 
-        <div class="container-mobile">
-            <div class="separator"></div>
+        <div class="separator"></div>
 
-            <div class="logo">
-                <div class="logo-border">
-                    <div class="logo-text">Go-Green Challenge</div>
-                    <div class="logo-year">2023</div>
-                </div>
+        <div class="individual_elements">
+            <div class="image_left">
+                <img src="../public/img/stay-tuned.png" alt="sample_image" />
             </div>
-            <div class="additional-text">Together, we are greener</div>
-
-            <div class="separator"></div>
-            <div class="row-mobile">
-                <div class="card-mobile">
-                    <div class="bg"></div>
-                    <div class="text-body">
-                        <h2>Day #5 Friday</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ullam, consequatur voluptatum similique
-                            obcaecati libero tempore eos! Error rem iusto ea
-                            quod exercitationem quia eveniet facilis qui
-                            inventore cum autem, nobis delectus sed veritatis
-                            consectetur excepturi quo atque vel. Modi
-                            consequuntur harum laborum vero mollitia similique
-                            optio error provident ex veritatis.
-                        </p>
-                        <input type="button" value=" Upload " />
-                    </div>
-                </div>
+            <div class="box_right">
+                <h2>Day 3# Wednesday</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Modi quam id est amet rem quo officia, minus neque
+                    deserunt culpa minima natus distinctio magni
+                    repudiandae, eaque, earum voluptatem assumenda veniam ex
+                    recusandae saepe vitae quas esse! Neque reprehenderit
+                    laborum nam facilis molestias sit voluptate placeat.
+                    Dolore odit architecto quisquam cupiditate.
+                </p>
+                <input type="button" value="Button" />
             </div>
-            <div class="row-mobile">
-                <div class="card-mobile">
-                    <div class="bg"></div>
-                    <div class="text-body">
-                        <h2>Day #4 Thursday</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Nobis, omnis laborum. Exercitationem
-                            repudiandae magnam adipisci eligendi voluptates non
-                            reiciendis aspernatur dolorem, eos quidem iste fuga
-                            cum numquam consequuntur culpa iusto accusantium
-                            suscipit placeat natus laudantium! Qui ipsam maiores
-                            ipsa culpa atque facere harum natus, officia
-                            temporibus, molestias amet tempore deleniti.
-                        </p>
-                        <input type="button" value=" Upload " />
-                    </div>
-                </div>
-            </div>
-            <div class="row-mobile">
-                <div class="card-mobile">
-                    <div class="bg"></div>
-                    <div class="text-body">
-                        <h2>Day #3 Wednesday</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ipsam repellendus repudiandae quam recusandae
-                            id ipsa veritatis aperiam fuga sequi, vero
-                            blanditiis neque corrupti autem exercitationem,
-                            saepe ex similique laboriosam illo adipisci quasi
-                            suscipit nesciunt asperiores provident magnam!
-                            Cumque sapiente iure iusto distinctio praesentium.
-                            Cupiditate, sequi.
-                        </p>
-                        <input type="button" value=" Upload " />
-                    </div>
-                </div>
-            </div>
-            <div class="row-mobile">
-                <div class="card-mobile">
-                    <div class="bg"></div>
-                    <div class="text-b">
-                        <h2>Day #2 Tuesday</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Quo ullam dolorum ut quis cum distinctio! Eos
-                            impedit magnam, nam totam aliquid voluptatem iste
-                            excepturi enim beatae, delectus odit qui cum
-                            deserunt officia nemo sed est quis praesentium ipsum
-                            nesciunt, perspiciatis veniam. Eos a commodi nihil
-                            fuga ipsam id facilis nesciunt.
-                        </p>
-                        <input type="button" value=" Upload " />
-                    </div>
-                </div>
-            </div>
-            <div class="row-mobile">
-                <div class="card-mobile">
-                    <div class="bg"></div>
-                    <div class="text-bo">
-                        <h2>Day #1 Monday</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Eum libero vitae, dolor dolore laudantium ab
-                            nobis similique, quidem quis quos harum porro illo
-                            quam accusantium iste vero ex magnam velit, est nam
-                            qui veritatis autem. Sint quibusdam maiores fuga
-                            dignissimos adipisci commodi distinctio. Cupiditate
-                            repellat atque ducimus eius neque nostrum.
-                        </p>
-                        <input type="button" value=" Upload " />
-                    </div>
-                </div>
-            </div>
-            <div class="separator"></div>
         </div>
 
-        <div class="footer-dark">
-            <footer>
-                <div class="container">
-                    <div class="row footer-text">
-                        <h3>Go-Green Challenge</h3>
-                        <p>
-                            Some text or a small paragraph or a small
-                            description for the challenge. Lorem ipsum dolor
-                            sit, amet consectetur adipisicing elit. Facilis
-                            excepturi est impedit dignissimos exercitationem
-                            placeat aspernatur obcaecati voluptatem iure
-                            recusandae?
-                        </p>
-                    </div>
-                    <div class="col item social">
-                        <a href="#"><i class="icon ion-social-facebook"></i></a
-                        ><a href="#"><i class="icon ion-social-twitter"></i></a
-                        ><a href="#"><i class="icon ion-social-snapchat"></i></a
-                        ><a href="#"
-                            ><i class="icon ion-social-instagram"></i
-                        ></a>
-                    </div>
-                    <div>
-                        <p class="copyright">GoGreenChallenge © 2023</p>
-                        <p class="copyright">
-                            GoGreenChallenge2023@gmail.com | 500 Dover Road
-                            Singapore 139651 | +65 9897 9695
-                        </p>
-                    </div>
-                </div>
-            </footer>
+        <div class="separator"></div>
+
+        <div class="individual_elements">
+            <div class="box_left">
+                <h2>Day 4# Thursday</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Modi quam id est amet rem quo officia, minus neque
+                    deserunt culpa minima natus distinctio magni
+                    repudiandae, eaque, earum voluptatem assumenda veniam ex
+                    recusandae saepe vitae quas esse! Neque reprehenderit
+                    laborum nam facilis molestias sit voluptate placeat.
+                    Dolore odit architecto quisquam cupiditate.
+                </p>
+                <input type="button" value="Button" />
+            </div>
+            <div class="image_right">
+                <img src="../public/img/stay-tuned.png" alt="sample_image" />
+            </div>
         </div>
 
-        <!-- <script src="./js/ongoing-challenge.js"></script> -->
+        <div class="separator"></div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+        <div class="individual_elements">
+            <div class="image_left">
+                <img src="../public/img/stay-tuned.png" alt="sample_image" />
+            </div>
+            <div class="box_right">
+                <h2>Day 5# Friday</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Modi quam id est amet rem quo officia, minus neque
+                    deserunt culpa minima natus distinctio magni
+                    repudiandae, eaque, earum voluptatem assumenda veniam ex
+                    recusandae saepe vitae quas esse! Neque reprehenderit
+                    laborum nam facilis molestias sit voluptate placeat.
+                    Dolore odit architecto quisquam cupiditate.
+                </p>
+                <input type="button" value="Button" />
+            </div>
+        </div>
+        <div class="separator"></div>
+    </div>
 
-        <!--bootstrap-->
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-            integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-            crossorigin="anonymous"
-        ></script>
+    <div class="container-mobile">
+        <div class="separator"></div>
 
-        <script>
-            const cards = document.querySelectorAll(".card-mobile");
+        <div class="logo">
+            <div class="logo-border">
+                <div class="logo-text">Go-Green Challenge</div>
+                <div class="logo-year">2023</div>
+            </div>
+        </div>
+        <div class="additional-text">Together, we are greener</div>
 
-            cards.forEach((card) => {
-                card.addEventListener("click", () => {
-                    card.classList.toggle("open");
-                });
+        <div class="separator"></div>
+        <div class="row-mobile">
+            <div class="card-mobile">
+                <div class="bg"></div>
+                <div class="text-body">
+                    <h2>Day #5 Friday</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Ullam, consequatur voluptatum similique
+                        obcaecati libero tempore eos! Error rem iusto ea
+                        quod exercitationem quia eveniet facilis qui
+                        inventore cum autem, nobis delectus sed veritatis
+                        consectetur excepturi quo atque vel. Modi
+                        consequuntur harum laborum vero mollitia similique
+                        optio error provident ex veritatis.
+                    </p>
+                    <input type="button" value=" Upload " />
+                </div>
+            </div>
+        </div>
+        <div class="row-mobile">
+            <div class="card-mobile">
+                <div class="bg"></div>
+                <div class="text-body">
+                    <h2>Day #4 Thursday</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Nobis, omnis laborum. Exercitationem
+                        repudiandae magnam adipisci eligendi voluptates non
+                        reiciendis aspernatur dolorem, eos quidem iste fuga
+                        cum numquam consequuntur culpa iusto accusantium
+                        suscipit placeat natus laudantium! Qui ipsam maiores
+                        ipsa culpa atque facere harum natus, officia
+                        temporibus, molestias amet tempore deleniti.
+                    </p>
+                    <input type="button" value=" Upload " />
+                </div>
+            </div>
+        </div>
+        <div class="row-mobile">
+            <div class="card-mobile">
+                <div class="bg"></div>
+                <div class="text-body">
+                    <h2>Day #3 Wednesday</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Ipsam repellendus repudiandae quam recusandae
+                        id ipsa veritatis aperiam fuga sequi, vero
+                        blanditiis neque corrupti autem exercitationem,
+                        saepe ex similique laboriosam illo adipisci quasi
+                        suscipit nesciunt asperiores provident magnam!
+                        Cumque sapiente iure iusto distinctio praesentium.
+                        Cupiditate, sequi.
+                    </p>
+                    <input type="button" value=" Upload " />
+                </div>
+            </div>
+        </div>
+        <div class="row-mobile">
+            <div class="card-mobile">
+                <div class="bg"></div>
+                <div class="text-b">
+                    <h2>Day #2 Tuesday</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Quo ullam dolorum ut quis cum distinctio! Eos
+                        impedit magnam, nam totam aliquid voluptatem iste
+                        excepturi enim beatae, delectus odit qui cum
+                        deserunt officia nemo sed est quis praesentium ipsum
+                        nesciunt, perspiciatis veniam. Eos a commodi nihil
+                        fuga ipsam id facilis nesciunt.
+                    </p>
+                    <input type="button" value=" Upload " />
+                </div>
+            </div>
+        </div>
+        <div class="row-mobile">
+            <div class="card-mobile">
+                <div class="bg"></div>
+                <div class="text-bo">
+                    <h2>Day #1 Monday</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Eum libero vitae, dolor dolore laudantium ab
+                        nobis similique, quidem quis quos harum porro illo
+                        quam accusantium iste vero ex magnam velit, est nam
+                        qui veritatis autem. Sint quibusdam maiores fuga
+                        dignissimos adipisci commodi distinctio. Cupiditate
+                        repellat atque ducimus eius neque nostrum.
+                    </p>
+                    <input type="button" value=" Upload " />
+                </div>
+            </div>
+        </div>
+        <div class="separator"></div>
+    </div>
+
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row footer-text">
+                    <h3>Go-Green Challenge</h3>
+                    <p>
+                        Some text or a small paragraph or a small
+                        description for the challenge. Lorem ipsum dolor
+                        sit, amet consectetur adipisicing elit. Facilis
+                        excepturi est impedit dignissimos exercitationem
+                        placeat aspernatur obcaecati voluptatem iure
+                        recusandae?
+                    </p>
+                </div>
+                <div class="col item social">
+                    <a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                            class="icon ion-social-twitter"></i></a><a href="#"><i
+                            class="icon ion-social-snapchat"></i></a><a href="#"><i
+                            class="icon ion-social-instagram"></i></a>
+                </div>
+                <div>
+                    <p class="copyright">GoGreenChallenge © 2023</p>
+                    <p class="copyright">
+                        GoGreenChallenge2023@gmail.com | 500 Dover Road
+                        Singapore 139651 | +65 9897 9695
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- <script src="./js/ongoing-challenge.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <!--bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const cards = document.querySelectorAll(".card-mobile");
+
+        cards.forEach((card) => {
+            card.addEventListener("click", () => {
+                card.classList.toggle("open");
             });
-        </script>
+        });
+    </script>
 
-        <!-- script -->
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-            import {
-                getAuth,
-                onAuthStateChanged,
-                signOut,
-            } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-            import {
-                getFirestore,
-                getDocs,
-                query,
-                collection,
-                where,
-                documentId,
-            } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+    <!-- script -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import {
+            getAuth,
+            onAuthStateChanged,
+            signOut,
+        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+        import {
+            getFirestore,
+            getDocs,
+            query,
+            collection,
+            where,
+            documentId,
+        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
-            // Firebase config
-            const firebaseConfig = {
-                apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
-                authDomain: "go-green-challenge.firebaseapp.com",
-                projectId: "go-green-challenge",
-                storageBucket: "go-green-challenge.appspot.com",
-                messagingSenderId: "586047303749",
-                appId: "1:586047303749:web:73a742cbefa66c0fbd732c",
-                measurementId: "G-5WNGZ08ND0",
-            };
+        // Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
+            authDomain: "go-green-challenge.firebaseapp.com",
+            projectId: "go-green-challenge",
+            storageBucket: "go-green-challenge.appspot.com",
+            messagingSenderId: "586047303749",
+            appId: "1:586047303749:web:73a742cbefa66c0fbd732c",
+            measurementId: "G-5WNGZ08ND0",
+        };
 
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const auth = getAuth(app);
-            const db = getFirestore(app);
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
 
-            // sign out button and username element
-            let signInPageButton = document.querySelector("#signInPageButton");
-            let signOutButton = document.querySelector("#signOutButton");
-            let usernameDisplay = document.querySelector("#usernameDisplay");
+        // sign out button and username element
+        let signInPageButton = document.querySelector("#signInPageButton");
+        let signOutButton = document.querySelector("#signOutButton");
+        let usernameDisplay = document.querySelector("#usernameDisplay");
 
-            // Unhide sign out button and add username
-            onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    signInPageButton.hidden = true;
-                    signOutButton.hidden = false;
-                    usernameDisplay.textContent = user.displayName;
-                }
-            });
-
-            // Sign out
-            signOutButton.addEventListener("click", (e) => {
-                e.preventDefault();
-                signOut(auth)
-                    .then(() => {
-                        location.assign("/");
-                    })
-                    .catch((error) => {
-                        alert(
-                            `Error code: ${error.code}\nError message: ${error.message}`
-                        );
-                        location.reload();
-                    });
-            });
-
-            let startTime = new Date(2023, 2, 20).getTime();
-            let endTime = new Date(2023, 4, 17).getTime();
-            let todayTime = Date.now();
-
-            if (todayTime < startTime) {
-                console.log("Challenge has not commenced");
-            } else if (todayTime < endTime) {
-                let dayDif = Math.floor((todayTime - startTime) / 86400000);
-                let dayOfWeek = (dayDif % 7) + 1;
-                let week = Math.ceil((dayDif + 1) / 7);
-
-                console.log(`week: ${week}, day: ${dayOfWeek}`);
-
-                let queryList = Array(dayOfWeek)
-                    .fill()
-                    .map((_, i) => {
-                        return `day${dayDif + 2 - dayOfWeek + i}`;
-                    });
-
-                getDocs(
-                    query(
-                        collection(db, "challenges"),
-                        where(documentId(), "in", queryList)
-                    )
-                )
-                    .then((snapshot) => {
-                        let challengesList = [];
-                        snapshot.forEach((doc) => {
-                            challengesList.push({ ...doc.data(), id: doc.id });
-                        });
-                        console.log(challengesList);
-                    })
-                    .catch((error) => {
-                        alert(
-                            `Error code: ${error.code}\nError message: ${error.message}`
-                        );
-                    });
-            } else {
-                console.log("Challenge has ceased");
+        // Unhide sign out button and add username
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                signInPageButton.hidden = true;
+                signOutButton.hidden = false;
+                usernameDisplay.textContent = user.displayName;
             }
-        </script>
-    </body>
+        });
+
+        // Sign out
+        signOutButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            signOut(auth)
+                .then(() => {
+                    location.assign("/");
+                })
+                .catch((error) => {
+                    alert(
+                        `Error code: ${error.code}\nError message: ${error.message}`
+                    );
+                    location.reload();
+                });
+        });
+
+        let startTime = new Date(2023, 2, 20).getTime();
+        let endTime = new Date(2023, 4, 17).getTime();
+        let todayTime = Date.now();
+
+        if (todayTime < startTime) {
+            console.log("Challenge has not commenced");
+        } else if (todayTime < endTime) {
+            let dayDif = Math.floor((todayTime - startTime) / 86400000);
+            let dayOfWeek = (dayDif % 7) + 1;
+            let week = Math.ceil((dayDif + 1) / 7);
+
+            console.log(`week: ${week}, day: ${dayOfWeek}`);
+
+            let queryList = Array(dayOfWeek)
+                .fill()
+                .map((_, i) => {
+                    return `day${dayDif + 2 - dayOfWeek + i}`;
+                });
+
+            getDocs(
+                query(
+                    collection(db, "challenges"),
+                    where(documentId(), "in", queryList)
+                )
+            )
+                .then((snapshot) => {
+                    let challengesList = [];
+                    snapshot.forEach((doc) => {
+                        challengesList.push({ ...doc.data(), id: doc.id });
+                    });
+                    console.log(challengesList);
+                })
+                .catch((error) => {
+                    alert(
+                        `Error code: ${error.code}\nError message: ${error.message}`
+                    );
+                });
+        } else {
+            console.log("Challenge has ceased");
+        }
+    </script>
+</body>
+
 </html>
