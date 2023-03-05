@@ -395,7 +395,7 @@ h2 {
 }
 
 .ongoing figcaption {
-  color: rgb(157, 111, 19)
+  color: rgb(157, 111, 19);
 }
 
 .unreleased {
@@ -479,9 +479,25 @@ footer p {
   border: 1px black solid;
   border-radius: 5px;
   background: rgba(97,97,97,0.6);
-  margin-bottom: 90px;
+  margin-bottom: 70px;
 }
 
-h5 {
+.carousel-caption>h5 {
   text-decoration: underline;
+}
+
+.container.hide-mobile h3, .container.hide-mobile h5{
+  color: black;
+}
+
+.text-past{
+  color: rgb(70, 235, 92);
+}
+
+.text-ongoing {
+  color: rgb(255, 218, 98);
+}
+
+hr {
+  color: black !important;
 }
