@@ -394,6 +394,15 @@
                 onAuthStateChanged,
                 signOut,
             } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+            import {
+                getFirestore,
+                query,
+                collection,
+                where,
+                getDocs,
+            } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+
+            // Firebase config
             const firebaseConfig = {
                 apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
                 authDomain: "go-green-challenge.firebaseapp.com",
@@ -407,6 +416,7 @@
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const auth = getAuth(app);
+            const db = getFirestore(app);
 
             // sign out button and username element
             let signInPageButton = document.querySelector("#signInPageButton");
@@ -436,11 +446,37 @@
                         location.reload();
                     });
             });
+
             let startTime = new Date(2023, 2, 20).getTime();
-            let todayTime = new Date(2023, 2, i).getTime() + 1;
-            let dayDif = Math.floor((todayTime - startTime) / 86400000); // 86400000
-            let dayOfWeek = (dayDif % 7) + 1;
-            let week = Math.ceil((dayDif + 1) / 7);
+            let endTime = new Date(2023, 4, 17).getTime();
+            let todayTime = Date.now();
+
+            if (todayTime < startTime) {
+                console.log("Challenge has not commenced");
+            } else if (todayTime < endTime) {
+                let dayDif = Math.floor((todayTime - startTime) / 86400000);
+                let dayOfWeek = (dayDif % 7) + 1;
+                let week = Math.ceil((dayDif + 1) / 7);
+
+                console.log(`week: ${week}, day: ${dayOfWeek}`);
+
+                let queryList = Array(dayOfWeek)
+                    .fill()
+                    .map((_, i) => {
+                        return `day${dayDif + 2 - dayOfWeek + i}`;
+                    });
+
+                getDocs(
+                    query(
+                        collection(db, "challenges"),
+                        where(id, "in", queryList)
+                    )
+                )
+                    .then()
+                    .catch();
+            } else {
+                console.log("Challenge has ceased");
+            }
         </script>
     </body>
 </html>
