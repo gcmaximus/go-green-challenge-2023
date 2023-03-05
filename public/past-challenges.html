@@ -304,33 +304,12 @@
 
         <!-- Main Contents (Mobile) -->
         <section class="container show-mobile">
-            <!-- Collapsible with Carousel -->
-
-            <h6>Click the buttons to see all past challenges for each week.</h6>
-
-            <p>
-                <button class="btn btn-secondary" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#Week1Collapsible" aria-expanded="false" aria-controls="Week1Collapsible">
-                    Week 1 Challenges
-                </button>
-                <button class="btn btn-secondary" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#Week2Collapsible" aria-expanded="false" aria-controls="Week2Collapsible">
-                    Week 2 Challenges
-                </button>
-                <button class="btn btn-secondary" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#Week3Collapsible" aria-expanded="false" aria-controls="Week3Collapsible">
-                    Week 3 Challenges
-                </button>
-                <button class="btn btn-secondary" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#Week4Collapsible" aria-expanded="false" aria-controls="Week4Collapsible">
-                    Week 4 Challenges
-                </button>
-            </p>
+            <!-- Carousel -->
 
             <!-- Week 1 Carousel -->
-            <div class="collapse" id="Week1Collapsible">
-                <div class="card card-body">
-                    <h2>Week 1</h2>
+            <div class="box">
+                <button type="button" class="collapsible">Week 1</button>
+                <div class="content">
                     <div id="week1" class="carousel slide">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#week1" data-bs-slide-to="0" class="active"
@@ -414,9 +393,9 @@
             </div>
 
             <!-- Week 2 Carousel -->
-            <div class="collapse" id="Week2Collapsible">
-                <div class="card card-body">
-                    <h2>Week 2</h2>
+            <div class="box">
+                <button type="button" class="collapsible">Week 2</button>
+                <div class="content">
                     <div id="week2" class="carousel slide">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#week2" data-bs-slide-to="0" class="active"
@@ -501,9 +480,9 @@
 
 
             <!-- Week 3 Carousel -->
-            <div class="collapse" id="Week3Collapsible">
-                <div class="card card-body">
-                    <h2>Week 3</h2>
+            <div class="box">
+                <button type="button" class="collapsible">Week 3</button>
+                <div class="content">
                     <div id="week3" class="carousel slide">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#week3" data-bs-slide-to="0" class="active"
@@ -586,10 +565,11 @@
                 </div>
             </div>
 
+
             <!-- Week 4 Carousel -->
-            <div class="collapse" id="Week4Collapsible">
-                <div class="card card-body">
-                    <h2>Week 4</h2>
+            <div class="box">
+                <button type="button" class="collapsible">Week 4</button>
+                <div class="content">
                     <div id="week4" class="carousel slide">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#week4" data-bs-slide-to="0" class="active"
@@ -671,6 +651,7 @@
                     </div>
                 </div>
             </div>
+
         </section>
     </main>
 
@@ -690,6 +671,24 @@
         crossorigin="anonymous"></script>
 
     <!-- Script -->
+
+    <!-- Script -->
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
 
     <script type="module">
         // Import the functions you need from the SDKs you need

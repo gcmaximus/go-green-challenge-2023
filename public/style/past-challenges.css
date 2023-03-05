@@ -425,19 +425,63 @@ footer p {
 }
 
 
-.container.show-mobile {
-  padding-bottom: 400px;
+/*  */
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color:#f1f1f1;
 }
 
-div.card.card-body {
-  background-color:rgb(255, 251, 13);
-  /* box-shadow: -7px 10px black; */
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
 }
 
-.collapse {
-  margin-bottom: 20px;
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
 }
 
-h2,h3,h5,h6{
-  color:black !important;
+
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\02796"; /* Unicode character for "minus" sign (-) */
+}
+
+.carousel {
+  margin-top:10px;
+}
+
+.box {
+  margin-bottom: 10px;
+  border: 1px solid black;
+}
+
+.carousel-caption {
+  border: 1px black solid;
+  border-radius: 5px;
+  background: rgba(97,97,97,0.6);
+  margin-bottom: 90px;
+}
+
+h5 {
+  text-decoration: underline;
 }
