@@ -256,18 +256,155 @@ body{
 }
 
 
+/* Leaderboards */
+.pc-container-leaderboard{
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  max-width: 80vw;
+
+
+}
+
+.justify-center{
+  display: flex;
+  justify-content: center;
+} 
+
+.top2-profile img, .top1-profile img, .top3-profile img{
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  border: 5px solid #363638;
+}
+
+.overall-top3 .row .col-3{
+  margin-top: -80px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0px;
+}
+
+.place{
+  font-size: 40px;
+  font-family: 'Bebas Neue', sans-serif;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0.55);
+}
+
+.placeholder-username{
+  font-family: "Bebas Neue", 'Oswald', sans-serif;
+  text-align: center;
+}
+
+.username{
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0.55);
+}
 
 
 
+.score{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: rgba(0,0,0,0.55);
+  padding: 0.125rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+
+.top2-profile{
+  background-color: #dE685E;
+  padding: 12px;
+  border-radius: 20px;
+}
+
+.top1-profile{
+  background-color: #92bCa6;
+  padding: 12px;
+  border-radius: 20px;
+}
+
+.top3-profile{
+  background-color: #8AAAE5;
+  padding: 12px;
+  border-radius: 20px;
+}
 
 
 
+/* Leaderboard div (expanding) */
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
 
 
+.overall-contianer .content .row{
+  border-top: 1px solid black;
+}
+
+.overall-contianer .content .first{
+  border: 0 !important;
+}
+
+.overall-contianer .content .row .pfp{
+  display: flex;
+  justify-content: center;
+}
 
 
+.overall-contianer .content .row .pfp img{
+  height: 80px;
+  width: 80px;
+  border-radius: 80px;
+  border: 5px solid #363638;
+}
 
-
+.overall-contianer .content .row .col-5, .overall-contianer .content .row .col-4{
+  height: auto;
+  max-height: 80px;
+  font-family: 'Oswald';
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
 
 
 
