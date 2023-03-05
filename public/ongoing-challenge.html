@@ -396,10 +396,11 @@
             } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
             import {
                 getFirestore,
+                getDocs,
                 query,
                 collection,
                 where,
-                getDocs,
+                documentId,
             } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
             // Firebase config
@@ -469,11 +470,21 @@
                 getDocs(
                     query(
                         collection(db, "challenges"),
-                        where(id, "in", queryList)
+                        where(documentId(), "in", queryList)
                     )
                 )
-                    .then()
-                    .catch();
+                    .then((snapshot) => {
+                        let challengesList = [];
+                        snapshot.forEach((doc) => {
+                            challengesList.push({ ...doc.data(), id: doc.id });
+                        });
+                        console.log(challengesList);
+                    })
+                    .catch((error) => {
+                        alert(
+                            `Error code: ${error.code}\nError message: ${error.message}`
+                        );
+                    });
             } else {
                 console.log("Challenge has ceased");
             }
