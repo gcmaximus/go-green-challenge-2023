@@ -210,7 +210,7 @@ body{
 }
 
 .prize1-header,.prize2-header,.prize3-header{
-    font-size: 20px;
+    font-size: 25px;
     font-family: "Fredoka One", sans-serif;
     text-align: center;
 }
@@ -235,7 +235,7 @@ body{
 .prize1-content, .prize2-content, .prize3-content{
     height: auto;
     min-height: 120px;
-    font-size: 10px;
+    font-size: 15px;
     font-family: 'Oswald';
     text-align: center;
     padding: 5px 10px 10px 10px;
@@ -244,7 +244,7 @@ body{
 
 .prize-description{
     margin-top: 6px;
-    font-size: 15px;
+    font-size: 21px;
     color: #363638;
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -278,7 +278,7 @@ body{
   border: 5px solid #363638;
 }
 
-.overall-top3 .row .col-3{
+.overall-top3 .row .col-3, .overall-top3 .row .col-4{
   margin-top: -80px;
   margin-right: auto;
   margin-left: auto;
@@ -405,6 +405,42 @@ body{
   margin-top: auto;
   margin-bottom: auto;
 }
+
+
+
+
+/* tab change transition */
+.active{
+  background-color: transparent;
+}
+
+
+.section-1,.section-2 {
+  display: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.section-1.active,.switch-button-checkbox:not(:checked) ~ .section-2.active {
+  display: block;
+}
+
+.section-2.active,.switch-button-checkbox:checked ~ .section-1.active {
+  display: block;
+}
+
+.switch-button-checkbox:checked ~ .section-1,.switch-button-checkbox:not(:checked) ~ .section-2 {
+  opacity: 0;
+}
+
+.switch-button-checkbox:checked ~ .section-2,.switch-button-checkbox:not(:checked) ~ .section-1 {
+  opacity: 1;
+}
+
+
+
+
+
+
 
 
 
