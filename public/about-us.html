@@ -29,7 +29,7 @@
             <section class="top-nav">
                 <div>
                     <img src="/img/logo.png" alt="Go-Green Challenge 2023" id="navbar-logo" />
-                    <span>
+                    <span hidden id="display">
                         <!-- Display Username and Points-->
                         <span id="usernameDisplay"></span>: <span id="totalScoreDisplay"></span> points
                     </span>
@@ -175,6 +175,9 @@
         let signInPageButton = document.querySelector("#signInPageButton")
         let signOutButton = document.querySelector("#signOutButton");
         let usernameDisplay = document.querySelector("#usernameDisplay");
+        let totalScoreDisplay =
+            document.querySelector("#totalScoreDisplay");
+        let display = document.querySelector("#display");
 
         // Unhide sign out button and add username
         onAuthStateChanged(auth, (user) => {
@@ -185,6 +188,7 @@
                 getDoc(doc(db, "scores", user.uid))
                     .then((docSnap) => {
                         totalScoreDisplay.textContent = docSnap.data().totalScore;
+                        display.hidden = false;
                     })
                     .catch((error) => {
                         alert(
