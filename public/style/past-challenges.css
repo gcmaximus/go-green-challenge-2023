@@ -3,6 +3,10 @@
   color: #D6CDA4;
 }
 
+.top-nav span, #signOutButton i, #signInPageButton a{
+  color: #D6CDA4;
+}
+
 main, html {
   background-color: #71d890;
 }

@@ -621,7 +621,7 @@ body{
 }
 
 
-.top-nav span, #signOutButton, #signInPageButton a{
+.top-nav span, #signOutButton i, #signInPageButton a{
   color: #D6CDA4;
 }
 
