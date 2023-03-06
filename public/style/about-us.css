@@ -87,12 +87,12 @@ p {
 
 .row {
   text-align: center;
-  margin: 10px 5px;
+  margin: 0 20px;
 }
 
-.container>.row {
+/* .container>.row {
   margin: 30px 0 10px 0;
-}
+} */
 
 /*mobile hamburger menu */
 
