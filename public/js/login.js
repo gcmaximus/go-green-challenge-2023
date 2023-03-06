@@ -47,24 +47,21 @@ myInput.onkeyup = function () {
     }
 };
 
-// Form stuff
-const toggleForm = document.querySelector(".toggle-form");
-var loginForm = document.querySelector("#login-form");
-var signupForm = document.querySelector("#signup-form");
-var cardToggleBtn = document.querySelector(".card-toggle button");
+// // Form stuff
+// const toggleForm = document.querySelector(".toggle-form");
+// var loginForm = document.querySelector("#login-form");
+// var signupForm = document.querySelector("#signup-form");
 
-// Toggle between login and signup forms
-toggleForm.addEventListener("click", function () {
-    if (loginForm.hidden = false) {
-        loginForm.hidden = true;
-        signupForm.hidden = false;
-        //cardToggleBtn.textContent = "Switch to Login";
-    } else {
-        loginForm.hidden = false;
-        signupForm.hidden = true;
-        //cardToggleBtn.textContent = "Switch to Sign Up";
-    }
-});
+// // Toggle between login and signup forms
+// toggleForm.addEventListener("click", function () {
+//     if (loginForm.hidden = false) {
+//         loginForm.hidden = true;
+//         signupForm.hidden = false;
+//     } else {
+//         loginForm.hidden = false;
+//         signupForm.hidden = true;
+//     }
+// });
 
 const username2Input = document.querySelector("#username2");
 const email2Input = document.querySelector("#email2");

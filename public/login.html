@@ -118,6 +118,23 @@
         ></script>
 
         <!-- Script -->
+        <script>
+            // Form stuff
+            const toggleForm = document.querySelector(".toggle-form");
+            var loginForm = document.querySelector("#login-form");
+            var signupForm = document.querySelector("#signup-form");
+
+            // Toggle between login and signup forms
+            toggleForm.addEventListener("click", function () {
+                if (loginForm.hidden = false) {
+                    loginForm.hidden = true;
+                    signupForm.hidden = false;
+                } else {
+                    loginForm.hidden = false;
+                    signupForm.hidden = true;
+                }
+            });
+        </script>
         <script src="/js/login.js"></script>
         <script type="module">
             // Import the functions you need from the SDKs you need
