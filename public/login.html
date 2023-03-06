@@ -119,13 +119,11 @@
 
         <!-- Script -->
         <script>
-            // Form stuff
-            const toggleForm = document.querySelector(".toggle-form");
-            var loginForm = document.querySelector("#login-form");
-            var signupForm = document.querySelector("#signup-form");
-
             // Toggle between login and signup forms
             toggleForm.addEventListener("click", function () {
+                const toggleForm = document.querySelector(".toggle-form");
+                var loginForm = document.querySelector("#login-form");
+                var signupForm = document.querySelector("#signup-form");
                 if (loginForm.hidden = false) {
                     loginForm.hidden = true;
                     signupForm.hidden = false;
