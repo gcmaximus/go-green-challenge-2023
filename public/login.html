@@ -121,7 +121,7 @@
         <script>
             //form
             var toggleForm = document.querySelector(".toggle-form");
-            var toggleForm2 = document.querySelector(".toggle-form2")
+            var toggleForm2 = document.querySelector(".toggle-form2");
             var loginForm = document.querySelector("#login-form");
             var signupForm = document.querySelector("#signup-form");
 
@@ -131,11 +131,10 @@
                 signupForm.hidden = false;
             });
 
-            toggleForm2.addEventListener("click", function(){
+            toggleForm2.addEventListener("click", function () {
                 loginForm.hidden = false;
                 signupForm.hidden = true;
-            })
-
+            });
         </script>
         <script src="/js/login.js"></script>
         <script type="module">
@@ -203,33 +202,42 @@
                         // Signed in
                         let user = userCredential.user;
                         if (user) {
-                            setDoc(doc(db, "scores", user.uid), {
-                                week1: {
-                                    day1: 0,
-                                    week1TotalScore: 0,
-                                },
-                                week2: {
-                                    day8: 0,
-                                    week2TotalScore: 0,
-                                },
-                                week3: {
-                                    day15: 0,
-                                    week3TotalScore: 0,
-                                },
-                                week4: {
-                                    day22: 0,
-                                    week4TotalScore: 0,
-                                },
-                                totalScore: 0,
-                            });
                             updateProfile(auth.currentUser, {
                                 displayName: username2Value,
                             })
                                 .then(() => {
-                                    alert(
-                                        `Welcome ${username2Value}, signup is successful! You are now logged in :D`
-                                    );
-                                    location.replace("/");
+                                    setDoc(doc(db, "scores", user.uid), {
+                                        week1: {
+                                            day1: 0,
+                                            week1TotalScore: 0,
+                                        },
+                                        week2: {
+                                            day8: 0,
+                                            week2TotalScore: 0,
+                                        },
+                                        week3: {
+                                            day15: 0,
+                                            week3TotalScore: 0,
+                                        },
+                                        week4: {
+                                            day22: 0,
+                                            week4TotalScore: 0,
+                                        },
+                                        totalScore: 0,
+                                        displayName: username2Value,
+                                    })
+                                        .then(() => {
+                                            alert(
+                                                `Welcome ${username2Value}, signup is successful! You are now logged in :D`
+                                            );
+                                            location.replace("/");
+                                        })
+                                        .catch((error) => {
+                                            alert(
+                                                `Error code: ${error.code}\nError message: ${error.message}`
+                                            );
+                                            location.reload();
+                                        });
                                 })
                                 .catch((error) => {
                                     alert(
