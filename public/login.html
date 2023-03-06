@@ -184,7 +184,7 @@
                         // Signed in
                         let user = userCredential.user;
                         if (user) {
-                            setDoc(doc(db, "scores", user.email), {
+                            setDoc(doc(db, "scores", user.uid), {
                                 week1: {
                                     day1: 0,
                                     week1TotalScore: 0,

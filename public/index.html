@@ -207,6 +207,13 @@
                 onAuthStateChanged,
                 signOut,
             } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+            import {
+            getFirestore,
+            collection,
+            doc,
+            getDoc,
+            getDocs,
+        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
             const firebaseConfig = {
                 apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
                 authDomain: "go-green-challenge.firebaseapp.com",
@@ -220,6 +227,7 @@
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const auth = getAuth(app);
+            const db = getFirestore(app);
 
             // sign out button and username element
             let signInPageButton = document.querySelector('#signInPageButton')
@@ -232,7 +240,7 @@
                 signInPageButton.hidden = true;
                 signOutButton.hidden = false;
                 usernameDisplay.textContent = user.displayName;
-                getDoc(doc(db, "scores", user.email))
+                getDoc(doc(db, "scores", user.uid))
                     .then((docSnap) => {
                         totalScoreDisplay.textContent = docSnap.data().totalScore;
                     })
