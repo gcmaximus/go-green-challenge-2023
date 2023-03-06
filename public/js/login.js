@@ -48,7 +48,7 @@ myInput.onkeyup = function () {
 };
 
 // Form stuff
-const toggleForm = document.querySelector(".toggle-form");
+var toggleForm = document.querySelector(".toggle-form");
 var loginForm = document.querySelector("#login-form");
 var signupForm = document.querySelector("#signup-form");
 
