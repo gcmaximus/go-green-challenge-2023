@@ -47,10 +47,10 @@ myInput.onkeyup = function () {
     }
 };
 
-// // Form stuff
-// const toggleForm = document.querySelector(".toggle-form");
-// var loginForm = document.querySelector("#login-form");
-// var signupForm = document.querySelector("#signup-form");
+// Form stuff
+const toggleForm = document.querySelector(".toggle-form");
+var loginForm = document.querySelector("#login-form");
+var signupForm = document.querySelector("#signup-form");
 
 // // Toggle between login and signup forms
 // toggleForm.addEventListener("click", function () {
