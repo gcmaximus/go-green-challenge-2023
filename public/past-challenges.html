@@ -765,6 +765,15 @@
                     challengesList.push({ ...doc.data(), id: doc.id });
                 });
 
+
+                // reorder the list according to id (day no.)
+
+                challengesList.sort((a, b) => {
+                    return a.id.substring(3) - b.id.substring(3);
+                });
+
+
+                console.log(challengesList)
                 // for PC 
                 const days = document.getElementsByClassName("day");
                 // for mobile
@@ -773,12 +782,13 @@
                 // no of challenges released so far 
                 var numberOfDaysReleased = challengesList.length
 
+
                 // days
                 var daysList = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
                 // Loop through each day
                 for (let i = 0; i < numberOfDaysReleased; i++) {
-                    
+
                     // Past challenges
                     if (numberOfDaysReleased - i > 1) {
                         days[i].innerHTML =
