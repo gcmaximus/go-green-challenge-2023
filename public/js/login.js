@@ -94,15 +94,15 @@ email2Input.addEventListener("input", function () {
 });
 
 // Add floating label effect to input fields
-const formGroups = document.querySelectorAll(".form-group");
-formGroups.forEach((group) => {
-    const input = group.querySelector("input");
-    input.addEventListener("focus", function () {
-        group.classList.add("focused");
-    });
-    input.addEventListener("blur", function () {
-        if (input.value === "") {
-            group.classList.remove("focused");
-        }
-    });
-});
+// const formGroups = document.querySelectorAll(".form-group");
+// formGroups.forEach((group) => {
+//     const input = group.querySelector("input");
+//     input.addEventListener("focus", function () {
+//         group.classList.add("focused");
+//     });
+//     input.addEventListener("blur", function () {
+//         if (input.value === "") {
+//             group.classList.remove("focused");
+//         }
+//     });
+// });
