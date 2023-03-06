@@ -26,12 +26,12 @@
     <header>
         <!--Navbar-->
         <nav>
-            <section class="top-nav d-none">
+            <section class="top-nav">
                 <div>
                     <img src="./img/logo.png" alt="Go-Green Challenge 2023" id="navbar-logo" />
                     <span>
-                        <!-- Display Username-->
-                        <span id="usernameDisplay"></span>! Points: 100000
+                        <!-- Display Username and Points-->
+                        <span id="usernameDisplay"></span>: <span id="totalScoreDisplay"></span> points
                     </span>
                 </div>
                 <input id="menu-toggle" type="checkbox" />
@@ -39,21 +39,22 @@
                     <div class="menu-button"></div>
                 </label>
                 <ul class="menu">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./leaderboard.html">Leaderboard & Prizes</a></li>
-                    <li><a href="./ongoing-challenge.html">Ongoing Challenges</a></li>
-                    <li><a href="./past-challenges.html">Past Challenges</a></li>
-                    <li><a href="./about-us.html">About Us</a></li>
-                    <li><button id="signOutButton">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/leaderboard.html">Leaderboard & Prizes</a></li>
+                    <li><a href="/ongoing-challenge.html">Ongoing Challenges</a></li>
+                    <li><a href="/past-challenges.html">Past Challenges</a></li>
+                    <li><a href="/about-us.html">About Us</a></li>
+                    <li hidden id="signOutButton"><button>
                         <i class="fa fa-sign-out" style="font-size:24px"></i>
                     </button></li>
+                    <li id="signInPageButton"><a href="/login.html">Sign In</a></li>
                 </ul>
             </section>
         </nav>
     </header>
     <div class="hero-banner">
         <div class="hero-banner1">Leaderboard & Prizes</div>
-        <div class="hero-banner2">Go-Green Chanllenge</div>
+        <div class="hero-banner2">Go-Green Challenge</div>
         <div class="hero-banner3">2023</div>
 
             <div class="toggle-margin">
