@@ -55,13 +55,13 @@ var cardToggleBtn = document.querySelector(".card-toggle button");
 
 // Toggle between login and signup forms
 toggleForm.addEventListener("click", function () {
-    if (document.querySelector("#signup-form").style.display === "block") {
-        loginForm.style.display = "block";
-        signupForm.style.display = "none";
+    if (loginForm.hidden = false) {
+        loginForm.hidden = true;
+        signupForm.hidden = false;
         //cardToggleBtn.textContent = "Switch to Login";
     } else {
-        loginForm.style.display = "none";
-        signupForm.style.display = "block";
+        loginForm.hidden = false;
+        signupForm.hidden = true;
         //cardToggleBtn.textContent = "Switch to Sign Up";
     }
 });
