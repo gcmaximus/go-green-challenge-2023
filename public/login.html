@@ -136,7 +136,7 @@
                 signupForm.hidden = true;
             });
         </script>
-        <script src="/js/login.js"></script>
+        <script src="./js/login.js"></script>
         <script type="module">
             // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
@@ -168,7 +168,7 @@
             const auth = getAuth(app);
             const db = getFirestore(app);
 
-            loginForm.addEventListener("submit", function (e) {
+            loginForm.addEventListener("submit", (e) => {
                 e.preventDefault();
                 let emailValue = document.querySelector("#email").value;
                 let passwordValue = document.querySelector("#password").value;
@@ -187,11 +187,33 @@
                     });
             });
 
-            signupForm.addEventListener("submit", function (e) {
+            let scoreDoc = {
+                week1: {
+                    day1: 0,
+                    week1TotalScore: 0,
+                },
+                week2: {
+                    day8: 0,
+                    week2TotalScore: 0,
+                },
+                week3: {
+                    day15: 0,
+                    week3TotalScore: 0,
+                },
+                week4: {
+                    day22: 0,
+                    week4TotalScore: 0,
+                },
+                totalScore: 0,
+                displayName: "",
+            };
+
+            signupForm.addEventListener("submit", (e) => {
                 e.preventDefault();
                 let username2Value = username2Input.value;
                 let email2Value = email2Input.value;
                 let password2Value = password2Input.value;
+
                 // Perform signup validation here
                 createUserWithEmailAndPassword(
                     auth,
@@ -202,35 +224,26 @@
                         // Signed in
                         let user = userCredential.user;
                         if (user) {
-                            updateProfile(auth.currentUser, {
+                            updateProfile(user, {
                                 displayName: username2Value,
                             })
                                 .then(() => {
-                                    setDoc(doc(db, "scores", user.uid), {
-                                        week1: {
-                                            day1: 0,
-                                            week1TotalScore: 0,
-                                        },
-                                        week2: {
-                                            day8: 0,
-                                            week2TotalScore: 0,
-                                        },
-                                        week3: {
-                                            day15: 0,
-                                            week3TotalScore: 0,
-                                        },
-                                        week4: {
-                                            day22: 0,
-                                            week4TotalScore: 0,
-                                        },
-                                        totalScore: 0,
-                                        displayName: username2Value,
-                                    })
+                                    user.getIdToken(true)
                                         .then(() => {
-                                            alert(
-                                                `Welcome ${username2Value}, signup is successful! You are now logged in :D`
-                                            );
-                                            location.replace("/");
+                                            scoreDoc.displayName = user.displayName
+                                            setDoc(doc(db, "scores", user.uid), scoreDoc)
+                                                .then(() => {
+                                                    alert(
+                                                        `Welcome ${username2Value}, signup is successful! You are now logged in :D`
+                                                    );
+                                                    location.replace("/");
+                                                })
+                                                .catch((error) => {
+                                                    alert(
+                                                        `Error code: ${error.code}\nError message: ${error.message}`
+                                                    );
+                                                    location.reload();
+                                                });
                                         })
                                         .catch((error) => {
                                             alert(
