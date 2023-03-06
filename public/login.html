@@ -95,7 +95,7 @@
 
                         <p>
                             Already have an account?
-                            <a href="#" class="toggle-form">Login</a>
+                            <a href="#" class="toggle-form2">Login</a>
                         </p>
                     </div>
                 </form>
@@ -121,19 +121,21 @@
         <script>
             //form
             var toggleForm = document.querySelector(".toggle-form");
+            var toggleForm2 = document.querySelector(".toggle-form2")
+            var loginForm = document.querySelector("#login-form");
+            var signupForm = document.querySelector("#signup-form");
 
             // Toggle between login and signup forms
             toggleForm.addEventListener("click", function () {
-                var loginForm = document.querySelector("#login-form");
-                var signupForm = document.querySelector("#signup-form");
-                if (signupForm.hidden = true) {
-                    loginForm.hidden = true;
-                    signupForm.hidden = false;
-                } else if (loginForm.hidden = true) {
-                    loginForm.hidden = false;
-                    signupForm.hidden = true;
-                }
+                loginForm.hidden = true;
+                signupForm.hidden = false;
             });
+
+            toggleForm2.addEventListener("click", function(){
+                loginForm.hidden = false;
+                signupForm.hidden = true;
+            })
+
         </script>
         <script src="/js/login.js"></script>
         <script type="module">
