@@ -436,33 +436,47 @@
         });
 
         // week 1 to 4 scores
-        for (let weekNum = 1, posList = ['First', 'Second', 'Third']; i < 5; i++) {
-            getDocs(query(collection(db, "scores"), orderby(`week${weekNum}`, "desc"), limit(3))).then((snapshot) => {
-                snapshot.forEach((doc, index) => {
-                    let data = doc.data()
-                    let weekAndPos = weekNum + posList[index]
-                    document.querySelector(`week${weekAndPos}Name`).textContent = data.displayName
-                    document.querySelector(`week${weekAndPos}Score`).textContent = data.
+        let posList = ["First", "Second", "Third"];
+        for (let weekNum = 1; i < 5; i++) {
+            getDocs(
+                query(
+                    collection(db, "scores"),
+                    orderby(`week${weekNum}.week${weekNum}TotalScore`, "desc"),
+                    limit(3)
+                )
+            )
+                .then((snapshot) => {
+                    snapshot.forEach((doc, index) => {
+                        let data = doc.data();
+                        let weekAndPos = weekNum + posList[index];
+                        document.querySelector(`week${weekAndPos}Name`).textContent =
+                            data.displayName;
+                        document.querySelector(`week${weekAndPos}Score`).textContent =
+                            data[`week${weekNum}TotalScore`];
+                    });
+                })
+                .catch((error) => {
+                    alert(`Error code: ${error.code}\nError message: ${error.message}`);
                 });
-            }).catch((error) => {
-                alert(
-                    `Error code: ${error.code}\nError message: ${error.message}`
-                );
-            })
         }
 
         // overall scores
-        getDocs(query(collection(db, "scores"), orderby("totalScore", "desc"), limit(3))).then(
-            (snapshot) => {
-                snapshot.forEach((doc) => {
-                    // copy data to the necessary elements
+        getDocs(
+            query(collection(db, "scores"), orderby("totalScore", "desc"), limit(3))
+        )
+            .then((snapshot) => {
+                snapshot.forEach((doc, index) => {
+                    let data = doc.data();
+                    let pos = posList[index];
+                    document.querySelector(`overall${pos}Name`).textContent =
+                        data.displayName;
+                    document.querySelector(`overall${pos}Score`).textContent =
+                        data.totalScore;
                 });
-            }
-        ).catch((error) => {
-            alert(
-                `Error code: ${error.code}\nError message: ${error.message}`
-            );
-        })
+            })
+            .catch((error) => {
+                alert(`Error code: ${error.code}\nError message: ${error.message}`);
+            });
         </script>
 </body>
 
