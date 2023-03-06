@@ -151,6 +151,7 @@ body{
     background-color: #BF95D3;
     height: auto;
     min-height: 260px;
+    padding: 5em;
 }
 
 .hero-banner1{
@@ -617,4 +618,13 @@ body{
   .menu > li:not(:last-child) {
     border-bottom: 1px solid #444;
   }
+}
+
+
+.top-nav span, #signOutButton, #signInPageButton a{
+  color: #D6CDA4;
+}
+
+.top-nav {
+  font-family: 'Nunito', sans-serif;
 }
