@@ -10,17 +10,31 @@ Format to change e.g. font-sizes of h1 elements when viewed on mobile
 
 */
 
+/* headings font */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+
+
+
+
+
 .top-nav span, #signOutButton i, #signInPageButton a{
   color: #D6CDA4;
 }
 
 * {
     font-family: 'Nunito', sans-serif;
-    color: #D6CDA4;
+    color: #C6B4A9;
+}
+
+h1, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 5px;
 }
 
 main, html {
-    background-color: #1C6758;
+    background-color: #214E34;
 }
 
 .home {
@@ -203,8 +217,8 @@ p {
     border: 1px solid #196455;
     border-radius: 15px;
     padding:25px;
-    background-color: #3D8361;
-    box-shadow: -10px 12px 4px 0 #3c8173;
+    background-color: #5c7457;
+    box-shadow: -10px 12px 4px 0 #153121;
 }
 
 .mission h1 {
@@ -267,7 +281,7 @@ figure.challenge-figure{
     transition: 0.4s;
     margin-bottom:20px;
     box-shadow: -14px 15px #155c4e;
-    background-color:#D6CDA4;
+    background-color:#ECC8C0;
 }
 
 
@@ -281,6 +295,7 @@ figure.challenge-figure:hover {
 figure.challenge-figure > figcaption {
     color:black;
     padding:10px;
+    font-style:italic;
 }
 
 .challenge-container a {
