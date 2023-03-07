@@ -77,7 +77,7 @@ h1 {
 
 p {
   font-size: 1.5em;
-  color: #EEF2E6;
+  color: #ffffff;
 }
 
 
@@ -335,4 +335,16 @@ footer p {
   p {
     font-size: 1.15em;
   }
+}
+
+
+.about-us-para {
+  padding: 30px;
+  border: 1px dashed black;
+  border-radius: 10px;
+  background-color:rgb(106, 113, 204);
+}
+
+.about-us-para > h1, .about-us-para > p {
+  padding-left:10px;
 }
