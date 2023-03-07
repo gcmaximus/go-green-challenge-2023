@@ -1,3 +1,13 @@
+/* headings font */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+h1, h3, h5 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing:5px;
+  color: #001A23 !important;
+  
+}
+
 * {
   font-family: 'Nunito', sans-serif;
   color: #D6CDA4;
@@ -8,7 +18,7 @@
 }
 
 main, html {
-  background-color: #9dbbb3;
+  background-color:#E8F1F2 ;
 }
 
 
@@ -391,7 +401,8 @@ h2 {
 }
 
 .carousel {
-  margin-bottom: 40px;
+  margin-top:20px;
+  margin-bottom: 20px;
 }
 
 .past {
@@ -470,9 +481,6 @@ footer p {
   content: "\02796"; /* Unicode character for "minus" sign (-) */
 }
 
-.carousel {
-  margin-top:10px;
-}
 
 .box {
   margin-bottom: 10px;
@@ -487,7 +495,7 @@ footer p {
 }
 
 .carousel-caption>h5 {
-  text-decoration: underline;
+  color: white !important;
 }
 
 .container.hide-mobile h3, .container.hide-mobile h5{
@@ -504,4 +512,9 @@ footer p {
 
 hr {
   color: black !important;
+}
+
+
+.box > .content {
+  background-color:#B3EFB2;
 }
