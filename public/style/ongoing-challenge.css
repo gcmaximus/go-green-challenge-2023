@@ -39,6 +39,7 @@ nav button {
 .menu a {
   text-decoration: none;
   color:white;
+  font-family: 'Nunito', sans-serif;
 }
 li {
   margin: 0 5px;
