@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- CSS -->
-        <link href="./style/login.css" rel="stylesheet" />
+        <link href="/style/login.css" rel="stylesheet" />
 
         <!-- Bootstrap -->
         <link
@@ -21,7 +21,7 @@
     <body>
         <div class="container">
             <div class="card-container">
-                <form id="login-form" style="display: block">
+                <form id="login-form">
                     <h2 class="title">Login</h2>
                     <div class="form-group">
                         <input
@@ -51,7 +51,7 @@
                         </p>
                     </div>
                 </form>
-                <form id="signup-form" style="display: none">
+                <form id="signup-form" hidden>
                     <h2 class="title">Sign up</h2>
                     <div class="form-group">
                         <input
@@ -95,7 +95,7 @@
 
                         <p>
                             Already have an account?
-                            <a href="/login.html" class="toggle-form">Login</a>
+                            <a href="#" class="toggle-form2">Login</a>
                         </p>
                     </div>
                 </form>
@@ -118,7 +118,25 @@
         ></script>
 
         <!-- Script -->
-        <script src="./js/login.js"></script>
+        <script>
+            //form
+            var toggleForm = document.querySelector(".toggle-form");
+            var toggleForm2 = document.querySelector(".toggle-form2");
+            var loginForm = document.querySelector("#login-form");
+            var signupForm = document.querySelector("#signup-form");
+
+            // Toggle between login and signup forms
+            toggleForm.addEventListener("click", function () {
+                loginForm.hidden = true;
+                signupForm.hidden = false;
+            });
+
+            toggleForm2.addEventListener("click", function () {
+                loginForm.hidden = false;
+                signupForm.hidden = true;
+            });
+        </script>
+        <script src="/js/login.js"></script>
         <script type="module">
             // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
@@ -150,7 +168,7 @@
             const auth = getAuth(app);
             const db = getFirestore(app);
 
-            loginForm.addEventListener("submit", function (e) {
+            loginForm.addEventListener("submit", (e) => {
                 e.preventDefault();
                 let emailValue = document.querySelector("#email").value;
                 let passwordValue = document.querySelector("#password").value;
@@ -169,11 +187,33 @@
                     });
             });
 
-            signupForm.addEventListener("submit", function (e) {
+            let scoreDoc = {
+                week1: {
+                    day1: 0,
+                    week1TotalScore: 0,
+                },
+                week2: {
+                    day8: 0,
+                    week2TotalScore: 0,
+                },
+                week3: {
+                    day15: 0,
+                    week3TotalScore: 0,
+                },
+                week4: {
+                    day22: 0,
+                    week4TotalScore: 0,
+                },
+                totalScore: 0,
+                displayName: "",
+            };
+
+            signupForm.addEventListener("submit", (e) => {
                 e.preventDefault();
                 let username2Value = username2Input.value;
                 let email2Value = email2Input.value;
                 let password2Value = password2Input.value;
+
                 // Perform signup validation here
                 createUserWithEmailAndPassword(
                     auth,
@@ -184,33 +224,33 @@
                         // Signed in
                         let user = userCredential.user;
                         if (user) {
-                            setDoc(doc(db, "scores", user.email), {
-                                week1: {
-                                    day1: 0,
-                                    week1TotalScore: 0,
-                                },
-                                week2: {
-                                    day8: 0,
-                                    week2TotalScore: 0,
-                                },
-                                week3: {
-                                    day15: 0,
-                                    week3TotalScore: 0,
-                                },
-                                week4: {
-                                    day22: 0,
-                                    week4TotalScore: 0,
-                                },
-                                totalScore: 0,
-                            });
-                            updateProfile(auth.currentUser, {
+                            updateProfile(user, {
                                 displayName: username2Value,
                             })
                                 .then(() => {
-                                    alert(
-                                        `Welcome ${username2Value}, signup is successful! You are now logged in :D`
-                                    );
-                                    location.replace("/");
+                                    user.getIdToken(true)
+                                        .then(() => {
+                                            scoreDoc.displayName = user.displayName
+                                            setDoc(doc(db, "scores", user.uid), scoreDoc)
+                                                .then(() => {
+                                                    alert(
+                                                        `Welcome ${username2Value}, signup is successful! You are now logged in :D`
+                                                    );
+                                                    location.replace("/");
+                                                })
+                                                .catch((error) => {
+                                                    alert(
+                                                        `Error code: ${error.code}\nError message: ${error.message}`
+                                                    );
+                                                    location.reload();
+                                                });
+                                        })
+                                        .catch((error) => {
+                                            alert(
+                                                `Error code: ${error.code}\nError message: ${error.message}`
+                                            );
+                                            location.reload();
+                                        });
                                 })
                                 .catch((error) => {
                                     alert(

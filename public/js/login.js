@@ -48,23 +48,20 @@ myInput.onkeyup = function () {
 };
 
 // Form stuff
-const toggleForm = document.querySelector(".toggle-form");
+var toggleForm = document.querySelector(".toggle-form");
 var loginForm = document.querySelector("#login-form");
 var signupForm = document.querySelector("#signup-form");
-var cardToggleBtn = document.querySelector(".card-toggle button");
 
-// Toggle between login and signup forms
-toggleForm.addEventListener("click", function () {
-    if (document.querySelector("#signup-form").style.display === "block") {
-        loginForm.style.display = "block";
-        signupForm.style.display = "none";
-        cardToggleBtn.textContent = "Switch to Login";
-    } else {
-        loginForm.style.display = "none";
-        signupForm.style.display = "block";
-        cardToggleBtn.textContent = "Switch to Sign Up";
-    }
-});
+// // Toggle between login and signup forms
+// toggleForm.addEventListener("click", function () {
+//     if (loginForm.hidden = false) {
+//         loginForm.hidden = true;
+//         signupForm.hidden = false;
+//     } else {
+//         loginForm.hidden = false;
+//         signupForm.hidden = true;
+//     }
+// });
 
 const username2Input = document.querySelector("#username2");
 const email2Input = document.querySelector("#email2");
@@ -97,15 +94,15 @@ email2Input.addEventListener("input", function () {
 });
 
 // Add floating label effect to input fields
-const formGroups = document.querySelectorAll(".form-group");
-formGroups.forEach((group) => {
-    const input = group.querySelector("input");
-    input.addEventListener("focus", function () {
-        group.classList.add("focused");
-    });
-    input.addEventListener("blur", function () {
-        if (input.value === "") {
-            group.classList.remove("focused");
-        }
-    });
-});
+// const formGroups = document.querySelectorAll(".form-group");
+// formGroups.forEach((group) => {
+//     const input = group.querySelector("input");
+//     input.addEventListener("focus", function () {
+//         group.classList.add("focused");
+//     });
+//     input.addEventListener("blur", function () {
+//         if (input.value === "") {
+//             group.classList.remove("focused");
+//         }
+//     });
+// });

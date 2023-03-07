@@ -10,6 +10,10 @@ Format to change e.g. font-sizes of h1 elements when viewed on mobile
 
 */
 
+.top-nav span, #signOutButton i, #signInPageButton a{
+  color: #D6CDA4;
+}
+
 * {
     font-family: 'Nunito', sans-serif;
     color: #D6CDA4;

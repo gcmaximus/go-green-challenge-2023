@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--CSS-->
-    <link href="./style/about-us.css" rel="stylesheet" />
+    <link href="/style/about-us.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--bootstrap-->
@@ -28,8 +28,8 @@
         <nav>
             <section class="top-nav">
                 <div>
-                    <img src="./img/logo.png" alt="Go-Green Challenge 2023" id="navbar-logo" />
-                    <span>
+                    <img src="/img/logo.png" alt="Go-Green Challenge 2023" id="navbar-logo" />
+                    <span hidden id="display">
                         <!-- Display Username and Points-->
                         <span id="usernameDisplay"></span>: <span id="totalScoreDisplay"></span> points
                     </span>
@@ -64,53 +64,33 @@
             <!--Images of committee-->
             <!--First row: 2 large photos-->
             <div class="row">
-                <div class="col-12 col-md-6">
+                <div class="m-auto col-11 col-md-6">
                     <figure>
-                        <img src="./img/person.png" alt="Photo of committee" />
+                        <img src="/img/person.png" alt="Photo of committee" />
                         <figcaption>Photo of committee</figcaption>
                     </figure>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="m-auto col-11 col-md-6">
                     <figure>
-                        <img src="./img/person.png" alt="Photo of committee" />
+                        <img src="/img/person.png" alt="Photo of committee" />
                         <figcaption>Photo of committee</figcaption>
                     </figure>
                 </div>
             </div>
 
-            <!--Second row: 4 small photos-->
+            <!--Second row: 1 large photos-->
             <div class="row">
-                <div class="col-6 col-md-3">
+                <div class="m-auto col-11 col-md-6">
                     <figure>
-                        <img src="./img/person.png" alt="Photo of committee" />
-                        <figcaption>Photo of committee</figcaption>
-                    </figure>
-                </div>
-                <div class="col-6 col-md-3">
-                    <figure>
-                        <img src="./img/person.png" alt="Photo of committee" />
-                        <figcaption>Photo of committee</figcaption>
-                    </figure>
-                </div>
-                <div class="col-6 col-md-3">
-                    <figure>
-                        <img src="./img/person.png" alt="Photo of committee" />
-                        <figcaption>Photo of committee</figcaption>
-                    </figure>
-                </div>
-                <div class="col-6 col-md-3">
-                    <figure>
-                        <img src="./img/person.png" alt="Photo of committee" />
+                        <img src="/img/person.png" alt="Photo of committee" />
                         <figcaption>Photo of committee</figcaption>
                     </figure>
                 </div>
             </div>
-
-            <hr />
 
             <!--About Us Paragraph-->
             <div class="row">
-                <div class="col-12" style="text-align: left">
+                <div class="m-auto col-10 about-us-para" style="text-align: left">
                     <h1>About Us</h1>
                     <p>
                         we are a group of sp students smth smth smth smth
@@ -149,6 +129,13 @@
             onAuthStateChanged,
             signOut
         } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+        import {
+            getFirestore,
+            collection,
+            doc,
+            getDoc,
+            getDocs,
+        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         const firebaseConfig = {
             apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
             authDomain: "go-green-challenge.firebaseapp.com",
@@ -162,20 +149,34 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        const db = getFirestore(app)
 
         // sign out button and username element
         let signInPageButton = document.querySelector("#signInPageButton")
         let signOutButton = document.querySelector("#signOutButton");
         let usernameDisplay = document.querySelector("#usernameDisplay");
+        let totalScoreDisplay =
+            document.querySelector("#totalScoreDisplay");
+        let display = document.querySelector("#display");
 
         // Unhide sign out button and add username
         onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    signInPageButton.hidden = true
-                    signOutButton.hidden = false
-                    usernameDisplay.textContent = user.displayName;
-                }
-            });
+            if (user) {
+                signInPageButton.hidden = true;
+                signOutButton.hidden = false;
+                usernameDisplay.textContent = user.displayName;
+                getDoc(doc(db, "scores", user.uid))
+                    .then((docSnap) => {
+                        totalScoreDisplay.textContent = docSnap.data().totalScore;
+                        display.hidden = false;
+                    })
+                    .catch((error) => {
+                        alert(
+                            `Error code: ${error.code}\nError message: ${error.message}`
+                        );
+                    });
+            }
+        });
 
         // Sign out
         signOutButton.addEventListener("click", (e) => {
