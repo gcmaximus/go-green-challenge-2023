@@ -416,24 +416,24 @@ body{
 }
 
 
-.section-1,.section-2 {
+.ONE,.TWO {
   display: none;
   transition: opacity 0.5s ease-in-out;
 }
 
-.section-1.active,.switch-button-checkbox:not(:checked) ~ .section-2.active {
+.ONE.active,.switch-button-checkbox:not(:checked) ~ .TWO.active {
   display: block;
 }
 
-.section-2.active,.switch-button-checkbox:checked ~ .section-1.active {
+.TWO.active,.switch-button-checkbox:checked ~ .ONE.active {
   display: block;
 }
 
-.switch-button-checkbox:checked ~ .section-1,.switch-button-checkbox:not(:checked) ~ .section-2 {
+.switch-button-checkbox:checked ~ .ONE,.switch-button-checkbox:not(:checked) ~ .TWO {
   opacity: 0;
 }
 
-.switch-button-checkbox:checked ~ .section-2,.switch-button-checkbox:not(:checked) ~ .section-1 {
+.switch-button-checkbox:checked ~ .TWO,.switch-button-checkbox:not(:checked) ~ .ONE {
   opacity: 1;
 }
 
@@ -567,20 +567,33 @@ body{
 
 
 
-/* display = none when mobile */
-@media (max-width: 768px) {
+
+/* mobile view */
+@media screen and (max-width: 768px) {
   .section-1, .section-2{
-    display: none;
+    display: none !important;
   }
 
+  .section-3, .section44 {
+    display: block !important;
+  }
+
+  .hero-banner-bg .hero-banner-header {
+    font-size: 25px;
+  }
 }
 
 
+/* pc view */
+@media (min-width: 768px) {
+  .section-3, .section44 {
+    display: none !important;
+  }
 
-
-
-
-
+  .section-1, .section-2{
+    display: block !important;
+  }
+}
 
 
 
