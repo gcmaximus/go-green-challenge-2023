@@ -352,7 +352,7 @@ body{
   font-size: 15px;
 }
 
-.active, .collapsible:hover {
+.active1, .collapsible:hover {
   background-color: #555;
 }
 
@@ -364,7 +364,7 @@ body{
   margin-left: 5px;
 }
 
-.active:after {
+.active1:after {
   content: "\2212";
 }
 
@@ -438,6 +438,142 @@ body{
 }
 
 
+
+
+/* mobile prize*/
+.section-3{
+  margin-top: -120px;
+}
+.card{
+  width: 90vw;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card-img-top{
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.mobile-header-prize{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+.mobile-content-prize{
+  font-family: 'Montserrat';
+  font-size: 15px;
+}
+
+/* mobile leaderboard */
+
+.section-4-bg{
+  background-color: #BF95D3;
+
+  border-radius: 0px 0px 100px 100px;
+
+}
+
+.section-4 {
+  max-width: 90vw;
+  min-width: 90vw;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -100px;
+  padding-top: 20px;
+  border-radius: 15px;
+  background: transparent;
+}
+
+.photo {
+  width: 75px;
+  background: #fff;
+  border-radius: 50%;
+  border: 5px solid cyan;
+  box-shadow: 0 0 20px cyan;
+  margin: 1rem 0;
+}
+
+.main {
+  width: 85px;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.profile .person {
+  display: flex;
+  margin: 1rem 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile .person.first {
+  z-index: 10;
+  transform: translateY(-10%);
+}
+
+.first .fa-crown {
+  color: gold;
+  filter: drop-shadow(0px 0px 5px gold);
+}
+
+.num {
+  color: white;
+}
+
+.fa-caret-up {
+  color: cyan;
+  font-size: 21px;
+}
+
+.link {
+  margin: 0.2rem 0;
+  color: #fff;
+  margin-top: -0.3rem;
+  font-size: 13px;
+}
+
+.points {
+  margin-top: 5px;
+  font-size: 17px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: rgba(0,0,0,0.55);
+  padding: 0.125rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  text-align: center;
+
+}
+
+.second {
+  margin-right: -0.7rem !important;
+}
+
+.third {
+  margin-left: -0.7rem !important;
+}
+
+
+
+
+/* display = none when mobile */
+@media (max-width: 768px) {
+  .section-1, .section-2{
+    display: none;
+  }
+
+}
 
 
 
