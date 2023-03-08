@@ -299,6 +299,70 @@
                         location.reload();
                     });
             });
+
+            let startTime = new Date(2023, 3, 20).getTime();
+            let endTime = new Date(2023, 4, 17).getTime();
+            let todayTime = Date.now();
+
+            if (todayTime < startTime) {
+                console.log("Challenge has not commenced");
+            } else if (todayTime < endTime) {
+                let dayDif = Math.floor((todayTime - startTime) / 86400000);
+                let dayOfWeek = (dayDif % 7) + 1;
+                let week = Math.ceil((dayDif + 1) / 7);
+
+                console.log(`week: ${week}, day: ${dayOfWeek}`);
+
+                let queryList = Array(dayOfWeek)
+                    .fill()
+                    .map((_, i) => {
+                        return `day${dayDif + 2 - dayOfWeek + i}`;
+                    });
+
+                getDocs(
+                    query(
+                        collection(db, "challenges"),
+                        where(documentId(), "in", queryList)
+                    )
+                )
+                .then((snapshot) => {
+                    let challengesList = [];
+                    snapshot.forEach((doc) => {
+                        challengesList.push({ ...doc.data(), id: doc.id });
+                    });
+
+                    // reorder the list according to id (day no.)
+                    challengesList.sort((a, b) => {
+                        return a.id.substring(3) - b.id.substring(3);
+                    });
+
+                    console.log(challengesList)
+                    // for PC 
+                    const pic = document.getElementById("#challenge-picture")
+
+                    // Daily challenge
+                    if (dayDif > 0) {
+                        pic.innerHTML =
+                            `
+                            <img src="/img/day${dayDif}-chall.jpg" alt="challenge-picture" id="challenge-picture" />
+                        `;
+                        
+                    }else{
+                        pic.innerHTML = `<img src="/img/challenge-picture.png" alt="challenge-picture" id="challenge-picture" />`
+                    }
+
+                    
+                })
+                .catch((error) => {
+                    alert(
+                        `Error code: ${error.code}\nError message: ${error.message}`
+                    );
+                });
+            } else {
+                console.log("Challenge has ceased");
+            }
+
+            
         </script>
     </body>
 </html>
