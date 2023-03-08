@@ -573,7 +573,7 @@ p{
   text-align:center;
 }
 
-.footer-dark .item.social > a {
+.footer-dark .item.social a {
   font-size:20px;
   width:36px;
   height:36px;
@@ -597,4 +597,32 @@ p{
   opacity:0.3;
   font-size:13px;
   margin-bottom:0;
+}
+
+.indiv-social {
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  br.show-mobile {
+    display:none;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-text > h3 {
+    font-size: 20px;
+  }
+  .footer-text > p, .copyright {
+    font-size: 90% !important;
+  }
+  br.show-mobile {
+    display:inline-block;
+  }
+  .social {
+    text-align: left !important;
+  }
+  .indiv-social {
+    margin-bottom: 5px;
+  }
 }
