@@ -300,8 +300,8 @@
                     });
             });
 
-            let startTime = new Date(2023, 2, 7).getTime();
-            let endTime = new Date(2023, 4, 17).getTime();
+            let startTime = new Date(2023, 2, 8).getTime();
+            let endTime = new Date(2023, 3, 17).getTime();
             let todayTime = Date.now();
 
             if (todayTime < startTime) {
@@ -311,7 +311,7 @@
                 let dayOfWeek = (dayDif % 7) + 1;
                 let week = Math.ceil((dayDif + 1) / 7);
 
-                console.log(`week: ${week}, day: ${dayOfWeek}`);
+                console.log(`week: ${week}, day: ${dayOfWeek}, ${dayDif}`);
 
                 getDocs(collection(db, "challenges"))
                 .then((snapshot) => {
@@ -327,18 +327,18 @@
 
                     console.log(challengesList)
                     // for PC 
-                    var fig = document.getElementsByClassName("daily-challenge")
+                    const element = document.getElementsByClassName("daily-challenge")
 
                     // Daily challenge
                     if (dayDif > 0) {
-                        fig.innerHTML =
+                        element[0].innerHTML =
                             `
                             <h1>Daily Challenges</h1>
                             <h4>Week ${week}</h4>
                             <div class="challenge-container">
                                 <a href="/ongoing-challenge.html">
                                     <figure class="challenge-figure">
-                                        <img src="${challengesList[challengesList.length-1].img}" alt="challenge-picture" id="challenge-picture" />
+                                        <img src="${challengesList[dayDif-1].img}" alt="challenge-picture" id="challenge-picture" width="1270.54" height="346.02"/>
                                         <figcaption>
                                             Click to view challenges
                                         </figcaption>
