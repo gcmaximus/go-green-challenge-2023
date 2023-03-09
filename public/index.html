@@ -327,17 +327,18 @@
 
                     console.log(challengesList)
                     // for PC 
-                    var pic = document.getElementById("#challenge-picture")
+                    var fig = document.getElementsByClassName("challenge-figure")
 
                     // Daily challenge
                     if (dayDif > 0) {
-                        pic =
+                        fig.innerHTML =
                             `
                             <img src="/img/day${dayDif}-chall.jpg" alt="challenge-picture" id="challenge-picture" />
+                            <figcaption>
+                                Click to view challenges
+                            </figcaption>
                         `;
                         
-                    }else{
-                        pic = `<img src="/img/challenge-picture.png" alt="challenge-picture" id="challenge-picture" />`
                     }
 
                     
