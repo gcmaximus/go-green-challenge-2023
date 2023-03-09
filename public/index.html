@@ -136,7 +136,7 @@
             <hr />
             <!--Daily Challenges-->
             <div class="row">
-                <div class="col-12 reveal">
+                <div class="col-12 reveal daily-challenge">
                     <h1>Daily Challenges</h1>
                     <h4>Week 1</h4>
                     <div class="challenge-container">
@@ -327,16 +327,24 @@
 
                     console.log(challengesList)
                     // for PC 
-                    var fig = document.getElementsByClassName("challenge-figure")
+                    var fig = document.getElementsByClassName("daily-challenge")
 
                     // Daily challenge
                     if (dayDif > 0) {
                         fig.innerHTML =
                             `
-                            <img src="/img/day${dayDif}-chall.jpg" alt="challenge-picture" id="challenge-picture" />
-                            <figcaption>
-                                Click to view challenges
-                            </figcaption>
+                            <h1>Daily Challenges</h1>
+                            <h4>Week ${week}</h4>
+                            <div class="challenge-container">
+                                <a href="/ongoing-challenge.html">
+                                    <figure class="challenge-figure">
+                                        <img src="${challengesList[challengesList.length-1].img}" alt="challenge-picture" id="challenge-picture" />
+                                        <figcaption>
+                                            Click to view challenges
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
                         `;
                         
                     }
