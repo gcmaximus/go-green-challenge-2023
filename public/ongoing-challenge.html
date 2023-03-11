@@ -433,6 +433,9 @@
                     .then((docSnap) => {
                         totalScoreDisplay.textContent = docSnap.data().totalScore;
                         display.hidden = false;
+                        if (document.location.search==''){
+                            document.location.href += `?usp=pp_url&entry.1889083675=${user.uid}`
+                        }
                     })
                     .catch((error) => {
                         alert(
