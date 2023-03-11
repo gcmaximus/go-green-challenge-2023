@@ -343,7 +343,7 @@ figcaption {
 
   .about-us-para {
     margin-top:20px !important;
-    margin-bottom: 50px;
+    
   }
 
 }
@@ -355,6 +355,7 @@ figcaption {
   border-radius: 10px;
   background-color:#214E34 ;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+  margin-bottom: 30px;
 }
 
 .about-us-para > h1, .about-us-para > p {
