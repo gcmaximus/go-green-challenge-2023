@@ -136,7 +136,7 @@
             <hr />
             <!--Daily Challenges-->
             <div class="row">
-                <div class="col-12 reveal">
+                <div class="col-12 reveal daily-challenge">
                     <h1>Daily Challenges</h1>
                     <h4>Week 1</h4>
                     <div class="challenge-container">
@@ -163,27 +163,56 @@
             </div>
         </section>
 
-        <footer>
-            <p>
-                GoGreenChallenge2023@gmail.com | 500 Dover Road Singapore
-                139651 | +65 9897 9695
-            </p>
-        </footer>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <!-- <div class="footer-dark">
-            <footer>
-                <div class="container">
-                    <div class="row footer-text">
-                            <h3>Go-Green Challenge</h3>
-                            <p>Some text or a small paragraph or a small description for the challenge. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis excepturi est impedit dignissimos exercitationem placeat aspernatur obcaecati voluptatem iure recusandae?</p>
-                    </div>
-                        <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
-                    </div>
-                    <p class="copyright">GoGreenChallenge © 2023</p>
-                    <p class="copyright">GoGreenChallenge2023@gmail.com | 500 Dover Road Singapore 139651 | +65 9897 9695</p>
+<div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row footer-text">
+                    <h3>Go-Green Challenge</h3>
+                    <p>
+                        Join us in going green for the sake of our environment!
+                    </p>
                 </div>
-            </footer>
-        </div> -->
+                <div class="col item social">
+
+
+                    <!-- Instagram -->
+                    <span class="indiv-social">
+                        <a target="_blank" href="https://www.instagram.com/thewontedproject/">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <span>@thewontedproject</span>
+                        <br class="show-mobile">
+                    </span>
+
+                    <!-- Email -->
+                    <span class="indiv-social">
+                        <a><i class="fa fa-envelope"></i></a>
+                        <span>GoGreenChallenge2023@gmail.com</span>
+                        <br class="show-mobile">
+                    </span>
+
+                    <!-- Address -->
+                    <span class="indiv-social">
+                        <a><i class="fa fa-home"></i></a>
+                        <span>500 Dover Road Singapore 139651</span>
+                        <br class="show-mobile">
+                    </span>
+                    <!-- Telephone No. -->
+                    <span class="indiv-social">
+                        <a><i class="fa fa-phone"></i></a>
+                        <span>+65 9999 9999</span>
+                        <br class="show-mobile">
+                    </span>
+
+                </div>
+                <div>
+                    <p class="copyright">GoGreenChallenge © 2023</p>
+                </div>
+            </div>
+        </footer>
+    </div>
     </main>
 
         <!--bootstrap-->
@@ -270,6 +299,68 @@
                         location.reload();
                     });
             });
+
+            let startTime = new Date(2023, 2, 8).getTime();
+            let endTime = new Date(2023, 3, 17).getTime();
+            let todayTime = Date.now();
+
+            if (todayTime < startTime) {
+                console.log("Challenge has not commenced");
+            } else if (todayTime < endTime) {
+                let dayDif = Math.floor((todayTime - startTime) / 86400000);
+                let dayOfWeek = (dayDif % 7) + 1;
+                let week = Math.ceil((dayDif + 1) / 7);
+
+                console.log(`week: ${week}, day: ${dayOfWeek}, ${dayDif}`);
+
+                getDocs(collection(db, "challenges"))
+                .then((snapshot) => {
+                    let challengesList = [];
+                    snapshot.forEach((doc) => {
+                        challengesList.push({ ...doc.data(), id: doc.id });
+                    });
+
+                    // reorder the list according to id (day no.)
+                    challengesList.sort((a, b) => {
+                        return a.id.substring(3) - b.id.substring(3);
+                    });
+
+                    console.log(challengesList)
+                    // for PC 
+                    const element = document.getElementsByClassName("daily-challenge")
+
+                    // Daily challenge
+                    if (dayDif > 0) {
+                        element[0].innerHTML =
+                            `
+                            <h1>Daily Challenges</h1>
+                            <h4>Week ${week}</h4>
+                            <div class="challenge-container">
+                                <a href="/ongoing-challenge.html">
+                                    <figure class="challenge-figure">
+                                        <img src="${challengesList[dayDif-1].img}" alt="challenge-picture" id="challenge-picture" width="1270.54" height="346.02"/>
+                                        <figcaption>
+                                            Click to view challenges
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                        `;
+                        
+                    }
+
+                    
+                })
+                .catch((error) => {
+                    alert(
+                        `Error code: ${error.code}\nError message: ${error.message}`
+                    );
+                });
+            } else {
+                console.log("Challenge has ceased");
+            }
+
+            
         </script>
     </body>
 </html>

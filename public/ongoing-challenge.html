@@ -306,7 +306,7 @@
                 </div>
             </div>
         </div>
-        <div class="separator"></div> -->
+        <div class="separator"></div>
     </div>
     
 
@@ -459,7 +459,7 @@
 
         let startTime = new Date(2023, 2, 20).getTime();
         let endTime = new Date(2023, 3, 17).getTime();
-        let todayTime = new Date(2023, 2, 26).getTime();
+        let todayTime = new Date(2023, 2, 18).getTime();
 
         // let todayTime = Date.now();
 
@@ -496,25 +496,15 @@
 
                     //identify even or odd (false == odd, true == even)
                     let even_or_odd = challengesList.length % 2 == 0
-
-
-
-                    function calculate_day(id){
-                        const dayNumber = id.match(/\d+/)[0];
-                        const dayIndex = (dayNumber -1) % 7
-                        const daysList = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-                        return daysList[dayIndex]
-                    }
-
-
-
-                    
                     var temporary_data = ""
+
+                    // console.log(challengesList[1].name)
+                    // console.log(challengesList[1].desc)
+                    // console.log(challengesList[1].img)
+                    // console.log(challengesList[1].id)
+
                     if (even_or_odd == true){
                         for (let i = 0 ; i < challengesList.length; i = i + 2){
-                            var current_day1 = calculate_day(challengesList[i].id)
-                            var current_day2 = calculate_day(challengesList[i+1].id)
-
                             temporary_data +=  
                             `
                             <div class="individual_elements">
@@ -522,9 +512,7 @@
                                     <img src="${challengesList[i].img}" alt="sample_image" />
                                 </div>
                             <div class="box_right">
-
-                                <h2>Day #${i+1} ${current_day1}</h2>
-                                <h3>${challengesList[i].name}</h3>
+                                <h2>Day 1# Monday</h2>
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                     Modi quam id est amet rem quo officia, minus neque
@@ -534,7 +522,7 @@
                                     laborum nam facilis molestias sit voluptate placeat.
                                     Dolore odit architecto quisquam cupiditate.
                                 </p>
-                                <input type="button" value=" Button " class="style-button"/>
+                                <input type="button" value=" Button " />
                             </div>
                         </div>
                         <div class="separator"></div>
@@ -542,8 +530,7 @@
 
                         <div class="individual_elements">
                             <div class="box_left">
-                                <h2>Day #${i+2} ${current_day2}</h2>
-                                <h3>${challengesList[i+1].name}</h3>
+                                <h2>Day 2# Tuesday</h2>
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                     Modi quam id est amet rem quo officia, minus neque
@@ -553,7 +540,7 @@
                                     laborum nam facilis molestias sit voluptate placeat.
                                     Dolore odit architecto quisquam cupiditate.
                                 </p>
-                                <input type="button" value=" Button " class="style-button"/>
+                                <input type="button" value="Button" />
                             </div>
                             <div class="image_right">
                                 <img src="${challengesList[i+1].img}" alt="sample_image" />
@@ -567,9 +554,6 @@
                     else if(even_or_odd == false){
                         var length_of_challenge = challengesList.length - 1
                         for(let i = 0; i < length_of_challenge; i = i + 2){
-                            var current_day1 = calculate_day(challengesList[i].id)
-                            var current_day2 = calculate_day(challengesList[i+1].id)
-                            
                             temporary_data +=  
                             `
                             <div class="individual_elements">
@@ -577,8 +561,7 @@
                                     <img src="${challengesList[i].img}" alt="sample_image" />
                                 </div>
                             <div class="box_right">
-                                <h2>Day #${i+1} ${current_day1}</h2>
-                                <h3>${challengesList[i].name}</h3>
+                                <h2>Day 1# Monday</h2>
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                     Modi quam id est amet rem quo officia, minus neque
@@ -588,7 +571,7 @@
                                     laborum nam facilis molestias sit voluptate placeat.
                                     Dolore odit architecto quisquam cupiditate.
                                 </p>
-                                <input type="button" value=" Button " class="style-button"/>
+                                <input type="button" value=" Button " />
                             </div>
                         </div>
                         <div class="separator"></div>
@@ -596,8 +579,7 @@
 
                         <div class="individual_elements">
                             <div class="box_left">
-                                <h2>Day #${i+2} ${current_day2}</h2>
-                                <h3>${challengesList[i+1].name}</h3>
+                                <h2>Day 2# Tuesday</h2>
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                     Modi quam id est amet rem quo officia, minus neque
@@ -607,7 +589,7 @@
                                     laborum nam facilis molestias sit voluptate placeat.
                                     Dolore odit architecto quisquam cupiditate.
                                 </p>
-                                <input type="button" value=" Button " class="style-button"/>
+                                <input type="button" value="Button" />
                             </div>
                             <div class="image_right">
                                 <img src="${challengesList[i+1].img}" alt="sample_image" />
@@ -626,9 +608,7 @@
                                     <img src="${challengesList[challengesList.length-1].img}" alt="sample_image" />
                                 </div>
                             <div class="box_right">
-                                <h2>Day #${challengesList.length} ${calculate_day(challengesList[2].id)}</h2>
-
-                                <h3>${challengesList[challengesList.length-1].name}</h3>
+                                <h2>Day 1# Monday</h2>
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                     Modi quam id est amet rem quo officia, minus neque
@@ -638,7 +618,7 @@
                                     laborum nam facilis molestias sit voluptate placeat.
                                     Dolore odit architecto quisquam cupiditate.
                                 </p>
-                                <input type="button" value=" Button " class="style-button"/>
+                                <input type="button" value=" Button " />
                             </div>
                         </div>
                         <div class="separator"></div>`
@@ -655,15 +635,12 @@
                     temporary_data = "";
 
                     for (let i = 0; i < challengesList.length; i++){
-                        var current_day_m = calculate_day(challengesList[i].id)
-
                         temporary_data += `
                             <div class="row-mobile">
                                 <div class="card-mobile">
-                                    <div class="bg"><img src="${challengesList[i].img}" alt=""></div>
+                                    <div class="bg"></div>
                                     <div class="text-body">
-                                        <h2>Day #${i+1} ${current_day_m}</h2>
-                                        <h3>${challengesList[i].name}</h3>
+                                        <h2>Day #5 Friday</h2>
                                         <p>
                                             Lorem ipsum dolor sit amet consectetur adipisicing
                                             elit. Ullam, consequatur voluptatum similique
@@ -681,8 +658,6 @@
                         `;
                         
                     }
-
-                    temporary_data += '<div class="separator"></div>'
 
                     $(temporary_data).insertAfter(mobile_container)
 
