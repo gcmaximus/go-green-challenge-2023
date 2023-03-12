@@ -103,7 +103,7 @@
                             laborum nam facilis molestias sit voluptate placeat.
                             Dolore odit architecto quisquam cupiditate.
                         </p>
-                        <input type="button" value=" Button " class="style-button submit-challenge"/>
+                        <input type="button" value=" Button " class="challenge-end-button submit-challenge"/>
                     </div>
                 </div>
         
@@ -189,8 +189,8 @@
                         </p>
                         <input type="button" value=" Button " class="style-button submit-challenge"/>
                     </div>
-                </div>
-                <div class="separator"></div> -->
+                </div> -->
+                <div class="separator"></div>
             </div>
 
         </div>
@@ -462,7 +462,7 @@
 
         let startTime = new Date(2023, 2, 20).getTime();
         let endTime = new Date(2023, 3, 17).getTime();
-        let todayTime = new Date(2023, 2, 26).getTime();
+        let todayTime = new Date(2023, 2, 23).getTime();
 
         // let todayTime = Date.now();
 
@@ -494,6 +494,11 @@
                     });
                     console.log(challengesList);
 
+
+                    // change banner 
+                    $('.hero-banner-header').text("Week #" + week + " Challenge")
+
+
                     // PC
                     const pc_container = document.getElementsByClassName('dynamic-pc')
 
@@ -514,9 +519,12 @@
 
                     var temporary_data = ""
                     if (even_or_odd == true) {
+
                         for (let i = 0; i < challengesList.length; i = i + 2) {
+
                             var current_day1 = calculate_day(challengesList[i].id)
                             var current_day2 = calculate_day(challengesList[i + 1].id)
+
 
                             temporary_data +=
                                 `
@@ -537,7 +545,7 @@
                                     laborum nam facilis molestias sit voluptate placeat.
                                     Dolore odit architecto quisquam cupiditate.
                                 </p>
-                                <input type="button" value=" Button " class="style-button submit-challenge"/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button submit-challenge"/>
                             </div>
                         </div>
                         <div class="separator"></div>
@@ -556,7 +564,7 @@
                                     laborum nam facilis molestias sit voluptate placeat.
                                     Dolore odit architecto quisquam cupiditate.
                                 </p>
-                                <input type="button" value=" Button " class="style-button submit-challenge"/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button submit-challenge"/>
                             </div>
                             <div class="image_right">
                                 <img src="${challengesList[i + 1].img}" alt="sample_image" />
@@ -591,7 +599,7 @@
                                     laborum nam facilis molestias sit voluptate placeat.
                                     Dolore odit architecto quisquam cupiditate.
                                 </p>
-                                <input type="button" value=" Button " class="style-button submit-challenge"/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button submit-challenge"/>
                             </div>
                         </div>
                         <div class="separator"></div>
@@ -610,7 +618,7 @@
                                     laborum nam facilis molestias sit voluptate placeat.
                                     Dolore odit architecto quisquam cupiditate.
                                 </p>
-                                <input type="button" value=" Button " class="style-button submit-challenge"/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button submit-challenge"/>
                             </div>
                             <div class="image_right">
                                 <img src="${challengesList[i + 1].img}" alt="sample_image" />
@@ -641,7 +649,7 @@
                                     laborum nam facilis molestias sit voluptate placeat.
                                     Dolore odit architecto quisquam cupiditate.
                                 </p>
-                                <input type="button" value=" Button " class="style-button submit-challenge"/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button submit-challenge"/>
                             </div>
                         </div>
                         <div class="separator"></div>`
@@ -651,6 +659,12 @@
                         temporary_data += "<div>GG.COM ur com has been hacked >:) </div>"
                     }
                     $(pc_container).append(temporary_data)
+                    var lastDiv = $('.challenge-end-button').last();
+
+
+                    lastDiv.val(' Upload ')
+                    lastDiv.addClass('style-button')
+                    lastDiv.removeClass('challenge-end-button')
 
 
                     // Mobile
