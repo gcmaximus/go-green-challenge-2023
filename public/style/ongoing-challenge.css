@@ -509,7 +509,6 @@ p{
 
 .box_right p{
   font-size: 14px;
-  text-align: center;
 }
 
 /* for right-based elemenets */
@@ -557,7 +556,6 @@ p{
 
 .box_left p{
   font-size: 14px;
-  text-align: center;
 }
 
 /* display = none when mobile */
@@ -674,11 +672,11 @@ p{
 
 }
 
-.new_con{
+/* .new_con{
   width: 90%;
   margin-right: auto;
   margin-left: auto;
-}
+} */
 
 .challenge-end-button{
   /* margin-top: 30px; */
@@ -692,7 +690,6 @@ p{
   padding: 8px;
   border: 0;
   color: white;
-  cursor: default !important;
 
 }
 
