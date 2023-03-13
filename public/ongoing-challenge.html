@@ -562,28 +562,27 @@
                 // Identify even or odd (false == odd, true == even) ?? FOR WHAT ??
                 let even_or_odd = challengesList.length % 2 == 0;
 
+                let daysList = [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday",
+                ];
                 function calculate_day(id) {
                     const dayNumber = id.match(/\d+/)[0];
                     const dayIndex = (dayNumber - 1) % 7;
-                    const daysList = [
-                        "Monday",
-                        "Tuesday",
-                        "Wednesday",
-                        "Thursday",
-                        "Friday",
-                        "Saturday",
-                        "Sunday",
-                    ];
                     return daysList[dayIndex];
                 }
 
-                var temporary_data = "";
+                let temporary_data = "";
                 if (even_or_odd == true) {
                     for (let i = 0; i < challengesList.length; i = i + 2) {
-                        var current_day1 = calculate_day(challengesList[i].id);
-                        var current_day2 = calculate_day(
-                            challengesList[i + 1].id
-                        );
+                        let current_day1 = daysList[i];
+                        let current_day2 = daysList[i + 1];
+
 
                         temporary_data += `
                             <div class="individual_elements">
@@ -632,17 +631,15 @@
                                 }" alt="sample_image" />
                             </div>
                         </div>
-                
+
                         <div class="separator"></div>
                         `;
                     }
                 } else if (even_or_odd == false) {
-                    var length_of_challenge = challengesList.length - 1;
+                    let length_of_challenge = challengesList.length - 1;
                     for (let i = 0; i < length_of_challenge; i = i + 2) {
-                        var current_day1 = calculate_day(challengesList[i].id);
-                        var current_day2 = calculate_day(
-                            challengesList[i + 1].id
-                        );
+                        let current_day1 = daysList[i];
+                        let current_day2 = daysList[i + 1];
 
                         temporary_data += `
                             <div class="individual_elements">
@@ -690,11 +687,12 @@
                                 }" alt="sample_image" />
                             </div>
                         </div>
-                
+
                         <div class="separator"></div>
                         `;
                     }
 
+                    // WM CHECK THE STRING BELOW, WHY IS THERE A HARD CODE [2].id
                     temporary_data += `
                         <div class="individual_elements">
                                 <div class="image_left">
@@ -732,7 +730,7 @@
                         "<div>GG.COM ur com has been hacked >:) </div>";
                 }
                 $(pc_container).append(temporary_data);
-                var lastDiv = $(".challenge-end-button").last();
+                let lastDiv = $(".challenge-end-button").last();
 
                 lastDiv.val(" Upload ");
                 lastDiv.addClass("style-button");
@@ -744,7 +742,7 @@
                 temporary_data = "";
 
                 for (let i = 0; i < challengesList.length; i++) {
-                    var current_day_m = calculate_day(challengesList[i].id);
+                    let current_day_m = daysList[i];
 
                     temporary_data += `
                             <div class="row-mobile">
