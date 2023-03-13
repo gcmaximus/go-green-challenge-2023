@@ -451,6 +451,7 @@
                         document
                             .querySelector("#submitButton")
                             .addEventListener("click", (e) => {
+                                console.log('MOBILE CLICKED')
                                 e.preventDefault();
                                 window.open(
                                     `https://docs.google.com/forms/d/e/1FAIpQLSd7UT5Xg8uN9ECP_6xE-qcgMGv3ueWQx2y4e6bJ65h2ADmC-A/viewform?usp=pp_url&entry.1889083675=${user.uid}`
@@ -738,7 +739,7 @@
                                         <p>
                                             ${challengesList[keys[i]].desc}
                                         </p>
-                                        <input type="button" class= "style-button_m_closed" id="submitButton ${challengesList[keys[i]].id}" value=" Challenged Closed " />
+                                        <input type="button" class= "style-button_m_closed" id="${challengesList[keys[i]].id}" value=" Challenged Closed " />
                                     </div>
                                 </div>
                             </div>
