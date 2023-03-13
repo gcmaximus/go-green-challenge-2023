@@ -680,6 +680,10 @@
                 snapshot.forEach((doc) => {
                     let data = doc.data();
                     let pos = posList[index];
+                    document.querySelector(`#bigOverall${pos}Name`).textContent =
+                        data.displayName;
+                    document.querySelector(`#bigOverall${pos}Score`).textContent =
+                        data.totalScore;
                     document.querySelector(`#overall${pos}Name`).textContent =
                         data.displayName;
                     document.querySelector(`#overall${pos}Score`).textContent =
