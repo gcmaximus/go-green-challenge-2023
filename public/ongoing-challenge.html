@@ -463,7 +463,6 @@
         let startTime = new Date(2023, 2, 20).getTime();
         let endTime = new Date(2023, 3, 17).getTime();
         let todayTime = new Date(2023, 2, 23).getTime();
-
         // let todayTime = Date.now();
 
         if (todayTime < startTime) {
@@ -502,7 +501,7 @@
                     // PC
                     const pc_container = document.getElementsByClassName('dynamic-pc')
 
-                    //identify even or odd (false == odd, true == even)
+                    // Identify even or odd (false == odd, true == even) ?? FOR WHAT ??  
                     let even_or_odd = challengesList.length % 2 == 0
 
 
@@ -702,38 +701,6 @@
                     temporary_data += '<div class="separator"></div>'
 
                     $(temporary_data).insertAfter(mobile_container)
-
-
-
-
-
-
-
-
-
-
-
-                    //listen for clicks on challenge submission
-                    var button = document.getElementsByClassName("style-button");
-                    for (var i = 0; i < button.length; i++) {
-                        button[i].addEventListener("click", () => {
-                            auth.onAuthStateChanged(function (user) {
-                                if (user) {
-                                    //allow submission
-                                    console.log("logged in");
-                                    window.location.assign(`https://docs.google.com/forms/d/e/1FAIpQLSd7UT5Xg8uN9ECP_6xE-qcgMGv3ueWQx2y4e6bJ65h2ADmC-A/viewform?usp=pp_url&entry.1889083675=${user.uid}`)
-
-                                } else {
-                                    //disallow submission
-                                    console.log("not logged in");
-                                    window.alert('Please log in to submit your challenge.')
-                                }
-                            });
-                        })
-                    }
-
-
-
                 })
                 .catch((error) => {
                     alert(
