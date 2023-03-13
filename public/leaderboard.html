@@ -646,7 +646,7 @@
 
         // week 1 to 4 scores
         let posList = ["First", "Second", "Third"];
-        for (let weekNum = 1; i < 5; i++) {
+        for (let weekNum = 1; weekNum < 5; weekNum++) {
             getDocs(
                 query(
                     collection(db, "scores"),
@@ -655,18 +655,21 @@
                 )
             )
                 .then((snapshot) => {
-                    snapshot.forEach((doc, index) => {
+                    var index = 0
+                    snapshot.forEach((doc) => {
                         let data = doc.data();
-                        let weekAndPos = weekNum + posList[index];
-                        document.querySelector(`week${weekAndPos}Name`).textContent =
+                        let weekAndPos = `${weekNum}${posList[index]}`;
+                        document.querySelector(`#week${weekAndPos}Name`).textContent =
                             data.displayName;
-                        document.querySelector(`week${weekAndPos}Score`).textContent =
-                            data[`week${weekNum}TotalScore`];
+                        document.querySelector(`#week${weekAndPos}Score`).textContent =
+                            data[`week${weekNum}`][`week${weekNum}TotalScore`];
+                        index++
                     });
                 })
                 .catch((error) => {
-                    alert(`Error code: ${error.code}\nError message: ${error.message}`);
+                    alert(`1Error code: ${error.code}\nError message: ${error.message}`);
                 });
+            
         }
 
         // overall scores
@@ -674,13 +677,15 @@
             query(collection(db, "scores"), orderBy("totalScore", "desc"), limit(3))
         )
             .then((snapshot) => {
-                snapshot.forEach((doc, index) => {
+                var index = 0
+                snapshot.forEach((doc) => {
                     let data = doc.data();
                     let pos = posList[index];
-                    document.querySelector(`overall${pos}Name`).textContent =
+                    document.querySelector(`#overall${pos}Name`).textContent =
                         data.displayName;
-                    document.querySelector(`overall${pos}Score`).textContent =
+                    document.querySelector(`#overall${pos}Score`).textContent =
                         data.totalScore;
+                    index++
                 });
             })
             .catch((error) => {
