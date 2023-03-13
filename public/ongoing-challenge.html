@@ -501,7 +501,7 @@
             // Just reading the time
             let startTime = new Date(2023, 2, 20).getTime();
             let endTime = new Date(2023, 3, 17).getTime();
-            let todayTime = new Date(2023, 2, 23).getTime();
+            let todayTime = new Date(2023, 2, 25).getTime();
             // let todayTime = Date.now();
 
             if (todayTime < startTime) {
@@ -559,8 +559,7 @@
                 const pc_container =
                     document.getElementsByClassName("dynamic-pc");
 
-                // Identify even or odd (false == odd, true == even) ?? FOR WHAT ??
-                let even_or_odd = challengesList.length % 2 == 0;
+                let symmetric = challengesList.length % 2 == 0;
 
                 let daysList = [
                     "Monday",
@@ -578,8 +577,20 @@
                 }
 
                 let temporary_data = "";
-                if (even_or_odd == true) {
+
+                const keys = Object.keys(challengesList)
+                console.log(challengesList[keys[1]].desc)
+                console.log(challengesList)
+                
+                symmetric = true
+
+
+                if (symmetric) {
+                    console.log('symmetric')
                     for (let i = 0; i < challengesList.length; i = i + 2) {
+                        console.log('LOG:')
+                        console.log(challengesList[keys[i].desc])
+
                         let current_day1 = daysList[i];
                         let current_day2 = daysList[i + 1];
 
@@ -588,23 +599,17 @@
                             <div class="individual_elements">
                                 <div class="image_left">
                                     <img src="${
-                                        challengesList[i].img
+                                        challengesList[keys[i]].img
                                     }" alt="sample_image" />
                                 </div>
                             <div class="box_right">
 
                                 <h2>Day #${i + 1} ${current_day1}</h2>
-                                <h3>${challengesList[i].name}</h3>
+                                <h3>${challengesList[keys[i]].name}</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Modi quam id est amet rem quo officia, minus neque
-                                    deserunt culpa minima natus distinctio magni
-                                    repudiandae, eaque, earum voluptatem assumenda veniam ex
-                                    recusandae saepe vitae quas esse! Neque reprehenderit
-                                    laborum nam facilis molestias sit voluptate placeat.
-                                    Dolore odit architecto quisquam cupiditate.
+                                    ${challengesList[keys[i]].desc}
                                 </p>
-                                <input type="button" value=" Challenged Closed " class="challenge-end-button "/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button " id="${challengesList[keys[i]].id}"/>
                             </div>
                         </div>
                         <div class="separator"></div>
@@ -613,21 +618,15 @@
                         <div class="individual_elements">
                             <div class="box_left">
                                 <h2>Day #${i + 2} ${current_day2}</h2>
-                                <h3>${challengesList[i + 1].name}</h3>
+                                <h3>${challengesList[keys[i+1]].name}</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Modi quam id est amet rem quo officia, minus neque
-                                    deserunt culpa minima natus distinctio magni
-                                    repudiandae, eaque, earum voluptatem assumenda veniam ex
-                                    recusandae saepe vitae quas esse! Neque reprehenderit
-                                    laborum nam facilis molestias sit voluptate placeat.
-                                    Dolore odit architecto quisquam cupiditate.
+                                    ${challengesList[keys[i+1]].desc}
                                 </p>
-                                <input type="button" value=" Challenged Closed " class="challenge-end-button "/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button" id="${challengesList[keys[i+1]].id}"/>
                             </div>
                             <div class="image_right">
                                 <img src="${
-                                    challengesList[i + 1].img
+                                    challengesList[keys[i+1]].img
                                 }" alt="sample_image" />
                             </div>
                         </div>
@@ -635,7 +634,9 @@
                         <div class="separator"></div>
                         `;
                     }
-                } else if (even_or_odd == false) {
+                } 
+                else if (!symmetric) {
+                    console.log('asymetric')
                     let length_of_challenge = challengesList.length - 1;
                     for (let i = 0; i < length_of_challenge; i = i + 2) {
                         let current_day1 = daysList[i];
@@ -645,22 +646,16 @@
                             <div class="individual_elements">
                                 <div class="image_left">
                                     <img src="${
-                                        challengesList[i].img
+                                        challengesList[keys[i]].img
                                     }" alt="sample_image" />
                                 </div>
                             <div class="box_right">
                                 <h2>Day #${i + 1} ${current_day1}</h2>
-                                <h3>${challengesList[i].name}</h3>
+                                <h3>${challengesList[keys[i]].name}</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Modi quam id est amet rem quo officia, minus neque
-                                    deserunt culpa minima natus distinctio magni
-                                    repudiandae, eaque, earum voluptatem assumenda veniam ex
-                                    recusandae saepe vitae quas esse! Neque reprehenderit
-                                    laborum nam facilis molestias sit voluptate placeat.
-                                    Dolore odit architecto quisquam cupiditate.
+                                    ${challengesList[keys[i]].desc}
                                 </p>
-                                <input type="button" value=" Challenged Closed " class="challenge-end-button "/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button id="${challengesList[keys[i]].id}""/>
                             </div>
                         </div>
                         <div class="separator"></div>
@@ -669,21 +664,15 @@
                         <div class="individual_elements">
                             <div class="box_left">
                                 <h2>Day #${i + 2} ${current_day2}</h2>
-                                <h3>${challengesList[i + 1].name}</h3>
+                                <h3>${challengesList[keys[i+1]].name}</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Modi quam id est amet rem quo officia, minus neque
-                                    deserunt culpa minima natus distinctio magni
-                                    repudiandae, eaque, earum voluptatem assumenda veniam ex
-                                    recusandae saepe vitae quas esse! Neque reprehenderit
-                                    laborum nam facilis molestias sit voluptate placeat.
-                                    Dolore odit architecto quisquam cupiditate.
+                                    ${challengesList[keys[i+1]].desc}
                                 </p>
-                                <input type="button" value=" Challenged Closed " class="challenge-end-button "/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button " id="${challengesList[keys[i+1]].id}"/>
                             </div>
                             <div class="image_right">
                                 <img src="${
-                                    challengesList[i + 1].img
+                                    challengesList[keys[i+1]].img
                                 }" alt="sample_image" />
                             </div>
                         </div>
@@ -692,50 +681,45 @@
                         `;
                     }
 
-                    // WM CHECK THE STRING BELOW, WHY IS THERE A HARD CODE [2].id
                     temporary_data += `
                         <div class="individual_elements">
                                 <div class="image_left">
                                     <img src="${
-                                        challengesList[
-                                            challengesList.length - 1
-                                        ].img
+                                        challengesList[keys[keys.length-1]].img
                                     }" alt="sample_image" />
                                 </div>
                             <div class="box_right">
                                 <h2>Day #${
                                     challengesList.length
-                                } ${calculate_day(challengesList[2].id)}</h2>
+                                } ${calculate_day(challengesList[keys[keys.length-1]].id)}</h2>
 
                                 <h3>${
-                                    challengesList[challengesList.length - 1]
+                                    challengesList[keys[keys.length-1]]
                                         .name
                                 }</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Modi quam id est amet rem quo officia, minus neque
-                                    deserunt culpa minima natus distinctio magni
-                                    repudiandae, eaque, earum voluptatem assumenda veniam ex
-                                    recusandae saepe vitae quas esse! Neque reprehenderit
-                                    laborum nam facilis molestias sit voluptate placeat.
-                                    Dolore odit architecto quisquam cupiditate.
+                                    ${challengesList[keys[keys.length-1]].desc}
                                 </p>
-                                <input type="button" value=" Challenged Closed " class="challenge-end-button "/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button " id="${challengesList[keys[keys.length-1].id]}"/>
                             </div>
                         </div>
                         <div class="separator"></div>`;
-                } else {
+                } 
+                else { //if no challenge hvt done
                     console.log("GG.COM");
                     temporary_data +=
                         "<div>GG.COM ur com has been hacked >:) </div>";
                 }
                 $(pc_container).append(temporary_data);
-                let lastDiv = $(".challenge-end-button").last();
 
+
+                let lastDiv = $(".challenge-end-button").last();
                 lastDiv.val(" Upload ");
                 lastDiv.addClass("style-button");
-                lastDiv.attr('id','submitButton');
                 lastDiv.removeClass("challenge-end-button");
+
+                lastDiv.attr('id','submitButton');
+
 
                 // Mobile
                 const mobile_container =
@@ -744,27 +728,19 @@
 
                 for (let i = 0; i < challengesList.length; i++) {
                     let current_day_m = daysList[i];
-
                     temporary_data += `
                             <div class="row-mobile">
                                 <div class="card-mobile">
                                     <div class="bg"><img src="${
-                                        challengesList[i].img
+                                        challengesList[keys[i]].img
                                     }" alt=""></div>
                                     <div class="text-body">
                                         <h2>Day #${i + 1} ${current_day_m}</h2>
-                                        <h3>${challengesList[i].name}</h3>
+                                        <h3>${challengesList[keys[i]].name}</h3>
                                         <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing
-                                            elit. Ullam, consequatur voluptatum similique
-                                            obcaecati libero tempore eos! Error rem iusto ea
-                                            quod exercitationem quia eveniet facilis qui
-                                            inventore cum autem, nobis delectus sed veritatis
-                                            consectetur excepturi quo atque vel. Modi
-                                            consequuntur harum laborum vero mollitia similique
-                                            optio error provident ex veritatis.
+                                            ${challengesList[keys[i]].desc}
                                         </p>
-                                        <input type="button" class="" id="submitButton" value=" Upload " />
+                                        <input type="button" class= "style-button_m_closed" id="submitButton ${challengesList[keys[i]].id}" value=" Challenged Closed " />
                                     </div>
                                 </div>
                             </div>
@@ -774,6 +750,13 @@
                 temporary_data += '<div class="separator"></div>';
 
                 $(temporary_data).insertAfter(mobile_container);
+
+                let lastDivM = $(".style-button_m_closed").last();
+                lastDivM.val(" Upload ");
+                lastDivM.addClass("style-button_m");
+                lastDivM.removeClass("style-button_m_closed");
+
+                lastDivM.attr('id','submitButton');
             }
         </script>
     </body>

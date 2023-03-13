@@ -115,6 +115,7 @@
   margin-bottom: 0;
   display: none;
   font-size: 14px;
+  text-align: center;
 }
 
 .card-mobile h3 {
@@ -141,11 +142,10 @@
   
 }
 
-.card-mobile input {
+.style-button_m{
   margin-top: 30px;
   width: 100%;
   display: none;
-
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   text-transform: uppercase;
@@ -154,7 +154,25 @@
   padding: 15px;
   border: 0;
   color: white;
+  cursor: pointer;
+}
 
+
+
+
+.style-button_m_closed{
+  margin-top: 30px;
+  width: 100%;
+  display: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  outline: 0;
+  padding: 15px;
+  border: 0;
+  color: white;
+  background: #d23636; 
+  cursor: default;
 }
 
 .card-mobile.open input {
