@@ -585,7 +585,6 @@
             getDocs,
             query,
             limit,
-            orderBy,
         } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
         const firebaseConfig = {
             apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
@@ -674,7 +673,7 @@
 
         // overall scores
         getDocs(
-            query(collection(db, "scores"), orderBy("totalScore", "desc"), limit(3))
+            query(collection(db, "scores"), orderby("totalScore", "desc"), limit(3))
         )
             .then((snapshot) => {
                 var index = 0
