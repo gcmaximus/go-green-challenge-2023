@@ -657,7 +657,7 @@
             getDocs(
                 query(
                     collection(db, "scores"),
-                    orderby(`week${weekNum}.week${weekNum}TotalScore`, "desc"),
+                    orderBy(`week${weekNum}.week${weekNum}TotalScore`, "desc"),
                     limit(3)
                 )
             )
