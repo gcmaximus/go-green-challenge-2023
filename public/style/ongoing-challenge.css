@@ -694,3 +694,13 @@ p{
 }
 
 
+
+
+
+
+/*square image for mobile */
+.bg img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+}
