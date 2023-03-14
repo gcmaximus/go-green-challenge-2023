@@ -422,7 +422,7 @@
                     signOutButton.hidden = false;
                     usernameDisplay.textContent = user.displayName;
 
-                   function submitFunc(e) {
+                   var submitFunc = (e) => {
                        e.preventDefault();
                        window.open(`https://docs.google.com/forms/d/e/1FAIpQLSd7UT5Xg8uN9ECP_6xE-qcgMGv3ueWQx2y4e6bJ65h2ADmC-A/viewform?usp=pp_url&entry.1889083675=${user.uid}`);
                    }
@@ -439,7 +439,7 @@
                             );
                         });
                 } else {
-                    function submitFunc(e) {
+                    var submitFunc = (e) => {
                         e.preventDefault();
                         alert("Please login");
                     }
