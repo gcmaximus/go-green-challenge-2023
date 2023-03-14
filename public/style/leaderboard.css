@@ -616,6 +616,7 @@ body{
   font-weight:bold;
   font-size:25px;
   font-family: "Montserrat", sans-serif;
+  color: #D6CDA4;
 }
 
 .footer-dark p{
@@ -625,6 +626,7 @@ body{
 
 .footer-dark .item.social {
   text-align:center;
+  color: #D6CDA4;
 }
 
 
@@ -640,8 +642,8 @@ body{
   border-radius:50%;
   box-shadow:0 0 0 1px rgba(255,255,255,0.4);
   margin:0 8px;
-  color:#fff;
   opacity:0.75;
+  color: #D6CDA4;
 }
 
 .footer-dark .item.social > a:hover {
