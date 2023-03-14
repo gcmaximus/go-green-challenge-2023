@@ -720,7 +720,7 @@
 
         // overall scores
         getDocs(
-            query(collection(db, "scores"), orderby("totalScore", "desc"), limit(3))
+            query(collection(db, "scores"), orderBy("totalScore", "desc"), limit(3))
         )
             .then((snapshot) => {
                 var index = 0
