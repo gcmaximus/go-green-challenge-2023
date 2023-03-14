@@ -422,18 +422,10 @@
                     signOutButton.hidden = false;
                     usernameDisplay.textContent = user.displayName;
 
-                    // Add submit stuff
-                    // Get all buttons with class "submitButton"
-                    const buttons = document.querySelectorAll('.submitButton');
-
-                    // Loop through each button and add event listener
-                    buttons.forEach(button => {
-                        button.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            window.open(`https://docs.google.com/forms/d/e/1FAIpQLSd7UT5Xg8uN9ECP_6xE-qcgMGv3ueWQx2y4e6bJ65h2ADmC-A/viewform?usp=pp_url&entry.1889083675=${user.uid}`);
-                        });
-                    });
-
+                   function submitFunc(e) {
+                       e.preventDefault();
+                       window.open(`https://docs.google.com/forms/d/e/1FAIpQLSd7UT5Xg8uN9ECP_6xE-qcgMGv3ueWQx2y4e6bJ65h2ADmC-A/viewform?usp=pp_url&entry.1889083675=${user.uid}`);
+                   }
 
                     getDoc(doc(db, "scores", user.uid))
                         .then((docSnap) => {
@@ -447,15 +439,19 @@
                             );
                         });
                 } else {
-                    // Add submit stuff
-                    document
-                        .querySelector(".submitButton")
-                        .addEventListener("click", (e) => {
-                            window.alert(
-                                "Please log in to submit your challenge."
-                            );
-                        });
+                    function submitFunc(e) {
+                        e.preventDefault();
+                        alert("Please login");
+                    }
                 }
+                // Add submit stuff
+                // Get all buttons with class "submitButton"
+                const buttons = document.querySelectorAll('.submitButton');
+
+                // Loop through each button and add event listener
+                buttons.forEach((button) => {
+                    button.addEventListener('click', submitFunc);
+                });
             });
         }
 
