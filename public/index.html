@@ -237,12 +237,17 @@
                 signOut,
             } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
             import {
-            getFirestore,
-            collection,
-            doc,
-            getDoc,
-            getDocs,
-        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+                getFirestore,
+                collection,
+                doc,
+                getDoc,
+                getDocs,
+            } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+            import { 
+                getStorage,
+                ref,
+                listAll
+            } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js"
             const firebaseConfig = {
                 apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
                 authDomain: "go-green-challenge.firebaseapp.com",
@@ -257,6 +262,7 @@
             const app = initializeApp(firebaseConfig);
             const auth = getAuth(app);
             const db = getFirestore(app);
+            const storage = getStorage(app);
 
             // sign out button and username element
             let signInPageButton = document.querySelector('#signInPageButton')
@@ -268,22 +274,22 @@
 
             // Unhide sign out button and add username
             onAuthStateChanged(auth, (user) => {
-            if (user) {
-                signInPageButton.hidden = true;
-                signOutButton.hidden = false;
-                usernameDisplay.textContent = user.displayName;
-                getDoc(doc(db, "scores", user.uid))
-                    .then((docSnap) => {
-                        totalScoreDisplay.textContent = docSnap.data().totalScore;
-                        display.hidden = false;
-                    })
-                    .catch((error) => {
-                        alert(
-                            `Error code: ${error.code}\nError message: ${error.message}`
-                        );
-                    });
-            }
-        });
+                if (user) {
+                    signInPageButton.hidden = true;
+                    signOutButton.hidden = false;
+                    usernameDisplay.textContent = user.displayName;
+                    getDoc(doc(db, "scores", user.uid))
+                        .then((docSnap) => {
+                            totalScoreDisplay.textContent = docSnap.data().totalScore;
+                            display.hidden = false;
+                        })
+                        .catch((error) => {
+                            alert(
+                                `Error code: ${error.code}\nError message: ${error.message}`
+                            );
+                        });
+                }
+            });
             
             // Sign out
             signOutButton.addEventListener("click", (e) => {
@@ -356,6 +362,8 @@
                         `Error code: ${error.code}\nError message: ${error.message}`
                     );
                 });
+
+                
             } else {
                 console.log("Challenge has ceased");
             }
