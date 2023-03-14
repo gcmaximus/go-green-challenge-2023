@@ -246,7 +246,7 @@
             import { 
                 getStorage,
                 ref,
-                listAll
+                list,
             } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js"
             const firebaseConfig = {
                 apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
@@ -306,7 +306,7 @@
                     });
             });
 
-            let startTime = new Date(2023, 2, 8).getTime();
+            let startTime = new Date(2023, 2, 14).getTime();
             let endTime = new Date(2023, 3, 17).getTime();
             let todayTime = Date.now();
 
@@ -318,6 +318,22 @@
                 let week = Math.ceil((dayDif + 1) / 7);
 
                 console.log(`week: ${week}, day: ${dayOfWeek}, ${dayDif}`);
+
+                //Element - daily challenge
+                const element = document.getElementsByClassName("daily-challenge")
+
+                //Image reference
+                const imgRef = ref(storage, 'challengeImg')
+
+                list(imgRef, {maxResults: dayDif+1})
+                .then((res) => {
+                    let imgList = []
+                    res.items.forEach((i) => {
+                        imgList.push(i)
+                    })
+
+                    console.log(imgList)
+                })
 
                 getDocs(collection(db, "challenges"))
                 .then((snapshot) => {
@@ -332,8 +348,6 @@
                     });
 
                     console.log(challengesList)
-                    // for PC 
-                    const element = document.getElementsByClassName("daily-challenge")
 
                     // Daily challenge
                     if (dayDif > 0) {
@@ -344,7 +358,7 @@
                             <div class="challenge-container">
                                 <a href="/ongoing-challenge.html">
                                     <figure class="challenge-figure">
-                                        <img src="${challengesList[dayDif-1].img}" alt="challenge-picture" id="challenge-picture" width="1270.54" height="346.02"/>
+                                        <img src="${challengesList[dayDif-1].img}" alt="challenge-picture" id="challenge-picture"/>
                                         <figcaption>
                                             Click to view challenges
                                         </figcaption>
@@ -363,7 +377,7 @@
                     );
                 });
 
-                
+
             } else {
                 console.log("Challenge has ceased");
             }
