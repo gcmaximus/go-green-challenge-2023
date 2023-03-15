@@ -502,7 +502,7 @@
             )
                 .then((snapshot) => {
                     // Call the function to display the challenges
-                    displayChallenges(dayOfWeek, week, dayDif, snapshot);
+                    displayChallenges(dayOfWeek, week, snapshot);
 
                     // Do the user stuff uid and stuff
                     checkLoggedInAndStuff();
@@ -517,7 +517,7 @@
         }
 
         // display the challenges function
-        function displayChallenges(dayOfWeek, week, dayDif, snapshot) {
+        function displayChallenges(dayOfWeek, week, snapshot) {
             let challengesList = [];
             snapshot.forEach((doc) => {
                 challengesList.push({ ...doc.data(), id: doc.id });
