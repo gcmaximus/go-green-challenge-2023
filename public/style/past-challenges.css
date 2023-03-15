@@ -594,3 +594,7 @@ hr {
 }
 
 
+
+figure.unreleased img {
+  width: 100px;
+}
