@@ -245,8 +245,6 @@
             } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
             import { 
                 getStorage,
-                ref,
-                list,
             } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js"
             const firebaseConfig = {
                 apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
@@ -319,64 +317,29 @@
 
                 console.log(`week: ${week}, day: ${dayOfWeek}, ${dayDif}`);
 
-                //Element - daily challenge
+                //Elements
                 const element = document.getElementsByClassName("daily-challenge")
+                let display = document.querySelector("#display");
 
-                //Image reference
-                const imgRef = ref(storage, 'challengeImg')
-
-                list(imgRef, {maxResults: dayDif+1})
-                .then((res) => {
-                    let imgList = []
-                    res.items.forEach((i) => {
-                        imgList.push(i)
-                    })
-
-                    console.log(imgList)
-                })
-
-                getDocs(collection(db, "challenges"))
-                .then((snapshot) => {
-                    let challengesList = [];
-                    snapshot.forEach((doc) => {
-                        challengesList.push({ ...doc.data(), id: doc.id });
-                    });
-
-                    // reorder the list according to id (day no.)
-                    challengesList.sort((a, b) => {
-                        return a.id.substring(3) - b.id.substring(3);
-                    });
-
-                    console.log(challengesList)
-
-                    // Daily challenge
-                    if (dayDif > 0) {
-                        element[0].innerHTML =
-                            `
-                            <h1>Daily Challenges</h1>
-                            <h4>Week ${week}</h4>
-                            <div class="challenge-container">
-                                <a href="/ongoing-challenge.html">
-                                    <figure class="challenge-figure">
-                                        <img src="${challengesList[dayDif-1].img}" alt="challenge-picture" id="challenge-picture"/>
-                                        <figcaption>
-                                            Click to view challenges
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                            </div>
-                        `;
-                        
-                    }
-
+                // Daily challenge
+                if (dayDif >= 0) {
+                    element[0].innerHTML =
+                        `
+                        <h1>Daily Challenges</h1>
+                        <h4>Week ${week}</h4>
+                        <div class="challenge-container">
+                            <a href="/ongoing-challenge.html">
+                                <figure class="challenge-figure">
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/go-green-challenge.appspot.com/o/challengeImg%2Fday${dayDif+1}.jpg?alt=media" alt="challenge-picture" id="challenge-picture"/>
+                                    <figcaption>
+                                        Click to view challenges
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    `;
                     
-                })
-                .catch((error) => {
-                    alert(
-                        `Error code: ${error.code}\nError message: ${error.message}`
-                    );
-                });
-
+                }
 
             } else {
                 console.log("Challenge has ceased");
