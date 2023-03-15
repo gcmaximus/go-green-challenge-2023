@@ -20,13 +20,16 @@ Format to change e.g. font-sizes of h1 elements when viewed on mobile
 
 
 
-.top-nav span, #signOutButton i, #signInPageButton a{
-  color: #D6CDA4;
+h1, h2, h3, h4{
+  color: #C6B4A9 !important;
+}
+
+*, .top-nav span, #signOutButton i, #signInPageButton a {
+    color: #D6CDA4;
 }
 
 * {
-    font-family: 'Nunito', sans-serif;
-    color: #C6B4A9;
+  font-family: 'Nunito', sans-serif;
 }
 
 main > .container h1, main > .container h3 {
@@ -183,6 +186,7 @@ nav button {
   font-size:13px;
   margin-bottom:0;
 } */
+
 
 h1 {
     font-size:3.5em;
@@ -602,6 +606,11 @@ transform: rotate(-405deg);
 .indiv-social {
   display: inline-block;
 }
+
+.footer-text h3, .social {
+  color: #D6CDA4 !important;
+}
+
 
 @media (min-width: 1000px) {
   br.show-mobile {
