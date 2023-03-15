@@ -269,11 +269,20 @@
         // Just reading the time
         let startTime = new Date(2023, 2, 20).getTime();
         let endTime = new Date(2023, 3, 17).getTime();
-        let todayTime = new Date(2023, 2, 25).getTime();
-        // let todayTime = Date.now();
+        // let todayTime = new Date(2023, 2, 25).getTime();
+        let todayTime = Date.now();
 
         if (todayTime < startTime) {
             console.log("Challenge has not commenced");
+
+            $('.dynamic-pc').append(`<p class="msg">Stay tuned for the upcoming challenges!</p>`)
+            $('.dynamic-mobile').append(`<p class="msg">Stay tuned for the upcoming challenges!</p>`)
+            $('.msg').css('text-align','center')
+            $('.msg').css('font-size','1.5em')
+            $('.msg').css('color','white')
+            $('.msg').css('border','1px solid black')
+            $('.msg').css('padding','20px')
+            $('.msg').css('background-color','gray')
         } else if (todayTime < endTime) {
             let dayDif = Math.floor((todayTime - startTime) / 86400000);
             let dayOfWeek = (dayDif % 7) + 1;
@@ -310,6 +319,15 @@
                 });
         } else {
             console.log("Challenge has ceased");
+
+            $('.dynamic-pc').append(`<p class="msg">Challenges have ended. Thank you for participating!</p>`)
+            $('.dynamic-mobile').append(`<p class="msg">Challenges have ended. Thank you for participating!</p>`)
+            $('.msg').css('text-align','center')
+            $('.msg').css('font-size','1.5em')
+            $('.msg').css('color','white')
+            $('.msg').css('border','1px solid black')
+            $('.msg').css('padding','20px')
+            $('.msg').css('background-color','gray')
         }
 
         // display the challenges function

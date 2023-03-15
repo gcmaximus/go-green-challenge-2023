@@ -136,16 +136,16 @@
             <div class="row">
                 <div class="col-12 reveal daily-challenge">
                     <h1>Daily Challenges</h1>
-                    <h4>Week 1</h4>
+                    <h4>Challenges will begin to release on 20th March.</h4>
                     <div class="challenge-container">
-                        <a href="/ongoing-challenge.html">
+
                             <figure class="challenge-figure">
                                 <img src="/img/challenge-picture.png" alt="challenge-picture" id="challenge-picture" />
                                 <figcaption>
-                                    Click to view challenges
+                                    Stay Tuned!
                                 </figcaption>
                             </figure>
-                        </a>
+
                     </div>
                 </div>
             </div>
@@ -155,7 +155,8 @@
                 <div class="col-12">
                     <h1>Questions?</h1>
                     <p>
-                        Contact <span style="text-decoration: underline;">thewontedproject@gmail.com</span> for more information on the project
+                        Contact <span style="text-decoration: underline;">thewontedproject@gmail.com</span> for more
+                        information on the project
                     </p>
                 </div>
             </div>
@@ -293,9 +294,9 @@
                 });
         });
 
-            let startTime = new Date(2023, 2, 20).getTime();
-            let endTime = new Date(2023, 3, 17).getTime();
-            let todayTime = Date.now();
+        let startTime = new Date(2023, 2, 20).getTime();
+        let endTime = new Date(2023, 3, 17).getTime();
+        let todayTime = Date.now();
 
         if (todayTime < startTime) {
             console.log("Challenge has not commenced");
@@ -332,6 +333,28 @@
 
         } else {
             console.log("Challenge has ceased");
+
+            //Elements
+            const element = document.getElementsByClassName("daily-challenge")
+
+            // All challenges have ended
+
+            element[0].innerHTML =
+                `
+                        <h1>Daily Challenges</h1>
+                        <h4>All challenges have ended. Thank you for going green with us!</h4>
+                        <div class="challenge-container">
+
+                                <figure class="challenge-figure">
+                                    <img src="/img/challenge-picture.png" alt="challenge-picture" id="challenge-picture" />
+                                    <figcaption>
+                                        No challenges remaining
+                                    </figcaption>
+                                </figure>
+
+                        </div>
+                    `;
+
         }
 
 
