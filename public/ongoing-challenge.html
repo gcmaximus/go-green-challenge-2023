@@ -269,8 +269,8 @@
         // Just reading the time
         let startTime = new Date(2023, 2, 20).getTime();
         let endTime = new Date(2023, 3, 17).getTime();
-        // let todayTime = new Date(2023, 2, 25).getTime();
-        let todayTime = Date.now();
+        let todayTime = new Date(2023, 2, 20).getTime();
+        // let todayTime = Date.now();
 
         if (todayTime < startTime) {
             console.log("Challenge has not commenced");
@@ -381,7 +381,7 @@
                     temporary_data += `
                             <div class="individual_elements">
                                 <div class="image_left">
-                                    <img src="${challengesList[keys[i]].img
+                                    <img src="http://drive.google.com/uc?id=${challengesList[keys[i]].img
                         }" alt="sample_image" />
                                 </div>
                             <div class="box_right">
@@ -407,7 +407,7 @@
                                 <input type="button" value=" Challenged Closed " class="challenge-end-button" id="${challengesList[keys[i + 1]].id}"/>
                             </div>
                             <div class="image_right">
-                                <img src="${challengesList[keys[i + 1]].img
+                                <img src="http://drive.google.com/uc?id=${challengesList[keys[i + 1]].img
                         }" alt="sample_image" />
                             </div>
                         </div>
@@ -426,7 +426,7 @@
                     temporary_data += `
                             <div class="individual_elements">
                                 <div class="image_left">
-                                    <img src="${challengesList[keys[i]].img
+                                    <img src="http://drive.google.com/uc?id=${challengesList[keys[i]].img
                         }" alt="sample_image" />
                                 </div>
                             <div class="box_right">
@@ -451,7 +451,7 @@
                                 <input type="button" value=" Challenged Closed " class="challenge-end-button " id="${challengesList[keys[i + 1]].id}"/>
                             </div>
                             <div class="image_right">
-                                <img src="${challengesList[keys[i + 1]].img
+                                <img src="http://drive.google.com/uc?id=${challengesList[keys[i + 1]].img
                         }" alt="sample_image" />
                             </div>
                         </div>
@@ -463,7 +463,7 @@
                 temporary_data += `
                         <div class="individual_elements">
                                 <div class="image_left">
-                                    <img src="${challengesList[keys[keys.length - 1]].img
+                                    <img src="http://drive.google.com/uc?id=${challengesList[keys[keys.length - 1]].img
                     }" alt="sample_image" />
                                 </div>
                             <div class="box_right">
@@ -508,7 +508,7 @@
                 temporary_data += `
                             <div class="row-mobile">
                                 <div class="card-mobile">
-                                    <div class="bg"><img src="${challengesList[keys[i]].img
+                                    <div class="bg"><img src="http://drive.google.com/uc?id=${challengesList[keys[i]].img
                     }" alt=""></div>
                                     <div class="text-body">
                                         <h2>Day #${i + 1} ${current_day_m}</h2>
