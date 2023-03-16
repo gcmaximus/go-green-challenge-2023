@@ -283,7 +283,7 @@ nav button {
 
 img {
   width: 145px;
-  height:100px;
+  height:120px;
   border-radius: 4px 4px 0 0;
 }
 
@@ -311,19 +311,27 @@ figcaption {
   display: none;
   font-size: 0.6em;
   color: black;
+  position: absolute;
+  top: 165px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width:150px;
 }
 
-#line {
+/* #line {
   color: black;
   display:none;
-}
+  position: absolute;
+  
+} */
 
 figure {
   background-color: #D6CDA4;
   padding: 0 0 5px 0;
   border-radius: 4px;
   display: block;
-  width: 100%;
+  width: 145px;
   box-shadow: 2px 2px black;
   transition: 0.3s;
 }
@@ -341,9 +349,9 @@ figure:hover #textbox {
   z-index:10;
 }
 
-figure:hover #line {
+/* figure:hover #line {
   display:block;
-}
+} */
 
 figcaption {
   font-size: 0.7em;
@@ -627,4 +635,6 @@ hr {
 
 figure.unreleased img {
   width: 100px;
+  height:100px;
+  margin: 10px 0;
 }
