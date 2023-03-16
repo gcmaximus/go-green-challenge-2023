@@ -38,7 +38,9 @@ main > .container h1, main > .container h3 {
 }
 
 main, html {
-    background-color: #214E34;
+  background:url('../img/index-bg.svg');
+  background-repeat: no-repeat;
+  background-size:cover;
 }
 
 .home {
@@ -222,7 +224,7 @@ p {
     border: 1px solid #196455;
     border-radius: 15px;
     padding:25px;
-    background-color: #5c7457;
+    background-color: #5c7557;
     box-shadow: -10px 12px 4px 0 #153121;
 }
 
@@ -294,7 +296,7 @@ figure.challenge-figure{
     transition: 0.4s;
     margin-bottom:20px;
     box-shadow: -14px 15px #083d11;
-    background-color:#ECC8C0;
+    background-color:#20211C;
 }
 
 
@@ -306,7 +308,7 @@ figure.challenge-figure:hover {
 }
 
 figure.challenge-figure > figcaption {
-    color:black;
+    color:white;
     padding:10px;
     font-style:italic;
 }

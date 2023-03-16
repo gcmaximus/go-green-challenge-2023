@@ -20,7 +20,9 @@ h1, h3, h5 {
 }
 
 main, html {
-  background-color:#E8F1F2 ;
+  background:url('../img/past-challenges-bg.svg');
+  background-repeat: no-repeat;
+  background-size:cover;
 }
 
 
@@ -638,3 +640,4 @@ figure.unreleased img {
   height:100px;
   margin: 10px 0;
 }
+

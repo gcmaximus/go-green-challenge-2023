@@ -28,7 +28,9 @@ h1{
 
 
 main, html {
-  background-color: #5C7457 ;
+  background:url('../img/about-us-bg.svg');
+  background-repeat: no-repeat;
+  background-size:cover;
 }
 
 
