@@ -308,12 +308,12 @@ img {
   height: auto;
   border-radius: 10px;
   border: 2px solid black;
-  margin: 20px 0;
+  margin: 20px 0 5px 0;
 }
 
 
 figure {
-  padding: 10px 20px;
+  padding: 5px 0px;
   border: 1px solid transparent;
   border-radius: 5px;
   background-color: #ECC8C0 ;
@@ -329,6 +329,7 @@ figure:hover {
 figcaption {
   color: black;
   font-size: 1.2em;
+  font-weight: bold;
 }
 
 
