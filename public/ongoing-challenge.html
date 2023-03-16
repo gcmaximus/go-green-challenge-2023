@@ -399,13 +399,10 @@
                 let temporary_data = "";
 
                 const keys = Object.keys(challengesList);
-                console.log(challengesList);
 
                 if (symmetric) {
                     console.log("symmetric");
                     for (let i = 0; i < challengesList.length; i = i + 2) {
-                        console.log("LOG:");
-                        console.log(challengesList[keys[i].desc]);
 
                         let current_day1 = daysList[i];
                         let current_day2 = daysList[i + 1];
