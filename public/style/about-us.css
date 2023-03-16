@@ -311,6 +311,7 @@ nav button {
   border-radius: 10px;
   border: 2px solid black;
   margin: 20px 0 5px 0;
+  height:450px;
 }
 
 
@@ -318,9 +319,10 @@ figure {
   padding: 5px 0px;
   border: 1px solid transparent;
   border-radius: 5px;
-  background-color: #ECC8C0 ;
+  background-color: #d1e272 ;
   transition: 0.4s;
   box-shadow: -10px 5px rgb(34, 34, 34);
+
 }
 
 figure:hover {
@@ -347,6 +349,10 @@ figcaption {
   .about-us-para {
     margin-top:20px !important;
     
+  }
+
+  .row img {
+    height:250px;
   }
 
 }
