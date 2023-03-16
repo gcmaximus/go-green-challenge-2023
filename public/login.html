@@ -190,18 +190,42 @@
             let scoreDoc = {
                 week1: {
                     day1: 0,
+                    day2: 0,
+                    day3: 0,
+                    day4: 0,
+                    day5: 0,
+                    day6: 0,
+                    day7: 0,
                     week1TotalScore: 0,
                 },
                 week2: {
                     day8: 0,
+                    day9: 0,
+                    day10: 0,
+                    day11: 0,
+                    day12: 0,
+                    day13: 0,
+                    day14: 0,
                     week2TotalScore: 0,
                 },
                 week3: {
                     day15: 0,
+                    day16: 0,
+                    day17: 0,
+                    day18: 0,
+                    day19: 0,
+                    day20: 0,
+                    day21: 0,
                     week3TotalScore: 0,
                 },
                 week4: {
                     day22: 0,
+                    day23: 0,
+                    day24: 0,
+                    day25: 0,
+                    day26: 0,
+                    day27: 0,
+                    day28: 0,
                     week4TotalScore: 0,
                 },
                 totalScore: 0,
@@ -230,8 +254,12 @@
                                 .then(() => {
                                     user.getIdToken(true)
                                         .then(() => {
-                                            scoreDoc.displayName = user.displayName
-                                            setDoc(doc(db, "scores", user.uid), scoreDoc)
+                                            scoreDoc.displayName =
+                                                user.displayName;
+                                            setDoc(
+                                                doc(db, "scores", user.uid),
+                                                scoreDoc
+                                            )
                                                 .then(() => {
                                                     alert(
                                                         `Welcome ${username2Value}, signup is successful! You are now logged in :D`
