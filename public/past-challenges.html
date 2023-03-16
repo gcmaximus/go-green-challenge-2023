@@ -1184,6 +1184,9 @@
                 e.preventDefault();
                 signOut(auth)
                     .then(() => {
+                        alert(
+                            "Sign out is successful! Will redirect to home page."
+                        );
                         location.assign("/");
                     })
                     .catch((error) => {

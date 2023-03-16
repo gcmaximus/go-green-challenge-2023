@@ -1,238 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--CSS-->
+        <link href="/style/about-us.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
 
-    <!--CSS-->
-    <link href="/style/about-us.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--bootstrap-->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous"
+        />
 
-    <!--bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+        <!--poppins-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+            rel="stylesheet"
+        />
 
-    <!--poppins-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+        <title>About Us</title>
+    </head>
 
-    <title>About Us</title>
-</head>
+    <body>
+        <header>
+            <!--Navbar-->
+            <nav>
+                <section class="top-nav">
+                    <div>
+                        <img
+                            src="/img/logo.png"
+                            alt="Go-Green Challenge 2023"
+                            id="navbar-logo"
+                        />
+                        <span hidden id="display">
+                            <!-- Display Username and Points-->
+                            <span id="usernameDisplay"></span>:
+                            <span id="totalScoreDisplay"></span> points
+                        </span>
+                    </div>
+                    <input id="menu-toggle" type="checkbox" />
+                    <label class="menu-button-container" for="menu-toggle">
+                        <div class="menu-button"></div>
+                    </label>
+                    <ul class="menu">
+                        <li><a href="/">Home</a></li>
+                        <li>
+                            <a href="/leaderboard.html">Leaderboard & Prizes</a>
+                        </li>
+                        <li>
+                            <a href="/ongoing-challenge.html"
+                                >Ongoing Challenges</a
+                            >
+                        </li>
+                        <li>
+                            <a href="/past-challenges.html">Past Challenges</a>
+                        </li>
+                        <li><a href="/about-us.html">About Us</a></li>
+                        <li hidden id="signOutButton">
+                            <button>
+                                <i
+                                    class="fa fa-sign-out"
+                                    style="font-size: 24px"
+                                ></i>
+                            </button>
+                        </li>
+                        <li id="signInPageButton">
+                            <a href="/login.html">Sign In</a>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+        </header>
 
-<body>
-    <header>
-        <!--Navbar-->
-        <nav>
-            <section class="top-nav">
-                <div>
-                    <img src="/img/logo.png" alt="Go-Green Challenge 2023" id="navbar-logo" />
-                    <span hidden id="display">
-                        <!-- Display Username and Points-->
-                        <span id="usernameDisplay"></span>: <span id="totalScoreDisplay"></span> points
-                    </span>
-                </div>
-                <input id="menu-toggle" type="checkbox" />
-                <label class="menu-button-container" for="menu-toggle">
-                    <div class="menu-button"></div>
-                </label>
-                <ul class="menu">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/leaderboard.html">Leaderboard & Prizes</a></li>
-                    <li><a href="/ongoing-challenge.html">Ongoing Challenges</a></li>
-                    <li><a href="/past-challenges.html">Past Challenges</a></li>
-                    <li><a href="/about-us.html">About Us</a></li>
-                    <li hidden id="signOutButton"><button>
-                        <i class="fa fa-sign-out" style="font-size:24px"></i>
-                    </button></li>
-                    <li id="signInPageButton"><a href="/login.html">Sign In</a></li>
-                </ul>
-            </section>
-        </nav>
-    </header>
+        <main>
+            <!--About Us Hero Banner-->
+            <article class="hero-banner about-us-banner">
+                <h1 class="mb-4">About Us</h1>
+            </article>
 
-    <main>
-        <!--About Us Hero Banner-->
-        <article class="hero-banner about-us-banner">
-            <h1 class="mb-4">About Us</h1>
-        </article>
-
-        <!--Main Contents-->
-        <section class="container">
-            <!--About Us Paragraph-->
-            <div class="row">
-                <div class="mx-auto col-10 col-md-12 about-us-para" style="text-align: left">
-                    <h1>Who are we?</h1>
-                    <p>
-                        we are a group of sp students smth smth smth smth
-                        smth smth smth smth smth smth smth smth smth smth
-                        smth smth smth smth smth smth smth smth smth smth
-                        smth smth smth smth smth smth smth smth smth smth
-                        smth smth smth smth smth smth smth smth smth smth
-                        smth smth smth smth smth smth smth smth smth
-                    </p>
-                </div>
-            </div>
-            
-            <!--Images of committee-->
-            <!--First row: 2 large photos-->
-            <div class="row">
-                <div class="m-auto col-11 col-md-6">
-                    <figure>
-                        <img src="/img/KG3-Ideation-Team.jpg" alt="Photo of committee" />
-                        <figcaption>KG3 Ideation Team</figcaption>
-                    </figure>
-                </div>
-                <div class="m-auto col-11 col-md-6">
-                    <figure>
-                        <img src="/img/Melons.png" alt="Photo of committee" />
-                        <figcaption>Melons Execution Team</figcaption>
-                    </figure>
-                </div>
-            </div>
-
-            <!--Second row: 1 large photos-->
-            <div class="row">
-                <div class="m-auto col-11 col-md-6">
-                    <figure>
-                        <img src="/img/team-ho-wan.png" alt="Photo of committee" />
-                        <figcaption>Team-Ho-Wan Web Dev Team</figcaption>
-                    </figure>
-                </div>
-            </div>
-
-            
-        </section>
-
-        <div class="footer-dark">
-            <footer>
-                <div class="container">
-                    <div class="row footer-text">
-                        <h3>Go-Green Challenge</h3>
+            <!--Main Contents-->
+            <section class="container">
+                <!--About Us Paragraph-->
+                <div class="row">
+                    <div
+                        class="mx-auto col-10 col-md-12 about-us-para"
+                        style="text-align: left"
+                    >
+                        <h1>Who are we?</h1>
                         <p>
-                            Join us in going green for the sake of our environment!
+                            we are a group of sp students smth smth smth smth
+                            smth smth smth smth smth smth smth smth smth smth
+                            smth smth smth smth smth smth smth smth smth smth
+                            smth smth smth smth smth smth smth smth smth smth
+                            smth smth smth smth smth smth smth smth smth smth
+                            smth smth smth smth smth smth smth smth smth
                         </p>
                     </div>
-                    <div class="col item social">
-    
-    
-                        <!-- Instagram -->
-                        <span class="indiv-social">
-                            <a target="_blank" href="https://www.instagram.com/thewontedproject/">
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                            <span>@thewontedproject</span>
-                            <br class="show-mobile">
-                        </span>
-    
-                        <!-- Email -->
-                        <span class="indiv-social">
-                            <a><i class="fa fa-envelope"></i></a>
-                            <span>thewontedproject@gmail.com</span>
-                            <br class="show-mobile">
-                        </span>
-    
-                        <!-- Address -->
-                        <span class="indiv-social">
-                            <a><i class="fa fa-home"></i></a>
-                            <span>500 Dover Road Singapore 139651</span>
-                            <br class="show-mobile">
-                        </span>
-    
+                </div>
+
+                <!--Images of committee-->
+                <!--First row: 2 large photos-->
+                <div class="row">
+                    <div class="m-auto col-11 col-md-6">
+                        <figure>
+                            <img
+                                src="/img/KG3-Ideation-Team.jpg"
+                                alt="Photo of committee"
+                            />
+                            <figcaption>KG3 Ideation Team</figcaption>
+                        </figure>
                     </div>
-                    <div>
-                        <p class="copyright">GoGreenChallenge © 2023</p>
+                    <div class="m-auto col-11 col-md-6">
+                        <figure>
+                            <img
+                                src="/img/Melons.png"
+                                alt="Photo of committee"
+                            />
+                            <figcaption>Melons Execution Team</figcaption>
+                        </figure>
                     </div>
                 </div>
-            </footer>
-        </div>
-    </main>
 
-    <!--bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-        crossorigin="anonymous"></script>
+                <!--Second row: 1 large photos-->
+                <div class="row">
+                    <div class="m-auto col-11 col-md-6">
+                        <figure>
+                            <img
+                                src="/img/team-ho-wan.png"
+                                alt="Photo of committee"
+                            />
+                            <figcaption>Team-Ho-Wan Web Dev Team</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
 
-    <!-- script -->
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-        import {
-            getAuth,
-            onAuthStateChanged,
-            signOut
-        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-        import {
-            getFirestore,
-            collection,
-            doc,
-            getDoc,
-            getDocs,
-        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
-        const firebaseConfig = {
-            apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
-            authDomain: "go-green-challenge.firebaseapp.com",
-            projectId: "go-green-challenge",
-            storageBucket: "go-green-challenge.appspot.com",
-            messagingSenderId: "586047303749",
-            appId: "1:586047303749:web:73a742cbefa66c0fbd732c",
-            measurementId: "G-5WNGZ08ND0",
-        };
+            <div class="footer-dark">
+                <footer>
+                    <div class="container">
+                        <div class="row footer-text">
+                            <h3>Go-Green Challenge</h3>
+                            <p>
+                                Join us in going green for the sake of our
+                                environment!
+                            </p>
+                        </div>
+                        <div class="col item social">
+                            <!-- Instagram -->
+                            <span class="indiv-social">
+                                <a
+                                    target="_blank"
+                                    href="https://www.instagram.com/thewontedproject/"
+                                >
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                                <span>@thewontedproject</span>
+                                <br class="show-mobile" />
+                            </span>
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app)
+                            <!-- Email -->
+                            <span class="indiv-social">
+                                <a><i class="fa fa-envelope"></i></a>
+                                <span>thewontedproject@gmail.com</span>
+                                <br class="show-mobile" />
+                            </span>
 
-        // sign out button and username element
-        let signInPageButton = document.querySelector("#signInPageButton")
-        let signOutButton = document.querySelector("#signOutButton");
-        let usernameDisplay = document.querySelector("#usernameDisplay");
-        let totalScoreDisplay =
-            document.querySelector("#totalScoreDisplay");
-        let display = document.querySelector("#display");
+                            <!-- Address -->
+                            <span class="indiv-social">
+                                <a><i class="fa fa-home"></i></a>
+                                <span>500 Dover Road Singapore 139651</span>
+                                <br class="show-mobile" />
+                            </span>
+                        </div>
+                        <div>
+                            <p class="copyright">GoGreenChallenge © 2023</p>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </main>
 
-        // Unhide sign out button and add username
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                signInPageButton.hidden = true;
-                signOutButton.hidden = false;
-                usernameDisplay.textContent = user.displayName;
-                getDoc(doc(db, "scores", user.uid))
-                    .then((docSnap) => {
-                        totalScoreDisplay.textContent = docSnap.data().totalScore;
-                        display.hidden = false;
+        <!--bootstrap-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+            integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- script -->
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+            import {
+                getAuth,
+                onAuthStateChanged,
+                signOut,
+            } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+            import {
+                getFirestore,
+                collection,
+                doc,
+                getDoc,
+                getDocs,
+            } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+            const firebaseConfig = {
+                apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
+                authDomain: "go-green-challenge.firebaseapp.com",
+                projectId: "go-green-challenge",
+                storageBucket: "go-green-challenge.appspot.com",
+                messagingSenderId: "586047303749",
+                appId: "1:586047303749:web:73a742cbefa66c0fbd732c",
+                measurementId: "G-5WNGZ08ND0",
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+            const db = getFirestore(app);
+
+            // sign out button and username element
+            let signInPageButton = document.querySelector("#signInPageButton");
+            let signOutButton = document.querySelector("#signOutButton");
+            let usernameDisplay = document.querySelector("#usernameDisplay");
+            let totalScoreDisplay =
+                document.querySelector("#totalScoreDisplay");
+            let display = document.querySelector("#display");
+
+            // Unhide sign out button and add username
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    signInPageButton.hidden = true;
+                    signOutButton.hidden = false;
+                    usernameDisplay.textContent = user.displayName;
+                    getDoc(doc(db, "scores", user.uid))
+                        .then((docSnap) => {
+                            totalScoreDisplay.textContent =
+                                docSnap.data().totalScore;
+                            display.hidden = false;
+                        })
+                        .catch((error) => {
+                            alert(
+                                `Error code: ${error.code}\nError message: ${error.message}`
+                            );
+                        });
+                }
+            });
+
+            // Sign out
+            signOutButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                signOut(auth)
+                    .then(() => {
+                        alert(
+                            "Sign out is successful! Will redirect to home page."
+                        );
+                        location.assign("/");
                     })
                     .catch((error) => {
                         alert(
                             `Error code: ${error.code}\nError message: ${error.message}`
                         );
+                        location.reload();
                     });
-            }
-        });
-
-        // Sign out
-        signOutButton.addEventListener("click", (e) => {
-            e.preventDefault();
-            signOut(auth)
-                .then(() => {
-                    location.assign("/");
-                })
-                .catch((error) => {
-                    alert(
-                        `Error code: ${error.code}\nError message: ${error.message}`
-                    );
-                    location.reload();
-                });
-        });
-
-
-    </script>
-</body>
-
+            });
+        </script>
+    </body>
 </html>

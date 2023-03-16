@@ -282,6 +282,9 @@
                 e.preventDefault();
                 signOut(auth)
                     .then(() => {
+                        alert(
+                            "Sign out is successful! Will redirect to home page."
+                        );
                         location.assign("/");
                     })
                     .catch((error) => {
@@ -403,7 +406,6 @@
                 if (symmetric) {
                     console.log("symmetric");
                     for (let i = 0; i < challengesList.length; i = i + 2) {
-
                         let current_day1 = daysList[i];
                         let current_day2 = daysList[i + 1];
 
