@@ -303,7 +303,7 @@ nav button {
 /**/
 
 
-img {
+.row img {
   width: 80%;
   height: auto;
   border-radius: 10px;
