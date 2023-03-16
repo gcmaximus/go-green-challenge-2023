@@ -1,79 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--CSS-->
+        <link rel="stylesheet" href="./style/ongoing-mobile.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link href="./style/ongoing-challenge.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/style/nav.css" />
 
-    <!--CSS-->
-    <link rel="stylesheet" href="./style/ongoing-mobile.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link href="./style/ongoing-challenge.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/style/nav.css" />
+        <!--bootstrap-->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous"
+        />
 
-    <!--bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+        <!-- poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ongoing Challenge</title>
+    </head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ongoing Challenge</title>
-</head>
+    <body>
+        <header>
+            <!--Navbar-->
+            <nav>
+                <section class="top-nav">
+                    <div>
+                        <img
+                            src="/img/logo.png"
+                            alt="Go-Green Challenge 2023"
+                            id="navbar-logo"
+                        />
+                        <span hidden id="display">
+                            <!-- Display Username and Points-->
+                            <span id="usernameDisplay"></span>:
+                            <span id="totalScoreDisplay"></span> points
+                        </span>
+                    </div>
+                    <input id="menu-toggle" type="checkbox" />
+                    <label class="menu-button-container" for="menu-toggle">
+                        <div class="menu-button"></div>
+                    </label>
+                    <ul class="menu">
+                        <li><a href="/">Home</a></li>
+                        <li>
+                            <a href="/leaderboard.html">Leaderboard & Prizes</a>
+                        </li>
+                        <li>
+                            <a href="/ongoing-challenge.html"
+                                >Ongoing Challenges</a
+                            >
+                        </li>
+                        <li>
+                            <a href="/past-challenges.html">Past Challenges</a>
+                        </li>
+                        <li><a href="/about-us.html">About Us</a></li>
+                        <li hidden id="signOutButton">
+                            <button>
+                                <i
+                                    class="fa fa-sign-out"
+                                    style="font-size: 24px"
+                                ></i>
+                            </button>
+                        </li>
+                        <li id="signInPageButton">
+                            <a href="/login.html">Sign In</a>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+        </header>
 
-<body>
-    <header>
-        <!--Navbar-->
-        <nav>
-            <section class="top-nav">
-                <div>
-                    <img src="/img/logo.png" alt="Go-Green Challenge 2023" id="navbar-logo" />
-                    <span hidden id="display">
-                        <!-- Display Username and Points-->
-                        <span id="usernameDisplay"></span>:
-                        <span id="totalScoreDisplay"></span> points
-                    </span>
+        <div class="hero-banner-bg">
+            <div class="hero-banner-header">Week #1 Challenge</div>
+        </div>
+
+        <div class="new_con">
+            <div class="container-pc">
+                <div class="margin" style="margin-top: 50px"></div>
+
+                <div class="logo">
+                    <div class="logo-border">
+                        <div class="logo-text">Go-Green Challenge</div>
+                    </div>
                 </div>
-                <input id="menu-toggle" type="checkbox" />
-                <label class="menu-button-container" for="menu-toggle">
-                    <div class="menu-button"></div>
-                </label>
-                <ul class="menu">
-                    <li><a href="/">Home</a></li>
-                    <li>
-                        <a href="/leaderboard.html">Leaderboard & Prizes</a>
-                    </li>
-                    <li>
-                        <a href="/ongoing-challenge.html">Ongoing Challenges</a>
-                    </li>
-                    <li>
-                        <a href="/past-challenges.html">Past Challenges</a>
-                    </li>
-                    <li><a href="/about-us.html">About Us</a></li>
-                    <li hidden id="signOutButton">
-                        <button>
-                            <i class="fa fa-sign-out" style="font-size: 24px"></i>
-                        </button>
-                    </li>
-                    <li id="signInPageButton">
-                        <a href="/login.html">Sign In</a>
-                    </li>
-                </ul>
-            </section>
-        </nav>
-    </header>
+                <div class="additional-text">Together, we are greener</div>
 
-    <div class="hero-banner-bg">
-        <div class="hero-banner-header">Week #1 Challenge</div>
-    </div>
+                <div class="separator"></div>
 
-    <div class="new_con">
-        <div class="container-pc">
-            <div class="margin" style="margin-top: 50px"></div>
+                <div class="dynamic-pc">
+                    <div class="separator"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-mobile">
+            <div class="separator"></div>
 
             <div class="logo">
                 <div class="logo-border">
@@ -84,305 +120,303 @@
 
             <div class="separator"></div>
 
-            <div class="dynamic-pc">
-                <div class="separator"></div>
-            </div>
+            <div class="dynamic-mobile"></div>
         </div>
-    </div>
 
-    <div class="container-mobile">
-        <div class="separator"></div>
+        <div class="footer-dark">
+            <footer>
+                <div class="container">
+                    <div class="row footer-text">
+                        <h3>Go-Green Challenge</h3>
+                        <p>
+                            Join us in going green for the sake of our
+                            environment!
+                        </p>
+                    </div>
+                    <div class="col item social">
+                        <!-- Instagram -->
+                        <span class="indiv-social">
+                            <a
+                                target="_blank"
+                                href="https://www.instagram.com/thewontedproject/"
+                            >
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                            <span>@thewontedproject</span>
+                            <br class="show-mobile" />
+                        </span>
 
-        <div class="logo">
-            <div class="logo-border">
-                <div class="logo-text">Go-Green Challenge</div>
-            </div>
+                        <!-- Email -->
+                        <span class="indiv-social">
+                            <a><i class="fa fa-envelope"></i></a>
+                            <span>thewontedproject@gmail.com</span>
+                            <br class="show-mobile" />
+                        </span>
+
+                        <!-- Address -->
+                        <span class="indiv-social">
+                            <a><i class="fa fa-home"></i></a>
+                            <span>500 Dover Road Singapore 139651</span>
+                            <br class="show-mobile" />
+                        </span>
+                    </div>
+                    <div>
+                        <p class="copyright">GoGreenChallenge © 2023</p>
+                    </div>
+                </div>
+            </footer>
         </div>
-        <div class="additional-text">Together, we are greener</div>
 
-        <div class="separator"></div>
+        <!-- <script src="/js/ongoing-challenge.js"></script> -->
 
-        <div class="dynamic-mobile"></div>
-    </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 
-    <div class="footer-dark">
-        <footer>
-            <div class="container">
-                <div class="row footer-text">
-                    <h3>Go-Green Challenge</h3>
-                    <p>
-                        Join us in going green for the sake of our
-                        environment!
-                    </p>
-                </div>
-                <div class="col item social">
-                    <!-- Instagram -->
-                    <span class="indiv-social">
-                        <a target="_blank" href="https://www.instagram.com/thewontedproject/">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                        <span>@thewontedproject</span>
-                        <br class="show-mobile" />
-                    </span>
+        <!--bootstrap-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+            integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3ekG5eD"
+            crossorigin="anonymous"
+        ></script>
 
-                    <!-- Email -->
-                    <span class="indiv-social">
-                        <a><i class="fa fa-envelope"></i></a>
-                        <span>thewontedproject@gmail.com</span>
-                        <br class="show-mobile" />
-                    </span>
+        <script>
+            $(document).on("click", ".card-mobile", function () {
+                $(this).toggleClass("open");
+            });
+        </script>
 
-                    <!-- Address -->
-                    <span class="indiv-social">
-                        <a><i class="fa fa-home"></i></a>
-                        <span>500 Dover Road Singapore 139651</span>
-                        <br class="show-mobile" />
-                    </span>
+        <!-- script -->
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+            import {
+                getAuth,
+                onAuthStateChanged,
+                signOut,
+            } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+            import {
+                getFirestore,
+                getDocs,
+                getDoc,
+                query,
+                collection,
+                where,
+                documentId,
+                doc,
+            } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
-                </div>
-                <div>
-                    <p class="copyright">GoGreenChallenge © 2023</p>
-                </div>
-            </div>
-        </footer>
-    </div>
+            // Firebase config
+            const firebaseConfig = {
+                apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
+                authDomain: "go-green-challenge.firebaseapp.com",
+                projectId: "go-green-challenge",
+                storageBucket: "go-green-challenge.appspot.com",
+                messagingSenderId: "586047303749",
+                appId: "1:586047303749:web:73a742cbefa66c0fbd732c",
+                measurementId: "G-5WNGZ08ND0",
+            };
 
-    <!-- <script src="/js/ongoing-challenge.js"></script> -->
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+            const db = getFirestore(app);
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+            // Sign out button and username element
+            let signInPageButton = document.querySelector("#signInPageButton");
+            let signOutButton = document.querySelector("#signOutButton");
+            let usernameDisplay = document.querySelector("#usernameDisplay");
+            let totalScoreDisplay =
+                document.querySelector("#totalScoreDisplay");
+            let display = document.querySelector("#display");
 
-    <!--bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3ekG5eD"
-        crossorigin="anonymous"></script>
+            // Function to check if logged in and do stuff accordingly
+            function checkLoggedInAndStuff() {
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        signInPageButton.hidden = true;
+                        signOutButton.hidden = false;
+                        usernameDisplay.textContent = user.displayName;
 
-    <script>
-        $(document).on("click", ".card-mobile", function () {
-            $(this).toggleClass("open");
-        });
-    </script>
-
-    <!-- script -->
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-        import {
-            getAuth,
-            onAuthStateChanged,
-            signOut,
-        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-        import {
-            getFirestore,
-            getDocs,
-            getDoc,
-            query,
-            collection,
-            where,
-            documentId,
-            doc,
-        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
-
-        // Firebase config
-        const firebaseConfig = {
-            apiKey: "AIzaSyDQ4klRjnWy9N_HTvffLRChaR9f6aTx5xA",
-            authDomain: "go-green-challenge.firebaseapp.com",
-            projectId: "go-green-challenge",
-            storageBucket: "go-green-challenge.appspot.com",
-            messagingSenderId: "586047303749",
-            appId: "1:586047303749:web:73a742cbefa66c0fbd732c",
-            measurementId: "G-5WNGZ08ND0",
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-
-        // Sign out button and username element
-        let signInPageButton = document.querySelector("#signInPageButton");
-        let signOutButton = document.querySelector("#signOutButton");
-        let usernameDisplay = document.querySelector("#usernameDisplay");
-        let totalScoreDisplay =
-            document.querySelector("#totalScoreDisplay");
-        let display = document.querySelector("#display");
-
-        // Function to check if logged in and do stuff accordingly
-        function checkLoggedInAndStuff() {
-            onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    signInPageButton.hidden = true;
-                    signOutButton.hidden = false;
-                    usernameDisplay.textContent = user.displayName;
-
-                   var submitFunc = (e) => {
-                       e.preventDefault();
-                       window.open(`https://docs.google.com/forms/d/e/1FAIpQLSd7UT5Xg8uN9ECP_6xE-qcgMGv3ueWQx2y4e6bJ65h2ADmC-A/viewform?usp=pp_url&entry.1889083675=${user.uid}`);
-                   }
-
-                    getDoc(doc(db, "scores", user.uid))
-                        .then((docSnap) => {
-                            totalScoreDisplay.textContent =
-                                docSnap.data().totalScore;
-                            display.hidden = false;
-                        })
-                        .catch((error) => {
-                            alert(
-                                `Error code: ${error.code}\nError message: ${error.message}`
+                        var submitFunc = (e) => {
+                            e.preventDefault();
+                            window.open(
+                                `https://docs.google.com/forms/d/e/1FAIpQLSd7UT5Xg8uN9ECP_6xE-qcgMGv3ueWQx2y4e6bJ65h2ADmC-A/viewform?usp=pp_url&entry.1889083675=${user.uid}`
                             );
-                        });
-                } else {
-                    var submitFunc = (e) => {
-                        e.preventDefault();
-                        alert("Please login");
+                        };
+
+                        getDoc(doc(db, "scores", user.uid))
+                            .then((docSnap) => {
+                                totalScoreDisplay.textContent =
+                                    docSnap.data().totalScore;
+                                display.hidden = false;
+                            })
+                            .catch((error) => {
+                                alert(
+                                    `Error code: ${error.code}\nError message: ${error.message}`
+                                );
+                            });
+                    } else {
+                        var submitFunc = (e) => {
+                            e.preventDefault();
+                            alert("Please login");
+                        };
                     }
-                }
-                // Add submit stuff
-                // Get all buttons with class "submitButton"
-                const buttons = document.querySelectorAll('.submitButton');
+                    // Add submit stuff
+                    // Get all buttons with class "submitButton"
+                    const buttons = document.querySelectorAll(".submitButton");
 
-                // Loop through each button and add event listener
-                buttons.forEach((button) => {
-                    button.addEventListener('click', submitFunc);
+                    // Loop through each button and add event listener
+                    buttons.forEach((button) => {
+                        button.addEventListener("click", submitFunc);
+                    });
                 });
+            }
+
+            // Sign out
+            signOutButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                signOut(auth)
+                    .then(() => {
+                        location.assign("/");
+                    })
+                    .catch((error) => {
+                        alert(
+                            `Error code: ${error.code}\nError message: ${error.message}`
+                        );
+                        location.reload();
+                    });
             });
-        }
 
-        // Sign out
-        signOutButton.addEventListener("click", (e) => {
-            e.preventDefault();
-            signOut(auth)
-                .then(() => {
-                    location.assign("/");
-                })
-                .catch((error) => {
-                    alert(
-                        `Error code: ${error.code}\nError message: ${error.message}`
-                    );
-                    location.reload();
-                });
-        });
+            // Just reading the time
+            let startTime = new Date(2023, 2, 20).getTime();
+            let endTime = new Date(2023, 3, 17).getTime();
+            let todayTime = new Date(2023, 2, 20).getTime();
+            // let todayTime = Date.now();
 
-        // Just reading the time
-        let startTime = new Date(2023, 2, 20).getTime();
-        let endTime = new Date(2023, 3, 17).getTime();
-        let todayTime = new Date(2023, 2, 20).getTime();
-        // let todayTime = Date.now();
+            if (todayTime < startTime) {
+                console.log("Challenge has not commenced");
 
-        if (todayTime < startTime) {
-            console.log("Challenge has not commenced");
+                $(".dynamic-pc").append(
+                    `<p class="msg">Stay tuned for the upcoming challenges!</p>`
+                );
+                $(".dynamic-mobile").append(
+                    `<p class="msg">Stay tuned for the upcoming challenges!</p>`
+                );
+                $(".msg").css("text-align", "center");
+                $(".msg").css("font-size", "1.5em");
+                $(".msg").css("color", "white");
+                $(".msg").css("border", "1px solid black");
+                $(".msg").css("padding", "20px");
+                $(".msg").css("background-color", "gray");
+            } else if (todayTime < endTime) {
+                let dayDif = Math.floor((todayTime - startTime) / 86400000);
+                let dayOfWeek = (dayDif % 7) + 1;
+                let week = Math.ceil((dayDif + 1) / 7);
 
-            $('.dynamic-pc').append(`<p class="msg">Stay tuned for the upcoming challenges!</p>`)
-            $('.dynamic-mobile').append(`<p class="msg">Stay tuned for the upcoming challenges!</p>`)
-            $('.msg').css('text-align','center')
-            $('.msg').css('font-size','1.5em')
-            $('.msg').css('color','white')
-            $('.msg').css('border','1px solid black')
-            $('.msg').css('padding','20px')
-            $('.msg').css('background-color','gray')
-        } else if (todayTime < endTime) {
-            let dayDif = Math.floor((todayTime - startTime) / 86400000);
-            let dayOfWeek = (dayDif % 7) + 1;
-            let week = Math.ceil((dayDif + 1) / 7);
+                console.log(`week: ${week}, day: ${dayOfWeek}`);
 
-            console.log(`week: ${week}, day: ${dayOfWeek}`);
+                let queryList = Array(dayOfWeek)
+                    .fill()
+                    .map((_, i) => {
+                        return `day${dayDif + 2 - dayOfWeek + i}`;
+                    });
 
-            let queryList = Array(dayOfWeek)
-                .fill()
-                .map((_, i) => {
-                    return `day${dayDif + 2 - dayOfWeek + i}`;
-                });
-
-            // Get ongoing challenges
-            // don't know why boss want get the whole week's
-            // when can only submit for that 1 day's
-            getDocs(
-                query(
-                    collection(db, "challenges"),
-                    where(documentId(), "in", queryList)
+                // Get ongoing challenges
+                // don't know why boss want get the whole week's
+                // when can only submit for that 1 day's
+                getDocs(
+                    query(
+                        collection(db, "challenges"),
+                        where(documentId(), "in", queryList)
+                    )
                 )
-            )
-                .then((snapshot) => {
-                    // Call the function to display the challenges
-                    displayChallenges(dayOfWeek, week, snapshot);
+                    .then((snapshot) => {
+                        // Call the function to display the challenges
+                        displayChallenges(dayOfWeek, week, snapshot);
 
-                    // Do the user stuff uid and stuff
-                    checkLoggedInAndStuff();
-                })
-                .catch((error) => {
-                    alert(
-                        `Error code: ${error.code}\nError message: ${error.message}`
-                    );
+                        // Do the user stuff uid and stuff
+                        checkLoggedInAndStuff();
+                    })
+                    .catch((error) => {
+                        alert(
+                            `Error code: ${error.code}\nError message: ${error.message}`
+                        );
+                    });
+            } else {
+                console.log("Challenge has ceased");
+
+                $(".dynamic-pc").append(
+                    `<p class="msg">Challenges have ended. Thank you for participating!</p>`
+                );
+                $(".dynamic-mobile").append(
+                    `<p class="msg">Challenges have ended. Thank you for participating!</p>`
+                );
+                $(".msg").css("text-align", "center");
+                $(".msg").css("font-size", "1.5em");
+                $(".msg").css("color", "white");
+                $(".msg").css("border", "1px solid black");
+                $(".msg").css("padding", "20px");
+                $(".msg").css("background-color", "gray");
+            }
+
+            // display the challenges function
+            function displayChallenges(dayOfWeek, week, snapshot) {
+                let challengesList = [];
+                snapshot.forEach((doc) => {
+                    challengesList.push({ ...doc.data(), id: doc.id });
                 });
-        } else {
-            console.log("Challenge has ceased");
+                console.log(challengesList);
 
-            $('.dynamic-pc').append(`<p class="msg">Challenges have ended. Thank you for participating!</p>`)
-            $('.dynamic-mobile').append(`<p class="msg">Challenges have ended. Thank you for participating!</p>`)
-            $('.msg').css('text-align','center')
-            $('.msg').css('font-size','1.5em')
-            $('.msg').css('color','white')
-            $('.msg').css('border','1px solid black')
-            $('.msg').css('padding','20px')
-            $('.msg').css('background-color','gray')
-        }
+                // change banner
+                $(".hero-banner-header").text("Week #" + week + " Challenge");
 
-        // display the challenges function
-        function displayChallenges(dayOfWeek, week, snapshot) {
-            let challengesList = [];
-            snapshot.forEach((doc) => {
-                challengesList.push({ ...doc.data(), id: doc.id });
-            });
-            console.log(challengesList);
+                // PC
+                const pc_container =
+                    document.getElementsByClassName("dynamic-pc");
 
-            // change banner
-            $(".hero-banner-header").text("Week #" + week + " Challenge");
+                let symmetric = challengesList.length % 2 == 0;
 
-            // PC
-            const pc_container =
-                document.getElementsByClassName("dynamic-pc");
+                let daysList = [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday",
+                ];
+                function calculate_day(id) {
+                    const dayNumber = id.match(/\d+/)[0];
+                    const dayIndex = (dayNumber - 1) % 7;
+                    return daysList[dayIndex];
+                }
 
-            let symmetric = challengesList.length % 2 == 0;
+                let temporary_data = "";
 
-            let daysList = [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday",
-            ];
-            function calculate_day(id) {
-                const dayNumber = id.match(/\d+/)[0];
-                const dayIndex = (dayNumber - 1) % 7;
-                return daysList[dayIndex];
-            }
+                const keys = Object.keys(challengesList);
+                console.log(challengesList[keys[1]].desc);
+                console.log(challengesList);
 
-            let temporary_data = "";
+                if (symmetric) {
+                    console.log("symmetric");
+                    for (let i = 0; i < challengesList.length; i = i + 2) {
+                        console.log("LOG:");
+                        console.log(challengesList[keys[i].desc]);
 
-            const keys = Object.keys(challengesList)
-            console.log(challengesList[keys[1]].desc)
-            console.log(challengesList)
+                        let current_day1 = daysList[i];
+                        let current_day2 = daysList[i + 1];
 
-            if (symmetric) {
-                console.log('symmetric')
-                for (let i = 0; i < challengesList.length; i = i + 2) {
-                    console.log('LOG:')
-                    console.log(challengesList[keys[i].desc])
-
-                    let current_day1 = daysList[i];
-                    let current_day2 = daysList[i + 1];
-
-
-                    temporary_data += `
+                        temporary_data += `
                             <div class="individual_elements">
                                 <div class="image_left">
-                                    <img src="http://drive.google.com/uc?id=${challengesList[keys[i]].img
-                        }" alt="sample_image" />
+                                    <img src="http://drive.google.com/uc?id=${
+                                        challengesList[keys[i]].img
+                                    }" alt="sample_image" />
                                 </div>
                             <div class="box_right">
 
@@ -391,7 +425,9 @@
                                 <p>
                                     ${challengesList[keys[i]].desc}
                                 </p>
-                                <input type="button" value=" Challenged Closed " class="challenge-end-button " id="${challengesList[keys[i]].id}"/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button " id="${
+                                    challengesList[keys[i]].id
+                                }"/>
                             </div>
                         </div>
                         <div class="separator"></div>
@@ -404,30 +440,33 @@
                                 <p>
                                     ${challengesList[keys[i + 1]].desc}
                                 </p>
-                                <input type="button" value=" Challenged Closed " class="challenge-end-button" id="${challengesList[keys[i + 1]].id}"/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button" id="${
+                                    challengesList[keys[i + 1]].id
+                                }"/>
                             </div>
                             <div class="image_right">
-                                <img src="http://drive.google.com/uc?id=${challengesList[keys[i + 1]].img
-                        }" alt="sample_image" />
+                                <img src="http://drive.google.com/uc?id=${
+                                    challengesList[keys[i + 1]].img
+                                }" alt="sample_image" />
                             </div>
                         </div>
 
                         <div class="separator"></div>
                         `;
-                }
-            }
-            else if (!symmetric) {
-                console.log('asymetric')
-                let length_of_challenge = challengesList.length - 1;
-                for (let i = 0; i < length_of_challenge; i = i + 2) {
-                    let current_day1 = daysList[i];
-                    let current_day2 = daysList[i + 1];
+                    }
+                } else if (!symmetric) {
+                    console.log("asymetric");
+                    let length_of_challenge = challengesList.length - 1;
+                    for (let i = 0; i < length_of_challenge; i = i + 2) {
+                        let current_day1 = daysList[i];
+                        let current_day2 = daysList[i + 1];
 
-                    temporary_data += `
+                        temporary_data += `
                             <div class="individual_elements">
                                 <div class="image_left">
-                                    <img src="http://drive.google.com/uc?id=${challengesList[keys[i]].img
-                        }" alt="sample_image" />
+                                    <img src="http://drive.google.com/uc?id=${
+                                        challengesList[keys[i]].img
+                                    }" alt="sample_image" />
                                 </div>
                             <div class="box_right">
                                 <h2>Day #${i + 1} ${current_day1}</h2>
@@ -435,7 +474,9 @@
                                 <p>
                                     ${challengesList[keys[i]].desc}
                                 </p>
-                                <input type="button" value=" Challenged Closed " class="challenge-end-button id="${challengesList[keys[i]].id}""/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button id="${
+                                    challengesList[keys[i]].id
+                                }""/>
                             </div>
                         </div>
                         <div class="separator"></div>
@@ -448,94 +489,107 @@
                                 <p>
                                     ${challengesList[keys[i + 1]].desc}
                                 </p>
-                                <input type="button" value=" Challenged Closed " class="challenge-end-button " id="${challengesList[keys[i + 1]].id}"/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button " id="${
+                                    challengesList[keys[i + 1]].id
+                                }"/>
                             </div>
                             <div class="image_right">
-                                <img src="http://drive.google.com/uc?id=${challengesList[keys[i + 1]].img
-                        }" alt="sample_image" />
+                                <img src="http://drive.google.com/uc?id=${
+                                    challengesList[keys[i + 1]].img
+                                }" alt="sample_image" />
                             </div>
                         </div>
 
                         <div class="separator"></div>
                         `;
-                }
+                    }
 
-                temporary_data += `
+                    temporary_data += `
                         <div class="individual_elements">
                                 <div class="image_left">
-                                    <img src="http://drive.google.com/uc?id=${challengesList[keys[keys.length - 1]].img
-                    }" alt="sample_image" />
+                                    <img src="http://drive.google.com/uc?id=${
+                                        challengesList[keys[keys.length - 1]]
+                                            .img
+                                    }" alt="sample_image" />
                                 </div>
                             <div class="box_right">
-                                <h2>Day #${challengesList.length
-                    } ${calculate_day(challengesList[keys[keys.length - 1]].id)}</h2>
+                                <h2>Day #${
+                                    challengesList.length
+                                } ${calculate_day(
+                        challengesList[keys[keys.length - 1]].id
+                    )}</h2>
 
-                                <h3>${challengesList[keys[keys.length - 1]]
-                        .name
-                    }</h3>
+                                <h3>${
+                                    challengesList[keys[keys.length - 1]].name
+                                }</h3>
                                 <p>
-                                    ${challengesList[keys[keys.length - 1]].desc}
+                                    ${
+                                        challengesList[keys[keys.length - 1]]
+                                            .desc
+                                    }
                                 </p>
-                                <input type="button" value=" Challenged Closed " class="challenge-end-button " id="${challengesList[keys[keys.length - 1].id]}"/>
+                                <input type="button" value=" Challenged Closed " class="challenge-end-button " id="${
+                                    challengesList[keys[keys.length - 1].id]
+                                }"/>
                             </div>
                         </div>
                         <div class="separator"></div>`;
-            }
-            else { //if no challenge hvt done
-                console.log("GG.COM");
-                temporary_data +=
-                    "<div>GG.COM ur com has been hacked >:) </div>";
-            }
-            $(pc_container).append(temporary_data);
+                } else {
+                    //if no challenge hvt done
+                    console.log("GG.COM");
+                    temporary_data +=
+                        "<div>GG.COM ur com has been hacked >:) </div>";
+                }
+                $(pc_container).append(temporary_data);
 
+                let lastDiv = $(".challenge-end-button").last();
+                lastDiv.val(" Upload ");
+                lastDiv.addClass("style-button");
+                lastDiv.addClass("submitButton");
+                lastDiv.removeClass("challenge-end-button");
 
-            let lastDiv = $(".challenge-end-button").last();
-            lastDiv.val(" Upload ");
-            lastDiv.addClass("style-button");
-            lastDiv.addClass("submitButton");
-            lastDiv.removeClass("challenge-end-button");
+                // lastDiv.attr('id', 'submitButton');
 
-            // lastDiv.attr('id', 'submitButton');
+                // Mobile
+                const mobile_container =
+                    document.getElementsByClassName("dynamic-mobile");
+                temporary_data = "";
 
-
-            // Mobile
-            const mobile_container =
-                document.getElementsByClassName("dynamic-mobile");
-            temporary_data = "";
-
-            for (let i = 0; i < challengesList.length; i++) {
-                let current_day_m = daysList[i];
-                temporary_data += `
+                for (let i = 0; i < challengesList.length; i++) {
+                    let current_day_m = daysList[i];
+                    temporary_data += `
                             <div class="row-mobile">
                                 <div class="card-mobile">
-                                    <div class="bg"><img src="http://drive.google.com/uc?id=${challengesList[keys[i]].img
-                    }" alt=""></div>
+                                    <div class="bg"><img src="http://drive.google.com/uc?id=${
+                                        challengesList[keys[i]].img
+                                    }" alt=""></div>
                                     <div class="text-body">
                                         <h2>Day #${i + 1} ${current_day_m}</h2>
                                         <h3>${challengesList[keys[i]].name}</h3>
                                         <p>
                                             ${challengesList[keys[i]].desc}
                                         </p>
-                                        <input type="button" class= "style-button_m_closed" id="${challengesList[keys[i]].id}-mobile" value=" Challenged Closed " />
+                                        <input type="button" class= "style-button_m_closed" id="${
+                                            challengesList[keys[i]].id
+                                        }-mobile" value=" Challenged Closed " />
                                     </div>
                                 </div>
                             </div>
                         `;
+                }
+
+                temporary_data += '<div class="separator"></div>';
+
+                $(temporary_data).insertAfter(mobile_container);
+
+                let lastDivM = $(".style-button_m_closed").last();
+                lastDivM.val(" Upload ");
+                lastDivM.addClass("style-button_m");
+                lastDivM.addClass("submitButton");
+                lastDivM.removeClass("style-button_m_closed");
+
+                // lastDivM.attr('id', 'submitButton');
             }
-
-            temporary_data += '<div class="separator"></div>';
-
-            $(temporary_data).insertAfter(mobile_container);
-
-            let lastDivM = $(".style-button_m_closed").last();
-            lastDivM.val(" Upload ");
-            lastDivM.addClass("style-button_m");
-            lastDivM.addClass("submitButton");
-            lastDivM.removeClass("style-button_m_closed");
-
-            // lastDivM.attr('id', 'submitButton');
-        }
-    </script>
-</body>
-
+        </script>
+    </body>
 </html>
