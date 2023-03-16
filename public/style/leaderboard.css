@@ -182,7 +182,7 @@ body{
 .bg-prize1{
     height: auto;
     min-height: 250px;
-    background-image: url("../img/prize1.jpg");
+    background-image: url("../img/question-block.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -194,7 +194,7 @@ body{
     margin-top: 10px;
     height: auto;
     min-height: 180px;
-    background-image: url("../img/prize2.jpg");
+    background-image: url("../img/question-block.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -204,7 +204,7 @@ body{
     margin-top: 10px;
     height: auto;
     min-height: 180px;
-    background-image: url("../img/prize3.jpg");
+    background-image: url("../img/question-block.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
