@@ -1198,7 +1198,7 @@
             // Just reading the time
             let startTime = new Date(2023, 2, 20).getTime();
             let endTime = new Date(2023, 3, 17).getTime();
-            let todayTime = new Date(2023, 2, 25).getTime();
+            let todayTime = new Date(2023, 2, 20).getTime();
             // let todayTime = Date.now();
 
             if (todayTime < startTime) {
@@ -1262,14 +1262,14 @@
                             if (numberOfDaysReleased - i > 1) {
                                 days[i].innerHTML = `
                         <figure class="past">
-                            <img src="${challengesList[i].img}" alt="Challenge Image" />
+                            <img src="http://drive.google.com/uc?id=${challengesList[i].img}" alt="Challenge Image" />
                             <figcaption>${challengesList[i].name}</figcaption>
                         </figure>
                         `;
 
                                 var day = daysList[i % 7];
                                 days_mobile[i].innerHTML = `
-                        <img src="${challengesList[i].img}" class="d-block w-100" alt="Challenge Image" />
+                        <img src="http://drive.google.com/uc?id=${challengesList[i].img}" class="d-block w-100" alt="Challenge Image" />
                         <div class="carousel-caption d-md-block">
                             <h5>${day}</h5>
                             <p>${challengesList[i].name}</p>
@@ -1284,7 +1284,7 @@
                                 days[i].innerHTML = `
                         <a href="/ongoing-challenge.html">
                             <figure class="ongoing">
-                                <img src="${challengesList[i].img}" alt="Challenge Image" />
+                                <img src="http://drive.google.com/uc?id=${challengesList[i].img}" alt="Challenge Image" />
                                 <figcaption>${challengesList[i].name}</figcaption>
                                 <hr id="line" />
                                 <p id="textbox">
@@ -1296,7 +1296,7 @@
 
                                 var day = daysList[i % 7];
                                 days_mobile[i].innerHTML = `
-                        <img src="${challengesList[i].img}" class="d-block w-100" alt="Challenge Image" />
+                        <img src="http://drive.google.com/uc?id=${challengesList[i].img}" class="d-block w-100" alt="Challenge Image" />
                         <a href="/ongoing-challenge.html">
                             <div class="carousel-caption d-md-block">
                                 <h5>${day}</h5>
