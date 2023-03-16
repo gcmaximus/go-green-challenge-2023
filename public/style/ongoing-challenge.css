@@ -339,7 +339,7 @@ transform: rotate(-405deg);
   }
 
 body{
-  background-color: white !important;
+  background-color: #bcccbc !important;
 }
 
 p{
@@ -470,6 +470,7 @@ p{
   flex: 3;
   position: relative;
   border: 1px solid black;
+  background-color:white;
 }
 
 .image_left img {
@@ -515,6 +516,7 @@ p{
 .image_right {
   flex: 3;
   position: relative;
+  background-color:white;
 }
 
 .image_right img {
