@@ -646,3 +646,7 @@ transform: rotate(-405deg);
 .challenge-figure > img {
   background-color:white;
 }
+
+.info-card-text p {
+  text-align:justify;
+}
