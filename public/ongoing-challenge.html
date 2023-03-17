@@ -301,6 +301,26 @@
             let todayTime = Date.now();
 
             if (todayTime < startTime) {
+                // Unhide sign out button and add username
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        signInPageButton.hidden = true;
+                        signOutButton.hidden = false;
+                        usernameDisplay.textContent = user.displayName;
+                        getDoc(doc(db, "scores", user.uid))
+                            .then((docSnap) => {
+                                totalScoreDisplay.textContent =
+                                    docSnap.data().totalScore;
+                                display.hidden = false;
+                            })
+                            .catch((error) => {
+                                alert(
+                                    `Error code: ${error.code}\nError message: ${error.message}`
+                                );
+                            });
+                    }
+                });
+
                 console.log("Challenge has not commenced");
 
                 $(".dynamic-pc").append(
@@ -350,6 +370,26 @@
                         );
                     });
             } else {
+                // Unhide sign out button and add username
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        signInPageButton.hidden = true;
+                        signOutButton.hidden = false;
+                        usernameDisplay.textContent = user.displayName;
+                        getDoc(doc(db, "scores", user.uid))
+                            .then((docSnap) => {
+                                totalScoreDisplay.textContent =
+                                    docSnap.data().totalScore;
+                                display.hidden = false;
+                            })
+                            .catch((error) => {
+                                alert(
+                                    `Error code: ${error.code}\nError message: ${error.message}`
+                                );
+                            });
+                    }
+                });
+
                 console.log("Challenge has ceased");
 
                 $(".dynamic-pc").append(
