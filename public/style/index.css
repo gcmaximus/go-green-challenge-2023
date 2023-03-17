@@ -262,8 +262,12 @@ p {
 
 @media screen and (max-width: 1000px) {
   .mission h1 {
-    font-size: 2em;
+    font-size: 1.7em;
     width: 100%;
+  }
+
+  .mission p {
+    font-size: 1.3em;
   }
 
   .info-card-pic {
