@@ -80,9 +80,18 @@
                             id="password2"
                             name="password2"
                             required
-                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                         />
                         <label for="password2">Password</label>
+                    </div>
+                    <div class="form-group">
+                        <input
+                            type="instaUsername"
+                            id="instaUsername"
+                            name="instaUsername"
+                            required
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        />
+                        <label for="instaUsername">Instagram Username</label>
                     </div>
                     <div class="form-group">
                         <button type="submit">
@@ -255,8 +264,7 @@
                 document.querySelector("#signUpSpinner").hidden = false;
                 e.preventDefault();
                 let username2Value = username2Input.value;
-                let instaUsername = "test";
-                // let instaUsername = document.querySelector("#instaUsername").value;
+                let instaUsername = document.querySelector("#instaUsername").value;
                 let email2Value = email2Input.value;
                 let password2Value = password2Input.value;
 
