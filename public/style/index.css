@@ -642,3 +642,7 @@ transform: rotate(-405deg);
   }
 }
 
+
+.challenge-figure > img {
+  background-color:white;
+}
