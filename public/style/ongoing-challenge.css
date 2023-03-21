@@ -707,3 +707,13 @@ p{
   height: auto;
   max-height: 100%;
 }
+
+
+.clicktoview {
+  font-size:0.4em;
+  color:gray;
+}
+
+.card-mobile.open .clicktoview{
+  display: none;
+}
