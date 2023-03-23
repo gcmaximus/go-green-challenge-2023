@@ -620,10 +620,14 @@
                 $(temporary_data).insertAfter(mobile_container);
 
                 let lastDivM = $(".style-button_m_closed").last();
+                console.log(lastDivM)
                 lastDivM.val(" Upload ");
                 lastDivM.addClass("style-button_m");
                 lastDivM.addClass("submitButton");
                 lastDivM.removeClass("style-button_m_closed");
+
+                let lastCardMobile = $('.card-mobile').last()
+                lastCardMobile.css('background-color','rgb(216, 187, 92)')
 
                 // lastDivM.attr('id', 'submitButton');
             }
