@@ -412,6 +412,13 @@
                 snapshot.forEach((doc) => {
                     challengesList.push({ ...doc.data(), id: doc.id });
                 });
+
+                // reorder the list according to id (day no.)
+
+                challengesList.sort((a, b) => {
+                    return a.id.substring(3) - b.id.substring(3);
+                });
+
                 console.log(challengesList);
 
                 // change banner
