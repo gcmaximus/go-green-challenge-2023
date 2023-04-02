@@ -1217,103 +1217,108 @@
                         return `day${i + 1}`;
                     });
 
-                // Get challenges
-                getDocs(
-                    query(
-                        collection(db, "challenges"),
-                        where(documentId(), "in", queryList)
-                    )
-                )
-                    .then((snapshot) => {
-                        let challengesList = [];
-                        snapshot.forEach((doc) => {
-                            challengesList.push({ ...doc.data(), id: doc.id });
-                        });
+                let batches = [];
+                while (queryList.length) {
+                    let batch = queryList.splice(0, 10);
+                    batches.push(
+                        getDocs(
+                            query(
+                                collection(db, "challenges"),
+                                where(documentId(), "in", batch)
+                            )
+                        ).then((snapshot) => {
+                            let batchResult = [];
+                            snapshot.forEach((doc) => {
+                                batchResult.push({
+                                    ...doc.data(),
+                                    id: doc.id,
+                                });
+                            });
+                            return batchResult;
+                        })
+                    );
+                }
+                await Promise.all(batches).then((batchResult) => {
+                    let challengesList = batchResult.flat();
+                    // reorder the list according to id (day no.)
+                    challengesList.sort((a, b) => {
+                        return a.id.substring(3) - b.id.substring(3);
+                    });
 
-                        // reorder the list according to id (day no.)
+                    console.log(challengesList);
+                    // for PC
+                    const days = document.getElementsByClassName("day");
 
-                        challengesList.sort((a, b) => {
-                            return a.id.substring(3) - b.id.substring(3);
-                        });
+                    // for mobile
+                    const days_mobile =
+                        document.getElementsByClassName("carousel-item");
 
-                        console.log(challengesList);
-                        // for PC
-                        const days = document.getElementsByClassName("day");
-                        // for mobile
-                        const days_mobile =
-                            document.getElementsByClassName("carousel-item");
+                    // no of challenges released so far
+                    var numberOfDaysReleased = challengesList.length;
 
-                        // no of challenges released so far
-                        var numberOfDaysReleased = challengesList.length;
+                    // days
+                    var daysList = [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                        "Sunday",
+                    ];
 
-                        // days
-                        var daysList = [
-                            "Monday",
-                            "Tuesday",
-                            "Wednesday",
-                            "Thursday",
-                            "Friday",
-                            "Saturday",
-                            "Sunday",
-                        ];
+                    // Loop through each day
+                    for (let i = 0; i < numberOfDaysReleased; i++) {
+                        // Past challenges
+                        if (numberOfDaysReleased - i > 1) {
+                            days[i].innerHTML = `
+                    <figure class="past">
+                        <img src="http://drive.google.com/uc?id=${challengesList[i].img}" alt="Challenge Image" />
+                        <figcaption>${challengesList[i].name}</figcaption>
+                    </figure>
+                    `;
 
-                        // Loop through each day
-                        for (let i = 0; i < numberOfDaysReleased; i++) {
-                            // Past challenges
-                            if (numberOfDaysReleased - i > 1) {
-                                days[i].innerHTML = `
-                        <figure class="past">
+                            var day = daysList[i % 7];
+                            days_mobile[i].innerHTML = `
+                    <img src="http://drive.google.com/uc?id=${challengesList[i].img}" class="d-block w-100" alt="Challenge Image" />
+                    <div class="carousel-caption d-md-block">
+                        <h5>${day}</h5>
+                        <p>${challengesList[i].name}</p>
+                        <h6 class="text-past">Past Challenge</h6>
+                    </div>
+
+                    `;
+                        }
+
+                        // Ongoing challenges
+                        else if (numberOfDaysReleased - i == 1) {
+                            days[i].innerHTML = `
+                    <a href="/ongoing-challenge.html">
+                        <figure class="ongoing">
                             <img src="http://drive.google.com/uc?id=${challengesList[i].img}" alt="Challenge Image" />
                             <figcaption>${challengesList[i].name}</figcaption>
-                        </figure>
-                        `;
 
-                                var day = daysList[i % 7];
-                                days_mobile[i].innerHTML = `
-                        <img src="http://drive.google.com/uc?id=${challengesList[i].img}" class="d-block w-100" alt="Challenge Image" />
+                            <p id="textbox">
+                                Click to view ongoing challenge!
+                            </p>
+                        </figure>
+                    </a>
+                `;
+
+                            var day = daysList[i % 7];
+                            days_mobile[i].innerHTML = `
+                    <img src="http://drive.google.com/uc?id=${challengesList[i].img}" class="d-block w-100" alt="Challenge Image" />
+                    <a href="/ongoing-challenge.html">
                         <div class="carousel-caption d-md-block">
                             <h5>${day}</h5>
                             <p>${challengesList[i].name}</p>
-                            <h6 class="text-past">Past Challenge</h6>
+                            <h6 class="text-ongoing">Click to view ongoing challenge!</h6>
                         </div>
-                        
-                        `;
-                            }
-
-                            // Ongoing challenges
-                            else if (numberOfDaysReleased - i == 1) {
-                                days[i].innerHTML = `
-                        <a href="/ongoing-challenge.html">
-                            <figure class="ongoing">
-                                <img src="http://drive.google.com/uc?id=${challengesList[i].img}" alt="Challenge Image" />
-                                <figcaption>${challengesList[i].name}</figcaption>
-
-                                <p id="textbox">
-                                    Click to view ongoing challenge!
-                                </p>
-                            </figure>
-                        </a>
+                    </a>
                     `;
-
-                                var day = daysList[i % 7];
-                                days_mobile[i].innerHTML = `
-                        <img src="http://drive.google.com/uc?id=${challengesList[i].img}" class="d-block w-100" alt="Challenge Image" />
-                        <a href="/ongoing-challenge.html">
-                            <div class="carousel-caption d-md-block">
-                                <h5>${day}</h5>
-                                <p>${challengesList[i].name}</p>
-                                <h6 class="text-ongoing">Click to view ongoing challenge!</h6>
-                            </div>
-                        </a>
-                        `;
-                            }
                         }
-                    })
-                    .catch((error) => {
-                        alert(
-                            `Error code: ${error.code}\nError message: ${error.message}`
-                        );
-                    });
+                    }
+                });
             } else {
                 console.log("Challenge has ceased");
             }
